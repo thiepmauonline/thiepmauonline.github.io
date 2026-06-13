@@ -112,23 +112,15 @@
         <div class="search-container mb-4 text-center">
           <input type="text" id="templateSearch" class="form-control d-inline-block w-auto" placeholder="🔍 Tìm kiếm mẫu thiệp ..." style="min-width: 300px; max-width: 100%; border-radius: 30px; padding: 12px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border);">
         </div>
-
-        <div class="template-grid">
-          <article class="template-card" data-aos="fade-up" data-aos-delay="0">
-            <div class="template-thumb">
-              <span class="badge-soft thumb-tag"><i class="fa-solid fa-cake-candles"></i> Birthday</span>
-              <img src="https://images.pexels.com/photos/13142788/pexels-photo-13142788.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp sinh nhật người yêu lãng mạn">
-            </div>
-            <div class="template-body">
-              <h3>Sinh nhật 01</h3>
-              <p>Màu hồng pastel, nhẹ nhàng và ngọt ngào.</p>
-              <div class="template-meta">
-                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-sinh-nhat-nguoi-yeu/index.html">Xem demo</a>
-              </div>
-            </div>
-          </article>
+        
+        <div class="categories-container">
           
-          <article class="template-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="category-block mb-5" data-category-group="love_wedding">
+          <h3 class="category-title mb-4" style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 12px; margin-top: 40px;">
+            <i class="fa-solid fa-heart me-2" style="color: var(--brand);"></i> Tình Yêu & Đám Cưới
+          </h3>
+          <div class="template-grid">
+            <article class="template-card" data-aos="fade-up" data-aos-delay="400">
             <div class="template-thumb">
               <span class="badge-soft thumb-tag"><i class="fa-solid fa-heart-circle-bolt"></i> Love</span>
               <img src="https://images.pexels.com/photos/7955939/pexels-photo-7955939.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp tình yêu kèm nhạc">
@@ -141,21 +133,6 @@
               </div>
             </div>
           </article>
-
-          <article class="template-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="template-thumb">
-              <span class="badge-soft thumb-tag"><i class="fa-solid fa-cake-candles"></i> Birthday</span>
-              <img src="https://images.pexels.com/photos/36211766/pexels-photo-36211766.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp sinh nhật hiện đại">
-            </div>
-            <div class="template-body">
-              <h3>Sinh nhật 02</h3>
-              <p>Sắc xanh hiện đại, trẻ trung và vui tươi.</p>
-              <div class="template-meta">
-                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-sinh-nhat-hien-dai/index.html">Xem demo</a>
-              </div>
-            </div>
-          </article>
-
           <article class="template-card" data-aos="fade-up" data-aos-delay="200">
             <div class="template-thumb">
               <span class="badge-soft thumb-tag"><i class="fa-solid fa-heart"></i> Wedding</span>
@@ -169,7 +146,6 @@
               </div>
             </div>
           </article>
-
           <article class="template-card" data-aos="fade-up" data-aos-delay="300">
             <div class="template-thumb">
               <span class="badge-soft thumb-tag"><i class="fa-solid fa-heart-circle-bolt"></i> Love</span>
@@ -183,8 +159,57 @@
               </div>
             </div>
           </article>
-
-          <article class="template-card" data-aos="fade-up" data-aos-delay="400">
+          </div>
+          <div class="text-center mt-4 load-more-wrapper" style="display: none;">
+            <button class="btn-card secondary btn-sm px-4 py-2 btn-load-more" style="min-height: auto;">
+              Xem thêm <i class="fa-solid fa-chevron-down ms-2"></i>
+            </button>
+          </div>
+        </div>
+        <div class="category-block mb-5" data-category-group="birthday">
+          <h3 class="category-title mb-4" style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 12px; margin-top: 40px;">
+            <i class="fa-solid fa-cake-candles me-2" style="color: var(--brand);"></i> Thiệp Sinh Nhật
+          </h3>
+          <div class="template-grid">
+            <article class="template-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="template-thumb">
+              <span class="badge-soft thumb-tag"><i class="fa-solid fa-cake-candles"></i> Birthday</span>
+              <img src="https://images.pexels.com/photos/13142788/pexels-photo-13142788.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp sinh nhật người yêu lãng mạn">
+            </div>
+            <div class="template-body">
+              <h3>Sinh nhật 01</h3>
+              <p>Màu hồng pastel, nhẹ nhàng và ngọt ngào.</p>
+              <div class="template-meta">
+                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-sinh-nhat-nguoi-yeu/index.html">Xem demo</a>
+              </div>
+            </div>
+          </article>
+          <article class="template-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="template-thumb">
+              <span class="badge-soft thumb-tag"><i class="fa-solid fa-cake-candles"></i> Birthday</span>
+              <img src="https://images.pexels.com/photos/36211766/pexels-photo-36211766.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp sinh nhật hiện đại">
+            </div>
+            <div class="template-body">
+              <h3>Sinh nhật 02</h3>
+              <p>Sắc xanh hiện đại, trẻ trung và vui tươi.</p>
+              <div class="template-meta">
+                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-sinh-nhat-hien-dai/index.html">Xem demo</a>
+              </div>
+            </div>
+          </article>
+          </div>
+          <div class="text-center mt-4 load-more-wrapper" style="display: none;">
+            <button class="btn-card secondary btn-sm px-4 py-2 btn-load-more" style="min-height: auto;">
+              Xem thêm <i class="fa-solid fa-chevron-down ms-2"></i>
+            </button>
+          </div>
+        </div>
+        <div class="category-block mb-5" data-category-group="holiday">
+          <h3 class="category-title mb-4" style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 12px; margin-top: 40px;">
+            <i class="fa-solid fa-sparkles me-2" style="color: var(--brand);"></i> Sự Kiện & Ngày Lễ
+          </h3>
+          <div class="template-grid">
+            <article class="template-card" data-aos="fade-up" data-aos-delay="400">
             <div class="template-thumb">
               <span class="badge-soft thumb-tag"><i class="fa-solid fa-sparkles"></i> New Year</span>
               <img src="https://images.pexels.com/photos/35826201/pexels-photo-35826201.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp năm mới pháo hoa">
@@ -197,21 +222,6 @@
               </div>
             </div>
           </article>
-
-          <article class="template-card" data-aos="fade-up" data-aos-delay="500">
-            <div class="template-thumb">
-              <span class="badge-soft thumb-tag"><i class="fa-solid fa-graduation-cap"></i> Graduation</span>
-              <img src="https://images.pexels.com/photos/8093033/pexels-photo-8093033.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp tốt nghiệp">
-            </div>
-            <div class="template-body">
-              <h3>Tốt nghiệp 01</h3>
-              <p>Trang trọng, mang dấu ấn học thuật.</p>
-              <div class="template-meta">
-                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-chuc-mung-tot-nghiep/index.html">Xem demo</a>
-              </div>
-            </div>
-          </article>
-
           <article class="template-card" data-aos="fade-up" data-aos-delay="0">
             <div class="template-thumb">
               <span class="badge-soft thumb-tag"><i class="fa-solid fa-holly-berry"></i> Christmas</span>
@@ -225,21 +235,6 @@
               </div>
             </div>
           </article>
-
-          <article class="template-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="template-thumb">
-              <span class="badge-soft thumb-tag"><i class="fa-solid fa-leaf"></i> Thank You</span>
-              <img src="https://images.pexels.com/photos/191429/pexels-photo-191429.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp cảm ơn">
-            </div>
-            <div class="template-body">
-              <h3>Cảm ơn 01</h3>
-              <p>Tối giản, thanh lịch với viền vàng.</p>
-              <div class="template-meta">
-                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-cam-on-thanh-lich/index.html">Xem demo</a>
-              </div>
-            </div>
-          </article>
-
           <article class="template-card" data-aos="fade-up" data-aos-delay="200">
             <div class="template-thumb">
               <span class="badge-soft thumb-tag"><i class="fa-solid fa-venus"></i> Women's Day</span>
@@ -253,7 +248,44 @@
               </div>
             </div>
           </article>
-
+          </div>
+          <div class="text-center mt-4 load-more-wrapper" style="display: none;">
+            <button class="btn-card secondary btn-sm px-4 py-2 btn-load-more" style="min-height: auto;">
+              Xem thêm <i class="fa-solid fa-chevron-down ms-2"></i>
+            </button>
+          </div>
+        </div>
+        <div class="category-block mb-5" data-category-group="congrats">
+          <h3 class="category-title mb-4" style="font-family: 'Playfair Display', serif; font-weight: 700; color: var(--text); border-bottom: 2px solid var(--border); padding-bottom: 12px; margin-top: 40px;">
+            <i class="fa-solid fa-graduation-cap me-2" style="color: var(--brand);"></i> Chúc Mừng & Cảm Ơn
+          </h3>
+          <div class="template-grid">
+            <article class="template-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="template-thumb">
+              <span class="badge-soft thumb-tag"><i class="fa-solid fa-graduation-cap"></i> Graduation</span>
+              <img src="https://images.pexels.com/photos/8093033/pexels-photo-8093033.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp tốt nghiệp">
+            </div>
+            <div class="template-body">
+              <h3>Tốt nghiệp 01</h3>
+              <p>Trang trọng, mang dấu ấn học thuật.</p>
+              <div class="template-meta">
+                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-chuc-mung-tot-nghiep/index.html">Xem demo</a>
+              </div>
+            </div>
+          </article>
+          <article class="template-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="template-thumb">
+              <span class="badge-soft thumb-tag"><i class="fa-solid fa-leaf"></i> Thank You</span>
+              <img src="https://images.pexels.com/photos/191429/pexels-photo-191429.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" loading="lazy" alt="Mẫu thiệp cảm ơn">
+            </div>
+            <div class="template-body">
+              <h3>Cảm ơn 01</h3>
+              <p>Tối giản, thanh lịch với viền vàng.</p>
+              <div class="template-meta">
+                <a class="btn-card primary btn-sm w-100" href="mau-thiep/thiep-cam-on-thanh-lich/index.html">Xem demo</a>
+              </div>
+            </div>
+          </article>
           <article class="template-card" data-aos="fade-up" data-aos-delay="300">
             <div class="template-thumb">
               <span class="badge-soft thumb-tag"><i class="fa-solid fa-seedling"></i> Get Well</span>
@@ -267,6 +299,13 @@
               </div>
             </div>
           </article>
+          </div>
+          <div class="text-center mt-4 load-more-wrapper" style="display: none;">
+            <button class="btn-card secondary btn-sm px-4 py-2 btn-load-more" style="min-height: auto;">
+              Xem thêm <i class="fa-solid fa-chevron-down ms-2"></i>
+            </button>
+          </div>
+        </div>
         </div>
       </div>
     </section>
@@ -292,9 +331,9 @@
     document.addEventListener("DOMContentLoaded", function() {
       const searchInput = document.getElementById("templateSearch");
       const templateCards = document.querySelectorAll(".template-card");
-      const templateGrid = document.querySelector(".template-grid");
+      const categoryGroups = document.querySelectorAll("[data-category-group]");
 
-      // Tạo style cho hiệu ứng mượt
+      // Inject custom CSS styles dynamically
       const style = document.createElement('style');
       style.textContent = `
         @keyframes popIn {
@@ -308,10 +347,14 @@
         .card-hide {
           display: none !important;
         }
+        .card-hidden-extra {
+          display: none !important;
+        }
       `;
       document.head.appendChild(style);
 
-      // Tạo khối thông báo "Không tìm thấy"
+      // Create "No Results" message box
+      const categoriesContainer = document.querySelector(".categories-container");
       const noResultsMsg = document.createElement("div");
       noResultsMsg.id = "noResultsMsg";
       noResultsMsg.className = "text-center w-100";
@@ -324,32 +367,129 @@
           <p class="text-muted">Không có mẫu nào khớp với từ khóa của bạn. Thử tìm từ khác nhé!</p>
         </div>
       `;
-      templateGrid.parentNode.insertBefore(noResultsMsg, templateGrid.nextSibling);
+      categoriesContainer.parentNode.insertBefore(noResultsMsg, categoriesContainer.nextSibling);
 
+      // CONFIG: Limit cards to display initially in each category
+      const INITIAL_LIMIT = 2;
+
+      // Initialize category pagination
+      function initPagination() {
+        categoryGroups.forEach(group => {
+          const cards = group.querySelectorAll(".template-card");
+          const loadMoreWrapper = group.querySelector(".load-more-wrapper");
+          const btnLoadMore = group.querySelector(".btn-load-more");
+
+          // Reset all cards first
+          cards.forEach(card => {
+            card.classList.remove("card-hidden-extra");
+          });
+
+          if (cards.length > INITIAL_LIMIT) {
+            // Hide cards beyond INITIAL_LIMIT
+            for (let i = INITIAL_LIMIT; i < cards.length; i++) {
+              cards[i].classList.add("card-hidden-extra");
+            }
+            
+            // Show the "Xem thêm" button wrapper
+            loadMoreWrapper.style.display = "block";
+            btnLoadMore.style.display = "inline-block";
+          } else {
+            loadMoreWrapper.style.display = "none";
+          }
+        });
+      }
+
+      // Add event listeners to "Xem thêm" buttons
+      categoryGroups.forEach(group => {
+        const btnLoadMore = group.querySelector(".btn-load-more");
+        if (btnLoadMore) {
+          btnLoadMore.addEventListener("click", function() {
+            const cards = group.querySelectorAll(".template-card");
+            // Show all hidden extra cards
+            cards.forEach(card => {
+              card.classList.remove("card-hidden-extra");
+            });
+            // Hide the button wrapper after expanding
+            group.querySelector(".load-more-wrapper").style.display = "none";
+          });
+        }
+      });
+
+      // Run pagination init on load
+      initPagination();
+
+      // Search functionality
       if (searchInput) {
         searchInput.addEventListener("input", function() {
           const filter = searchInput.value.toLowerCase().trim();
-          let hasVisible = false;
           
-          templateCards.forEach(card => {
-            const title = card.querySelector("h3").innerText.toLowerCase();
-            if (title.includes(filter)) {
-              if (card.classList.contains('card-hide') || card.style.display === "none") {
-                 card.classList.remove('card-hide');
-                 card.classList.add('card-show');
-                 card.style.display = ""; 
+          if (filter === "") {
+            // Restore default view when search is empty
+            noResultsMsg.style.display = "none";
+            categoriesContainer.style.display = "block";
+            
+            // Show all category headings
+            categoryGroups.forEach(group => {
+              group.style.display = "block";
+              group.querySelector("h3").style.display = "block";
+            });
+
+            // Re-apply pagination limits
+            initPagination();
+            
+            // Reset active search classes
+            templateCards.forEach(card => {
+              card.classList.remove("card-show", "card-hide");
+            });
+            return;
+          }
+
+          // Search Mode: Bypass pagination and show search results
+          let totalVisible = 0;
+          
+          categoryGroups.forEach(group => {
+            const cards = group.querySelectorAll(".template-card");
+            const loadMoreWrapper = group.querySelector(".load-more-wrapper");
+            let groupHasMatch = false;
+
+            // Hide "Xem thêm" buttons during search
+            if (loadMoreWrapper) {
+              loadMoreWrapper.style.display = "none";
+            }
+
+            cards.forEach(card => {
+              // Remove pagination hidden class
+              card.classList.remove("card-hidden-extra");
+
+              const title = card.querySelector("h3").innerText.toLowerCase();
+              if (title.includes(filter)) {
+                card.classList.remove("card-hide");
+                card.classList.add("card-show");
+                card.style.display = ""; 
+                groupHasMatch = true;
+                totalVisible++;
+              } else {
+                card.classList.remove("card-show");
+                card.classList.add("card-hide");
               }
-              hasVisible = true;
+            });
+
+            // If a category has no matches, hide the entire category block
+            if (groupHasMatch) {
+              group.style.display = "block";
+              group.querySelector("h3").style.display = "block";
             } else {
-              card.classList.remove('card-show');
-              card.classList.add('card-hide');
+              group.style.display = "none";
             }
           });
 
-          if (!hasVisible) {
+          // Show or hide "No Results" message
+          if (totalVisible === 0) {
             noResultsMsg.style.display = "block";
+            categoriesContainer.style.display = "none";
           } else {
             noResultsMsg.style.display = "none";
+            categoriesContainer.style.display = "block";
           }
         });
       }
