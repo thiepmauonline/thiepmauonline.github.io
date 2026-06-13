@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy New Year - Happy Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/app.css">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "",
+      "img2": "",
+      "img3": ""
+    };
+  </script>
+  <style>
+    :root {
+      --ny-gold: #f59e0b;
+      --ny-gold-light: #fbbf24;
+      --ny-bg: #0f172a;
+      --ny-text: #f8fafc;
+    }
+    body.template-shell {
+      font-family: 'Oswald', sans-serif;
+      background: #000;
+    }
+    .mobile-app-container {
+      background: var(--ny-bg);
+      background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="1" fill="rgba(245, 158, 11, 0.2)"/></svg>');
+      color: var(--ny-text);
+      overflow: hidden;
+      position: relative;
+    }
+    .topbar {
+      background: transparent !important;
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2) !important;
+    }
+    .nav-shell strong {
+      color: var(--ny-gold);
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.5rem;
+    }
+    .hero-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .year-badge {
+      display: inline-block;
+      border: 2px solid var(--ny-gold);
+      padding: 10px 30px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--ny-gold);
+      letter-spacing: 5px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.3) inset, 0 0 20px rgba(245, 158, 11, 0.3);
+      position: relative;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    .images-container {
+      padding: 0 20px;
+    }
+    .image-block {
+      border: 3px solid var(--ny-gold-light);
+      padding: 5px;
+      border-radius: 0;
+      background: rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+    .image-block img {
+      width: 100%;
+      height: auto;
+    }
+    .message-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(0,0,0,0));
+      border-top: 1px solid var(--ny-gold);
+      border-bottom: 1px solid var(--ny-gold);
+      padding: 40px 20px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .message-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--ny-gold);
+      margin-bottom: 20px;
+    }
+    .message-card p {
+      font-family: sans-serif;
+      font-size: 1rem;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+    .btn-back {
+      background: var(--ny-gold);
+      color: #000 !important;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      padding: 12px 30px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-back:hover {
+      background: #fff;
+      color: #000 !important;
+    }
+  </style>
+</head>
+<body class="template-shell mobile-mode">
+  <div class="mobile-app-container">
+    <header class="topbar">
+      <div class="container-wide">
+        <div class="nav-shell position-relative" style="justify-content:center;">
+          <strong>Celebration</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="pb-5">
+      <div class="hero-section" data-aos="fade-down">
+        <div class="year-badge">2026</div>
+        <h1 class="hero-title">Happy New Year</h1>
+        <p style="font-family: sans-serif; color: #aaa;">Khởi đầu mới, thành công mới.</p>
+      </div>
+
+      <div class="images-container" data-aos="fade-up">
+        <div class="dynamic-img" data-img="img1"></div>
+      </div>
+
+      <div class="message-card" data-aos="zoom-in">
+        <h3>Chúc Mừng Năm Mới</h3>
+        <p>Năm mới chúc gia đình an khang thịnh vượng, vạn sự như ý, sức khỏe dồi dào, ngập tràn niềm vui và hạnh phúc.</p>
+      </div>
+      
+      <div class="images-container" data-aos="fade-up">
+        <div class="dynamic-img" data-img="img2"></div>
+        <div class="dynamic-img" data-img="img3"></div>
+      </div>
+
+      <div class="text-center mt-5 mb-3" data-aos="fade-up">
+        <a class="btn-back" href="../../index.html">
+           Trở về
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".dynamic-img").forEach(container => {
+        const key = container.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          container.innerHTML = `<div class="image-block"><img src="${src}" alt="Ảnh chi tiết"></div>`;
+        } else {
+          container.innerHTML = `<div class="image-block img-placeholder" style="aspect-ratio:1;display:flex;align-items:center;justify-content:center;background:#1e293b;color:#f59e0b;"><span>Chưa có ảnh (${key})</span></div>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

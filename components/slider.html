@@ -1,0 +1,129 @@
+<div class="slider-component" data-slider-component>
+  <div class="carousel slide carousel-fade" data-slider-root data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="hover" style="border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+    <div class="carousel-inner" data-slider-inner>
+      <!-- Items dynamically injected here -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-slider-control="prev" style="width: 15%;">
+      <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(0,0,0,0.5); border-radius: 50%; width: 2.5rem; height: 2.5rem; background-size: 50%;"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-slider-control="next" style="width: 15%;">
+      <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(0,0,0,0.5); border-radius: 50%; width: 2.5rem; height: 2.5rem; background-size: 50%;"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const host = document.currentScript && document.currentScript.parentElement;
+    if (!host) return;
+
+    const sliderRoot = host.querySelector('[data-slider-root]');
+    const sliderContainer = host.querySelector('[data-slider-inner]');
+    if (!sliderContainer || !sliderRoot) return;
+
+    let html = '';
+    const rawImages = host.getAttribute('data-slider-images');
+
+    function normalizeImages(input) {
+      if (!input) {
+        return [];
+      }
+
+      let parsed;
+      try {
+        parsed = JSON.parse(input);
+      } catch (error) {
+        console.warn('Không thể đọc data-slider-images:', error);
+        return [];
+      }
+
+      if (Array.isArray(parsed)) {
+        return parsed
+          .map((item, index) => {
+            if (typeof item === 'string') {
+              return item ? { src: item, alt: `Hình ảnh ${index + 1}` } : null;
+            }
+
+            if (item && typeof item === 'object') {
+              const src = item.src || item.url || item.image || '';
+              const alt = item.alt || item.title || `Hình ảnh ${index + 1}`;
+              return src ? { src, alt } : null;
+            }
+
+            return null;
+          })
+          .filter(Boolean);
+      }
+
+      if (parsed && typeof parsed === 'object') {
+        return Object.entries(parsed)
+          .map(([key, value]) => {
+            if (typeof value === 'string') {
+              return value ? { src: value, alt: key } : null;
+            }
+
+            if (value && typeof value === 'object') {
+              const src = value.src || value.url || value.image || '';
+              const alt = value.alt || value.title || key;
+              return src ? { src, alt } : null;
+            }
+
+            return null;
+          })
+          .filter(Boolean);
+      }
+
+      return [];
+    }
+
+    let sliderImages = normalizeImages(rawImages);
+    
+    if (sliderImages.length === 0 && typeof PAGE_IMAGES !== 'undefined' && PAGE_IMAGES) {
+      for (const [key, src] of Object.entries(PAGE_IMAGES)) {
+        if (src && src.trim() !== '') {
+          sliderImages.push({ src, alt: `Hình ảnh ${key}` });
+        }
+      }
+    }
+
+    sliderRoot.id = sliderRoot.id || `dynamicAutoSlider-${Math.random().toString(36).slice(2, 10)}`;
+    host.querySelectorAll('[data-slider-control]').forEach((button) => {
+      button.setAttribute('data-bs-target', `#${sliderRoot.id}`);
+    });
+
+    sliderImages.forEach((image, index) => {
+      html += `
+        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+          <img src="${image.src}" loading="lazy" class="d-block w-100" style="object-fit: cover; aspect-ratio: 4/5; filter: brightness(0.95); transition: transform 0.5s ease;" alt="${image.alt}">
+        </div>
+      `;
+    });
+
+    // Fallback: nếu rỗng thì hiện hộp xám
+    if (html === '') {
+      html = `
+        <div class="carousel-item active">
+          <div style="aspect-ratio: 4/5; background: #e9ecef; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #6c757d;">
+            <i class="fa-regular fa-image mb-2" style="font-size: 2rem;"></i>
+            <span>Chưa có hình ảnh slide</span>
+          </div>
+        </div>
+      `;
+    }
+
+    // Inject HTML
+    sliderContainer.innerHTML = html;
+
+    // QUAN TRỌNG: Re-initialize Bootstrap Carousel để tránh lỗi khi DOM thay đổi động
+    // Đặc biệt trên mobile, nếu render DOM sau thì auto-play có thể bị chết.
+    if (typeof bootstrap !== 'undefined') {
+      new bootstrap.Carousel(sliderRoot, {
+        interval: 2500,
+        ride: 'carousel',
+        wrap: true
+      });
+    }
+  })();
+</script>

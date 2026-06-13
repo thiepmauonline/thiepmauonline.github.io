@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thiệp Cưới Tinh Tế - Happy Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/app.css">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "",
+      "img2": "",
+      "img3": ""
+    };
+  </script>
+  <style>
+    :root {
+      --wd-primary: #8e7f5e;
+      --wd-bg: #faf7f2;
+      --wd-text: #4a453f;
+    }
+    body.template-shell {
+      font-family: 'Cormorant Garamond', serif;
+      background: #fdfdfd;
+    }
+    .mobile-app-container {
+      background: var(--wd-bg);
+      color: var(--wd-text);
+      overflow: hidden;
+      position: relative;
+    }
+    .topbar {
+      background: transparent !important;
+      border-bottom: none !important;
+      padding-top: 20px;
+    }
+    .nav-shell strong {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--wd-primary);
+    }
+    .hero-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero-title {
+      font-size: 3.5rem;
+      margin-bottom: 5px;
+      color: var(--wd-text);
+    }
+    .hero-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--wd-primary);
+      margin-bottom: 25px;
+    }
+    .ornament {
+      width: 150px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--wd-primary), transparent);
+      margin: 0 auto 30px;
+    }
+    .images-container {
+      padding: 0 15px;
+    }
+    .image-block {
+      border: 1px solid rgba(142, 127, 94, 0.3);
+      padding: 8px;
+      background: #fff;
+      margin-bottom: 40px;
+    }
+    .image-block img {
+      width: 100%;
+      height: auto;
+      filter: sepia(0.2);
+    }
+    .message-card {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .message-card i {
+      font-size: 1.5rem;
+      color: var(--wd-primary);
+      margin-bottom: 20px;
+    }
+    .message-card p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      font-style: italic;
+    }
+    .btn-back {
+      font-family: 'Montserrat', sans-serif;
+      background: transparent;
+      color: var(--wd-text) !important;
+      border: 1px solid var(--wd-primary);
+      padding: 12px 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    .btn-back:hover {
+      background: var(--wd-primary);
+      color: #fff !important;
+    }
+  </style>
+</head>
+<body class="template-shell mobile-mode">
+  <div class="mobile-app-container">
+    <header class="topbar">
+      <div class="container-wide">
+        <div class="nav-shell position-relative" style="justify-content:center;">
+          <strong>Wedding Invitation</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="pb-5">
+      <div class="hero-section" data-aos="fade-down">
+        <h1 class="hero-title">Save the Date</h1>
+        <div class="hero-subtitle">Mừng hạnh phúc</div>
+        <div class="ornament"></div>
+      </div>
+
+      <div class="images-container" data-aos="fade-up">
+        <div class="dynamic-img" data-img="img1"></div>
+      </div>
+
+      <div class="message-card" data-aos="zoom-in">
+        <i class="fa-solid fa-rings-wedding"></i>
+        <p>"Trân trọng kính mời quý khách đến dự buổi tiệc chung vui cùng gia đình chúng tôi. Sự hiện diện của quý vị là niềm vinh hạnh lớn nhất."</p>
+      </div>
+      
+      <div class="images-container" data-aos="fade-up">
+        <div class="dynamic-img" data-img="img2"></div>
+        <div class="dynamic-img" data-img="img3"></div>
+      </div>
+
+      <div class="text-center mt-5 mb-4" data-aos="fade-up">
+        <a class="btn-back" href="../../index.html">
+           Quay lại trang chủ
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".dynamic-img").forEach(container => {
+        const key = container.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          container.innerHTML = `<div class="image-block"><img src="${src}" alt="Ảnh chi tiết"></div>`;
+        } else {
+          container.innerHTML = `<div class="image-block img-placeholder" style="aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;background:#f5f0e6;color:#8e7f5e;font-family:'Montserrat',sans-serif;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;"><span>Chưa có ảnh (${key})</span></div>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

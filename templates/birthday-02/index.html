@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sinh Nhật Neon - Happy Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/app.css">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "",
+      "img2": "",
+      "img3": ""
+    };
+  </script>
+  <style>
+    :root {
+      --neon-blue: #00f3ff;
+      --neon-pink: #ff00ea;
+      --dark-bg: #0a0a12;
+      --card-bg: #151522;
+    }
+    body.template-shell {
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+    }
+    .mobile-app-container {
+      background: var(--dark-bg);
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(0, 243, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 30%, rgba(255, 0, 234, 0.15) 0%, transparent 50%);
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+    .topbar {
+      background: rgba(10, 10, 18, 0.8) !important;
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+      z-index: 10;
+    }
+    .nav-shell strong {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+    }
+    .hero-section {
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 900;
+      line-height: 1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--neon-blue);
+      text-shadow: 0 0 10px rgba(0,243,255,0.5), 0 0 20px rgba(0,243,255,0.3);
+      font-style: italic;
+    }
+    .hero-title span {
+      display: block;
+      color: #fff;
+      -webkit-text-stroke: 0;
+      text-shadow: 0 0 10px rgba(255,0,234,0.8), 0 0 20px rgba(255,0,234,0.5);
+    }
+    .images-container {
+      padding: 0 20px;
+    }
+    .image-block {
+      border-radius: 12px;
+      position: relative;
+      margin-bottom: 40px;
+      z-index: 1;
+      background: var(--card-bg);
+    }
+    .image-block::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background: linear-gradient(45deg, var(--neon-blue), var(--neon-pink));
+      border-radius: 15px;
+      z-index: -1;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+    .image-block img {
+      border-radius: 12px;
+    }
+    .img-placeholder {
+      background: var(--card-bg);
+      color: rgba(255,255,255,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+    }
+    .message-card {
+      background: rgba(21, 21, 34, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 35px 25px;
+      margin: 30px 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+      position: relative;
+    }
+    .message-card::after {
+      content: '"';
+      position: absolute;
+      top: 10px; left: 20px;
+      font-size: 5rem;
+      color: rgba(255,255,255,0.05);
+      font-family: serif;
+      line-height: 1;
+    }
+    .message-card h3 {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      color: var(--neon-pink);
+    }
+    .message-card p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #ccc;
+    }
+    .btn-back {
+      background: transparent;
+      color: #fff !important;
+      border-radius: 5px;
+      padding: 12px 30px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid var(--neon-blue);
+      box-shadow: 0 0 15px rgba(0,243,255,0.3) inset, 0 0 15px rgba(0,243,255,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-back:hover {
+      background: var(--neon-blue);
+      color: #000 !important;
+      box-shadow: 0 0 25px rgba(0,243,255,0.6);
+    }
+  </style>
+</head>
+<body class="template-shell mobile-mode">
+  <div class="mobile-app-container">
+    <header class="topbar">
+      <div class="container-wide">
+        <div class="nav-shell position-relative" style="justify-content:center;">
+          <strong>B-Day Bash</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="pb-5">
+      <div class="hero-section" data-aos="fade-down">
+        <h1 class="hero-title">Happy<br><span>Birthday</span></h1>
+        <p style="color: #888; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Let's party all night!</p>
+      </div>
+
+      <div class="images-container" data-aos="zoom-in-up">
+        <div class="dynamic-img" data-img="img1"></div>
+      </div>
+
+      <div class="message-card" data-aos="fade-right">
+        <h3>Tuổi Mới Rực Rỡ</h3>
+        <p>Chúc bạn thêm một tuổi mới bùng nổ, thành công rực rỡ và luôn cháy hết mình với đam mê. Cuộc sống là một bữa tiệc, hãy quẩy nhiệt tình nhé!</p>
+      </div>
+      
+      <div class="images-container" data-aos="zoom-in-up">
+        <div class="dynamic-img" data-img="img2"></div>
+        <div class="dynamic-img" data-img="img3"></div>
+      </div>
+
+      <div class="text-center mt-5 mb-3" data-aos="fade-up">
+        <a class="btn-back" href="../../index.html">
+           <i class="fa-solid fa-arrow-left"></i> Về trang chủ
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/js/app.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".dynamic-img").forEach(container => {
+        const key = container.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          container.innerHTML = `<div class="image-block"><img src="${src}" alt="Ảnh chi tiết"></div>`;
+        } else {
+          container.innerHTML = `<div class="image-block img-placeholder"><span>Chưa có ảnh (${key})</span></div>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

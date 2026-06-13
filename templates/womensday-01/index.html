@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chúc mừng 8/3 - Happy Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/app.css">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "",
+      "img2": "",
+      "img3": ""
+    };
+  </script>
+  <style>
+    :root {
+      --bd-primary: #e05e8b;
+      --bd-secondary: #fce4ec;
+      --bd-bg: #fff5f8;
+      --bd-text: #4a2333;
+    }
+    body.template-shell {
+      font-family: 'Lora', serif;
+      background-color: #f8f8f8;
+    }
+    .mobile-app-container {
+      background: var(--bd-bg);
+      color: var(--bd-text);
+      overflow: hidden;
+      position: relative;
+    }
+    /* Hoa tiết góc trang */
+    .mobile-app-container::before {
+      content: '🌸';
+      position: absolute;
+      top: -30px; left: -20px;
+      font-size: 8rem;
+      opacity: 0.15;
+      z-index: 0;
+      transform: rotate(-15deg);
+    }
+    .mobile-app-container::after {
+      content: '🌷';
+      position: absolute;
+      bottom: 50px; right: -20px;
+      font-size: 7rem;
+      opacity: 0.15;
+      z-index: 0;
+      transform: rotate(15deg);
+    }
+    .topbar {
+      background: rgba(255, 245, 248, 0.9) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 2px dashed var(--bd-secondary) !important;
+      z-index: 10;
+    }
+    h1, h2, h3, .bd-title {
+      font-family: 'Great Vibes', cursive;
+      color: var(--bd-primary);
+    }
+    .hero-section {
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-title {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px rgba(224, 94, 139, 0.2);
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #8c576c;
+    }
+    .images-container {
+      position: relative;
+      z-index: 1;
+      padding: 0 20px;
+    }
+    .image-block {
+      border: 8px solid #fff;
+      border-radius: 50% 50% 10px 10px; /* vòm cung */
+      box-shadow: 0 15px 30px rgba(224, 94, 139, 0.15);
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .img-placeholder {
+      background: linear-gradient(to bottom, var(--bd-secondary), #fff);
+      color: var(--bd-primary);
+      font-weight: 600;
+      border-radius: 50% 50% 10px 10px;
+    }
+    .message-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 35px 25px;
+      margin: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .message-card i {
+      font-size: 2rem;
+      color: var(--bd-primary);
+      margin-bottom: 15px;
+    }
+    .message-card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .btn-back {
+      background: linear-gradient(45deg, var(--bd-primary), #ff84b2);
+      color: #fff !important;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-family: 'Lora', serif;
+      font-weight: bold;
+      box-shadow: 0 8px 15px rgba(224, 94, 139, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="template-shell mobile-mode">
+  <div class="mobile-app-container">
+    <header class="topbar">
+      <div class="container-wide">
+        <div class="nav-shell position-relative" style="justify-content:center;">
+          <strong class="bd-title ms-2" style="font-size: 1.8rem;">Women's Day</strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="pb-5">
+      <div class="hero-section" data-aos="fade-in">
+        <h1 class="hero-title">Happy<br>Women's Day</h1>
+        <div class="hero-subtitle">Tôn vinh phái đẹp 🌸</div>
+      </div>
+
+      <div class="images-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="dynamic-img" data-img="img1"></div>
+      </div>
+
+      <div class="message-card" data-aos="fade-up">
+        <i class="fa-solid fa-venus"></i>
+        <p>Chúc bạn một ngày lễ thật vui vẻ, ngập tràn hoa hồng và nụ cười. Hãy luôn xinh đẹp, tự tin và rạng rỡ như những đóa hoa mùa xuân nhé!</p>
+      </div>
+      
+      <div class="images-container" data-aos="fade-up">
+        <div class="dynamic-img" data-img="img2"></div>
+      </div>
+
+      <div class="text-center mt-5 mb-3" data-aos="fade-up">
+        <a class="btn-back" href="../../index.html">
+           <i class="fa-solid fa-arrow-left"></i> Quay lại
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="../../assets/js/app.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".dynamic-img").forEach(container => {
+        const key = container.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          container.innerHTML = `<div class="image-block"><img src="${src}" alt="Ảnh chi tiết"></div>`;
+        } else {
+          container.innerHTML = `<div class="image-block img-placeholder"><span>Chưa có ảnh (${key})</span></div>`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

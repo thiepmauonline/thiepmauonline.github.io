@@ -1,0 +1,26 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="86.5" y1="45" x2="1124" y2="744.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6B8B"/>
+      <stop offset="0.52" stop-color="#FF9F43"/>
+      <stop offset="1" stop-color="#7C83FD"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(603 330) rotate(90) scale(305 512)">
+      <stop stop-color="white" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" rx="48" fill="url(#bg)"/>
+  <circle cx="250" cy="160" r="140" fill="white" fill-opacity="0.12"/>
+  <circle cx="990" cy="180" r="170" fill="white" fill-opacity="0.1"/>
+  <circle cx="980" cy="630" r="220" fill="white" fill-opacity="0.08"/>
+  <circle cx="600" cy="385" r="270" fill="url(#glow)"/>
+  <path d="M129 612C245 502 350 575 454 518C559 461 636 369 748 397C860 425 931 538 1075 471" stroke="white" stroke-opacity="0.28" stroke-width="24" stroke-linecap="round"/>
+  <path d="M120 642C247 543 347 619 458 575C568 531 649 430 755 448C861 466 945 567 1081 512" stroke="white" stroke-opacity="0.18" stroke-width="12" stroke-linecap="round"/>
+  <rect x="170" y="180" width="860" height="440" rx="36" fill="white" fill-opacity="0.18" stroke="white" stroke-opacity="0.22"/>
+  <text x="600" y="342" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700" fill="white">Happy Card</text>
+  <text x="600" y="404" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="white" fill-opacity="0.92">Preview image placeholder</text>
+  <text x="600" y="454" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="white" fill-opacity="0.88">Replace with your own photo or illustration anytime</text>
+  <rect x="420" y="484" width="360" height="54" rx="27" fill="white" fill-opacity="0.22"/>
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="white">Static HTML • CSS • JavaScript</text>
+</svg>
