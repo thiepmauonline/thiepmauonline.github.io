@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VEXCGLXVLN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-VEXCGLXVLN');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <title>404 - Không tìm thấy trang | Happy Card</title>
+  <meta name="description" content="Đường dẫn truy cập không tồn tại. Quay lại Happy Card để tạo các mẫu thiệp điện tử tuyệt đẹp.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
+  
+  <style>
+    body.error-page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      position: relative;
+      background:
+        radial-gradient(circle at top left, rgba(255, 107, 139, 0.22), transparent 40%),
+        radial-gradient(circle at right bottom, rgba(124, 131, 253, 0.22), transparent 40%),
+        linear-gradient(135deg, #fffaf8 0%, #fff4ee 100%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      border-radius: var(--radius-xl);
+      padding: 60px 40px;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 32px 80px rgba(17, 24, 39, 0.12);
+      z-index: 2;
+    }
+
+    .error-code {
+      font-family: "Playfair Display", serif;
+      font-size: 8.5rem;
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
+      animation: pulseCode 3s ease-in-out infinite;
+    }
+
+    .error-title {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 15px;
+    }
+
+    .error-desc {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .floating-hearts-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @keyframes pulseCode {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+  </style>
+</head>
+<body class="error-page">
+  <div class="floating-hearts-bg" id="heartsBg"></div>
+
+  <div class="glass-card" data-aos="zoom-in">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Không Tìm Thấy Trang</h1>
+    <p class="error-desc">Trang bạn đang tìm kiếm không tồn tại, đã bị xóa hoặc đường dẫn bị thay đổi. Hãy quay lại trang chủ để khám phá các mẫu thiệp tuyệt đẹp nhé!</p>
+    <div>
+      <a href="index.html" class="btn-card primary btn-lg px-5">
+        <i class="fa-solid fa-home me-2"></i> Quay lại trang chủ
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const heartsContainer = document.getElementById('heartsBg');
+      const heartSymbols = ['❤️', '💖', '💝', '💕', '💗'];
+      
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heart.style.position = 'absolute';
+        heart.style.left = Math.random() * 100 + '%';
+        heart.style.bottom = '-50px';
+        heart.style.fontSize = (1 + Math.random() * 2) + 'rem';
+        heart.style.opacity = (0.15 + Math.random() * 0.3).toString();
+        
+        const animName = 'floatErrorHeart' + i;
+        heart.style.animation = `${animName} ${8 + Math.random() * 8}s linear infinite`;
+        heart.style.animationDelay = `${Math.random() * 6}s`;
+        
+        const style = document.createElement('style');
+        style.innerHTML = `
+          @keyframes ${animName} {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-120vh) rotate(${180 + Math.random() * 360}deg); }
+          }
+        `;
+        document.head.appendChild(style);
+        heartsContainer.appendChild(heart);
+      }
+    });
+  </script>
+</body>
+</html>
