@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khu Vườn Bí Mật | Happy Card</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Thiệp tình yêu phong cách khu vườn lãng mạn, nhẹ nhàng.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  <style>
+    :root {
+      --sage: #B5C1B4;
+      --dark-sage: #5F6B55;
+      --cream: #FAF7F2;
+      --white: #FFFFFF;
+      --pink: #FDF3F5;
+      --text-main: #4a4a4a;
+    }
+    
+    html {
+      background-color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--cream);
+      color: var(--text-main);
+      font-family: 'Nunito', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.1);
+      min-height: 100vh;
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      color: var(--dark-sage);
+      font-weight: 600;
+    }
+
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+
+    .content-z { position: relative; z-index: 2; }
+    
+    /* Particles for petals */
+    #particles-js {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Section 1: Hero */
+    .s1-hero {
+      background: var(--pink);
+      text-align: center;
+    }
+    .hero-title {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      animation: softFade 3s ease forwards;
+    }
+    .hero-subtitle {
+      font-size: 1.1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #999;
+      animation: softFadeUp 3s ease forwards 1s;
+      opacity: 0;
+    }
+    .floral-accent {
+      width: 150px;
+      margin: 0 auto 30px auto;
+      opacity: 0;
+      animation: softFade 4s ease forwards 0.5s;
+    }
+    @keyframes softFade {
+      from { opacity: 0; filter: blur(10px); }
+      to { opacity: 1; filter: blur(0); }
+    }
+    @keyframes softFadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Section 2: Path */
+    .s2-path {
+      background: var(--white);
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .path-container {
+      position: relative;
+      margin: 0 auto;
+      max-width: 320px;
+    }
+    .path-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(181, 193, 180, 0.4); /* var(--sage) */
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+    .path-step {
+      position: relative;
+      z-index: 1;
+      margin: 70px 0;
+    }
+    .path-step:first-child { margin-top: 0; }
+    .path-step:last-child { margin-bottom: 0; }
+    .path-icon {
+      width: 45px;
+      height: 45px;
+      background: var(--white);
+      border: 2px solid var(--sage);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .path-step p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--dark-sage);
+      background: var(--white);
+      padding: 10px 15px;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    }
+
+    /* Section 3: Hidden Photos */
+    .s3-hidden {
+      background: var(--cream);
+      padding: 100px 0;
+    }
+    .bush-container {
+      position: relative;
+      height: 600px;
+    }
+    .hidden-img {
+      position: absolute;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(95, 107, 85, 0.15);
+      object-fit: cover;
+    }
+    .img-1 { width: 60%; height: 250px; top: 0; left: 10%; z-index: 2; }
+    .img-2 { width: 50%; height: 200px; top: 150px; right: 5%; z-index: 1; opacity: 0.8; }
+    .img-3 { width: 70%; height: 300px; top: 280px; left: 15%; z-index: 3; }
+
+    /* Section 4: Leaves */
+    .s4-leaves {
+      background: var(--dark-sage);
+      color: var(--white);
+    }
+    .s4-leaves h2 { color: var(--pink); }
+    .leaf-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 40px 0 40px 0; /* Leaf shape */
+      padding: 30px 20px;
+      margin-bottom: 25px;
+      text-align: center;
+      transition: transform 0.5s ease;
+    }
+    .leaf-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Section 5: Mixed Gallery */
+    .s5-gallery {
+      background: var(--white);
+      padding: 60px 0;
+    }
+    .gal-full {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .gal-grid {
+      display: flex;
+      gap: 10px;
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+    .gal-half {
+      width: 50%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    /* Section 6: Confessions */
+    .s6-confess {
+      background: var(--pink);
+    }
+    .confess-text {
+      font-size: 1.1rem;
+      line-height: 2;
+      margin-bottom: 40px;
+      color: var(--text-main);
+      padding: 0 10px;
+      text-align: justify;
+    }
+
+    /* Section 7: Break */
+    .s7-break {
+      background: var(--sage);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .big-break-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--white);
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* Section 8: Masonry */
+    .s8-masonry {
+      background: var(--cream);
+      padding: 80px 20px;
+    }
+    .masonry-wrapper {
+      column-count: 2;
+      column-gap: 15px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 15px;
+    }
+    .masonry-img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* Section 9: Promises */
+    .s9-promises {
+      background: var(--white);
+      text-align: center;
+    }
+    .promise-box {
+      border: 1px dashed var(--sage);
+      padding: 40px 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    /* Section 10: Bright Ending */
+    .s10-ending {
+      background-image: url('https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: var(--white);
+    }
+    .s10-ending::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(250, 247, 242, 0.2); /* very light overlay */
+      backdrop-filter: blur(2px);
+      z-index: 0;
+    }
+    .s10-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(95, 107, 85, 0.8), rgba(0,0,0,0));
+      z-index: 1;
+    }
+    .ending-quote {
+      font-size: 2.5rem;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Hero -->
+  <section class="section s1-hero">
+    <div id="particles-js"></div>
+    <div class="content-z w-100">
+      <img src="https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Flowers" class="floral-accent" style="border-radius: 50%; object-fit: cover; height: 150px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+      <h1 class="hero-title serif">Khu Vườn<br>Bí Mật</h1>
+      <p class="hero-subtitle">Nơi tình yêu bắt đầu</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Path -->
+  <section class="section s2-path">
+    <div class="content-z w-100">
+      <h2 class="serif text-center mb-5" data-aos="fade-in" style="font-size: 2rem;">Lối Đi Cảm Xúc</h2>
+      <div class="path-container">
+        <div class="path-line"></div>
+        <div class="path-step" data-aos="fade-up">
+          <div class="path-icon"><i class="fa-solid fa-leaf" style="color: var(--sage); font-size: 1.2rem;"></i></div>
+          <p>"Có những con đường ta vô tình bước qua..."</p>
+        </div>
+        <div class="path-step" data-aos="fade-up" data-aos-delay="100">
+          <div class="path-icon"><i class="fa-solid fa-seedling" style="color: var(--sage); font-size: 1.2rem;"></i></div>
+          <p>"...nhưng lại dẫn đến một khu vườn đẹp nhất."</p>
+        </div>
+        <div class="path-step" data-aos="fade-up" data-aos-delay="200">
+          <div class="path-icon"><i class="fa-solid fa-heart" style="color: #e5989b; font-size: 1.2rem;"></i></div>
+          <p>"Và khu vườn đó mang tên em."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Hidden Photos -->
+  <section class="section s3-hidden">
+    <div class="content-z w-100">
+      <h2 class="serif text-center mb-5" data-aos="fade-in">Những Khung Hình Bỏ Ngỏ</h2>
+      <div class="bush-container">
+        <img src="https://images.pexels.com/photos/1031588/pexels-photo-1031588.jpeg?auto=compress&cs=tinysrgb&w=600" class="hidden-img img-1" data-aos="fade-down" data-aos-duration="1500" alt="Garden 1">
+        <img src="https://images.pexels.com/photos/2088210/pexels-photo-2088210.jpeg?auto=compress&cs=tinysrgb&w=600" class="hidden-img img-2" data-aos="fade-left" data-aos-duration="1500" alt="Garden 2">
+        <img src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&w=600" class="hidden-img img-3" data-aos="fade-up" data-aos-duration="1500" alt="Couple">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Leaves -->
+  <section class="section s4-leaves">
+    <div class="content-z w-100">
+      <h2 class="serif text-center mb-5" data-aos="fade-in">Nhành Lá Yêu Thương</h2>
+      
+      <div class="leaf-card" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="serif" style="color: var(--pink); font-size: 1.3rem;">Sự Dịu Dàng</h3>
+        <p class="m-0 mt-2" style="font-size: 0.9rem; color: #eee;">Như làn gió lướt qua kẽ lá, mang lại cảm giác bình yên đến lạ thường.</p>
+      </div>
+
+      <div class="leaf-card" data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="serif" style="color: var(--pink); font-size: 1.3rem;">Ánh Mắt</h3>
+        <p class="m-0 mt-2" style="font-size: 0.9rem; color: #eee;">Trong veo và sâu thẳm, nơi anh luôn muốn đắm chìm mỗi ngày.</p>
+      </div>
+
+      <div class="leaf-card" data-aos="zoom-in" data-aos-delay="300">
+        <h3 class="serif" style="color: var(--pink); font-size: 1.3rem;">Nụ Cười</h3>
+        <p class="m-0 mt-2" style="font-size: 0.9rem; color: #eee;">Là tia nắng ban mai rực rỡ nhất đánh thức khu vườn tĩnh lặng trong anh.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Mixed Gallery -->
+  <section class="section s5-gallery" style="padding: 0;">
+    <div class="content-z w-100">
+      <img src="https://images.pexels.com/photos/1488313/pexels-photo-1488313.jpeg?auto=compress&cs=tinysrgb&w=800" class="gal-full" data-aos="fade-in" alt="Flowers full">
+      
+      <div class="gal-grid">
+        <img src="https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=400" class="gal-half" data-aos="fade-right" alt="Flower small">
+        <img src="https://images.pexels.com/photos/1031588/pexels-photo-1031588.jpeg?auto=compress&cs=tinysrgb&w=400" class="gal-half" data-aos="fade-left" alt="Leaf small">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Confessions -->
+  <section class="section s6-confess">
+    <div class="content-z w-100">
+      <div class="leaf-divider mb-5"></div>
+      
+      <p class="confess-text" data-aos="fade-up">
+        Trước khi gặp em, anh chưa từng nghĩ mình sẽ dừng lại ở một nơi lâu đến vậy. Nhưng khu vườn này, những cảm xúc này, khiến anh muốn cắm rễ và ở lại mãi mãi.
+      </p>
+      
+      <p class="confess-text" data-aos="fade-up" data-aos-delay="100">
+        Mỗi bông hoa nở, mỗi nhành cây vươn lên đều mang bóng dáng của những kỷ niệm chúng ta đã có. Nó nhẹ nhàng, tự nhiên nhưng vô cùng mãnh liệt.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 7: Break -->
+  <section class="section s7-break">
+    <div class="content-z w-100" data-aos="zoom-in" data-aos-duration="1500">
+      <div class="big-break-quote">
+        "Tình yêu giống như một cái cây,<br>nó tự lớn lên và cắm rễ thật sâu..."
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Masonry -->
+  <section class="section s8-masonry">
+    <div class="content-z w-100">
+      <h2 class="serif text-center mb-5" data-aos="fade-up">Góc Nhỏ Của Ta</h2>
+      <div class="masonry-wrapper">
+        <div class="masonry-item" data-aos="fade-up"><img src="https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
+        <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
+        <div class="masonry-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.pexels.com/photos/813269/pexels-photo-813269.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
+        <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Promises -->
+  <section class="section s9-promises">
+    <div class="content-z w-100">
+      <div class="promise-box" data-aos="fade-up">
+        <h3 class="serif mb-4">Lời Hứa Tương Lai</h3>
+        <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-main);">
+          Khu vườn này không chỉ là những kỷ niệm đã qua, mà là nơi chúng ta sẽ cùng nhau gieo hạt cho những ngày sắp tới. Bình yên, giản dị, nhưng vững bền.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 10: Bright Ending -->
+  <section class="section s10-ending">
+    <div class="s10-overlay"></div>
+    <div class="content-z w-100" data-aos="zoom-in" data-aos-duration="2000">
+      <h2 class="ending-quote serif">Cảm Ơn Em<br>Vì Đã Đến</h2>
+      <p style="font-size: 1.1rem; letter-spacing: 1px; color: #ddd;">Mãi yêu em.</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Particles JS -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Animations
+    AOS.init({
+      once: false,
+      offset: 80,
+      duration: 1200
+    });
+
+    // Soft Petals falling
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 30, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": ["#ffb6c1", "#ffc0cb", "#fff0f5"] },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+        "size": { "value": 6, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 3, "sync": false } },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 1.5, "direction": "bottom", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true } },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>
