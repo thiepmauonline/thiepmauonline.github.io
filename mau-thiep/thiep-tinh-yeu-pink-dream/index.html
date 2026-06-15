@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pink Dream | The Softest Love</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Thiệp tình yêu phong cách giấc mơ màu hồng ngọt ngào.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  <style>
+    :root {
+      --p1: #FFFDFD;
+      --p2: #FFF4F7;
+      --p3: #FFE4EC;
+      --p4: #FFD6E7;
+      --p5: #F8C8DC;
+      --text: #5C4A52;
+      --gold: #D2A882;
+    }
+    
+    html {
+      background-color: #f7f7f7;
+      overflow-x: hidden;
+    }
+    
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--p1);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.05);
+      font-weight: 300;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: 'Lora', serif;
+      color: var(--text);
+    }
+
+    /* Common */
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      padding: 60px 20px;
+      overflow: hidden;
+    }
+
+    .content-z { position: relative; z-index: 2; }
+    .bg-p1 { background-color: var(--p1); }
+    .bg-p2 { background-color: var(--p2); }
+
+    /* Particles */
+    #particles-js {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Section 1: Hero */
+    .s1-hero {
+      background: linear-gradient(135deg, var(--p2) 0%, var(--p4) 100%);
+      text-align: center;
+    }
+    .hero-name {
+      font-size: 3.5rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      color: var(--text);
+      animation: floatName 4s ease-in-out infinite alternate;
+    }
+    .hero-quote {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--text);
+      opacity: 0;
+      animation: softReveal 3s ease forwards 1s;
+    }
+    @keyframes floatName {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+    @keyframes softReveal {
+      from { opacity: 0; transform: translateY(10px); filter: blur(5px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    /* Section 2: Emotion */
+    .s2-emotion {
+      background: var(--p1);
+      text-align: center;
+    }
+    .emotion-txt {
+      font-size: 1.15rem;
+      line-height: 2;
+      margin: 40px 0;
+      color: #7a656e;
+    }
+
+    /* Section 3: First Photo App UI */
+    .s3-photo {
+      background: var(--p2);
+      align-items: center;
+    }
+    .app-card {
+      background: var(--p1);
+      padding: 15px;
+      border-radius: 35px;
+      box-shadow: 0 20px 50px rgba(248, 200, 220, 0.3);
+      width: 100%;
+    }
+    .app-card img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 25px;
+    }
+    .app-caption {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Section 4: Art Album */
+    .s4-album {
+      background: var(--p1);
+    }
+    .album-container {
+      position: relative;
+      height: 450px;
+    }
+    .album-img {
+      position: absolute;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    }
+    .img-main {
+      width: 70%;
+      height: 300px;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    .img-sub1 {
+      width: 50%;
+      height: 200px;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+    }
+    .img-sub2 {
+      width: 40%;
+      height: 150px;
+      top: 150px;
+      right: 5%;
+      z-index: 3;
+      border: 5px solid var(--p1);
+    }
+
+    /* Section 5: Glassmorphism */
+    .s5-glass {
+      background: url('https://images.pexels.com/photos/1963030/pexels-photo-1963030.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+      position: relative;
+    }
+    .s5-glass::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(255, 228, 236, 0.5); /* p3 with opacity */
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .glass-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .glass-card p {
+      font-size: 0.95rem;
+      color: #6a5a62;
+      margin: 0;
+    }
+
+    /* Section 6: Huge Quote */
+    .s6-quote {
+      background: var(--p1);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .big-quote {
+      font-size: 2.2rem;
+      line-height: 1.5;
+      color: var(--text);
+      font-style: italic;
+    }
+
+    /* Section 7: Pinterest Gallery */
+    .s7-pinterest {
+      background: var(--p2);
+    }
+    .pin-grid {
+      column-count: 2;
+      column-gap: 15px;
+    }
+    .pin-item {
+      break-inside: avoid;
+      margin-bottom: 15px;
+    }
+    .pin-item img {
+      width: 100%;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 5px 15px rgba(255, 214, 231, 0.5);
+    }
+
+    /* Section 8: Notes */
+    .s8-notes {
+      background: var(--p1);
+    }
+    .note-block {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: var(--p2);
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+    }
+    .note-right {
+      margin-left: 20%;
+      background: var(--p3);
+      border-radius: 25px 25px 0 25px;
+    }
+    .note-left {
+      margin-right: 20%;
+      border-radius: 25px 25px 25px 0;
+    }
+    .note-center {
+      text-align: center;
+      background: transparent;
+      border: 1px solid var(--p4);
+      box-shadow: none;
+    }
+    .note-block p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* Section 9: Parallax */
+    .s9-parallax {
+      background-image: url('https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=800');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    .parallax-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(255, 244, 247, 0.4);
+    }
+
+    /* Section 10: Ending */
+    .s10-ending {
+      background: linear-gradient(to bottom, var(--p3), var(--p5));
+      text-align: center;
+    }
+    .glow-text {
+      font-size: 2rem;
+      line-height: 1.6;
+      color: var(--text);
+      text-shadow: 0 0 20px rgba(255,255,255,0.8);
+      position: relative;
+      z-index: 2;
+    }
+    .light-orb {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      animation: pulseLight 4s infinite alternate;
+    }
+    @keyframes pulseLight {
+      0% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- S1: Hero -->
+  <section class="section s1-hero">
+    <div id="particles-js"></div>
+    <div class="content-z w-100">
+      <h1 class="serif hero-name">Hà My</h1>
+      <p class="hero-quote">"Em chính là điều dịu dàng nhất<br>anh từng gặp."</p>
+    </div>
+  </section>
+
+  <!-- S2: Emotion -->
+  <section class="section s2-emotion">
+    <div class="content-z w-100">
+      <p class="emotion-txt" data-aos="fade-up" data-aos-duration="1500">
+        Người ta hay nói về những giấc mơ đẹp,<br>nhưng với anh, thực tại có em<br>mới là điều tuyệt vời nhất.
+      </p>
+      <p class="emotion-txt" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
+        Một thực tại ngọt ngào, ấm áp,<br>và tràn ngập sắc màu.
+      </p>
+    </div>
+  </section>
+
+  <!-- S3: App UI Photo -->
+  <section class="section s3-photo">
+    <div class="content-z w-100" data-aos="zoom-in" data-aos-duration="1500">
+      <div class="app-card">
+        <img src="https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beautiful Moment">
+        <div class="app-caption serif">The First Chapter</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4: Art Album -->
+  <section class="section s4-album">
+    <div class="content-z w-100">
+      <h2 class="serif text-center mb-5" data-aos="fade-in">Khung Hình Nhỏ</h2>
+      <div class="album-container">
+        <img src="https://images.pexels.com/photos/2088208/pexels-photo-2088208.jpeg?auto=compress&cs=tinysrgb&w=800" class="album-img img-main" data-aos="fade-right" data-aos-duration="1200" alt="Album 1">
+        <img src="https://images.pexels.com/photos/1820141/pexels-photo-1820141.jpeg?auto=compress&cs=tinysrgb&w=400" class="album-img img-sub1" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" alt="Album 2">
+        <img src="https://images.pexels.com/photos/1488313/pexels-photo-1488313.jpeg?auto=compress&cs=tinysrgb&w=400" class="album-img img-sub2" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400" alt="Album 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- S5: Glassmorphism -->
+  <section class="section s5-glass">
+    <div class="content-z w-100">
+      <h2 class="serif text-center mb-5" style="color: var(--text);">Tại Sao Là Em?</h2>
+      
+      <div class="glass-card" data-aos="fade-up">
+        <h3 class="serif">Sự Mềm Mại</h3>
+        <p>Cách em đối xử với thế giới xung quanh luôn tỏa ra một sự ấm áp đặc biệt, khiến ai ở bên cạnh cũng thấy bình yên.</p>
+      </div>
+
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="serif">Nụ Cười Tỏa Nắng</h3>
+        <p>Chỉ cần nhìn thấy em cười, mọi muộn phiền hay áp lực ngoài kia đều tan biến hết.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: Huge Quote -->
+  <section class="section s6-quote">
+    <div class="content-z w-100" data-aos="zoom-in" data-aos-duration="1500">
+      <h2 class="serif big-quote">
+        "Yêu em không phải là một sự lựa chọn, mà là một sự tĩnh lặng tự nhiên của trái tim."
+      </h2>
+    </div>
+  </section>
+
+  <!-- S7: Pinterest Gallery -->
+  <section class="section s7-pinterest">
+    <div class="content-z w-100">
+      <h2 class="serif text-center mb-5" data-aos="fade-in">Moodboard</h2>
+      <div class="pin-grid">
+        <div class="pin-item" data-aos="fade-up"><img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cafe Aesthetic"></div>
+        <div class="pin-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Soft Flowers"></div>
+        <div class="pin-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.pexels.com/photos/2567221/pexels-photo-2567221.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Garden Aesthetic"></div>
+        <div class="pin-item" data-aos="fade-up" data-aos-delay="150"><img src="https://images.pexels.com/photos/338936/pexels-photo-338936.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pink Sky"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8: Notes -->
+  <section class="section s8-notes">
+    <div class="content-z w-100">
+      
+      <div class="note-block note-left" data-aos="fade-right">
+        <p>Đôi khi anh chỉ muốn nắm tay em đi dạo quanh thành phố, không cần nói gì cả.</p>
+      </div>
+
+      <div class="note-block note-right" data-aos="fade-left">
+        <p>Bởi vì chỉ cần có em ở cạnh, mọi thứ xung quanh tự nhiên trở nên hoàn hảo.</p>
+      </div>
+
+      <div class="note-block note-center" data-aos="fade-up">
+        <p class="serif" style="font-size: 1.2rem; color: var(--gold);">Và anh gọi đó là Hạnh Phúc.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- S9: Parallax -->
+  <section class="section s9-parallax">
+    <div class="parallax-overlay"></div>
+    <div class="content-z w-100 text-center" data-aos="zoom-in" data-aos-duration="2000">
+      <h2 class="serif" style="font-size: 2.5rem; color: var(--text); mix-blend-mode: multiply;">DREAMY</h2>
+    </div>
+  </section>
+
+  <!-- S10: Ending -->
+  <section class="section s10-ending">
+    <div class="light-orb"></div>
+    <div class="content-z w-100" data-aos="fade-up" data-aos-duration="2000">
+      <h2 class="serif glow-text">Cảm ơn em đã xuất hiện<br>trong cuộc đời anh.</h2>
+      <p style="margin-top: 30px; letter-spacing: 2px; font-size: 0.85rem; color: #88747d;">FOREVER AND ALWAYS</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Animations
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1200,
+      easing: 'ease-in-out-cubic'
+    });
+
+    // Soft elegant floating particles
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 25, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": ["#ffffff", "#ffd6e7"] },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+        "size": { "value": 5, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 2, "sync": false } },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.8, "direction": "top", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true } },
+      "retina_detect": true
+    });
+  </script>
+</body>
+</html>

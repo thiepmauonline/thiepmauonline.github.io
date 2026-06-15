@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MUSE Magazine | Cuốn Tạp Chí Về Em</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Thiệp tình yêu phong cách tạp chí thời trang cao cấp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400;1,6..96,700&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  <style>
+    :root {
+      --burgundy: #5B2333;       /* Deep, romantic red */
+      --burgundy-dark: #3A1320;
+      --blush: #FDF5F6;          /* Soft pink/white */
+      --cream: #FAF3E0;          /* Warm elegant beige */
+      --gold: #C5A059;           /* Champagne gold */
+      --charcoal: #2C2C2C;       /* Soft black for text */
+      --border-color: #DBC4C6;
+    }
+    
+    html {
+      background-color: #050505;
+      overflow-x: hidden;
+    }
+    
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--blush);
+      color: var(--charcoal);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4, h5, h6, .vogue-font {
+      font-family: 'Bodoni Moda', serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin: 0;
+    }
+
+    .section {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .full-vh { min-height: 100vh; }
+    .pad-sec { padding: 60px 20px; }
+    .bg-burgundy { background-color: var(--burgundy); color: var(--blush); }
+    .bg-cream { background-color: var(--cream); color: var(--burgundy-dark); }
+    .bg-blush { background-color: var(--blush); color: var(--charcoal); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 0px; }
+
+    /* Typography Utilities */
+    .text-justify { text-align: justify; }
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 3.5rem;
+      line-height: 0.8;
+      padding-top: 4px;
+      padding-right: 8px;
+      font-family: 'Bodoni Moda', serif;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+    .line-header {
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 10px 0;
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--burgundy-dark);
+    }
+    .bg-burgundy .line-header {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+    
+    /* Image Utilities */
+    .img-fluid { width: 100%; height: auto; display: block; }
+    .img-cover { object-fit: cover; }
+    .warm-filter { filter: sepia(20%) contrast(1.05) saturate(1.1); transition: filter 0.8s; }
+    .warm-filter:hover { filter: sepia(0%) contrast(1) saturate(1); }
+
+    /* Section 1: Cover */
+    .s1-cover {
+      text-align: center;
+      background-image: url('https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg?auto=compress&cs=tinysrgb&w=800');
+      background-size: cover;
+      background-position: center;
+    }
+    .cover-top {
+      padding: 40px 20px 10px 20px;
+      background: linear-gradient(to bottom, rgba(58,19,32,0.8), transparent);
+    }
+    .cover-title {
+      font-size: 5.5rem;
+      letter-spacing: 4px;
+      color: var(--blush);
+      line-height: 1;
+      text-shadow: 2px 2px 15px rgba(0,0,0,0.4);
+    }
+    .cover-issue {
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 5px;
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    .cover-lines {
+      position: absolute;
+      bottom: 40px;
+      left: 20px;
+      right: 20px;
+      text-align: left;
+      color: var(--blush);
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
+      border-left: 2px solid var(--gold);
+      padding-left: 15px;
+    }
+    .cover-headline {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: var(--blush);
+    }
+    .cover-sub {
+      font-size: 0.9rem;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: none;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* Section 2: TOC */
+    .s2-toc {
+      background: var(--blush);
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .toc-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid var(--border-color);
+      padding: 15px 0;
+    }
+    .toc-item:last-child { border-bottom: none; }
+    .toc-num {
+      font-family: 'Bodoni Moda', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--burgundy);
+    }
+    .toc-title {
+      flex-grow: 1;
+      margin-left: 15px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--charcoal);
+    }
+
+    /* Section 3: Article */
+    .s3-article {
+      background: var(--cream);
+      position: relative;
+    }
+    .s3-article::before {
+      content: "";
+      position: absolute;
+      top: 10px; left: 10px; right: 10px; bottom: 10px;
+      border: 1px solid rgba(91, 35, 51, 0.2);
+      pointer-events: none;
+    }
+    .article-col p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--burgundy-dark);
+    }
+
+    /* Section 4: Editorial Overlay */
+    .s4-editorial {
+      background-image: url('https://images.pexels.com/photos/2567221/pexels-photo-2567221.jpeg?auto=compress&cs=tinysrgb&w=800');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s4-editorial::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(91, 35, 51, 0.3); /* Burgundy tint overlay */
+    }
+    .editorial-text {
+      color: var(--blush);
+      font-size: 3.2rem;
+      text-align: center;
+      line-height: 1.1;
+      z-index: 2;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    /* Section 5: Collection */
+    .s5-collection {
+      background: var(--blush);
+    }
+    .coll-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .coll-img-1 { grid-column: 1 / -1; height: 350px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .coll-img-2 { height: 200px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .coll-img-3 { height: 250px; margin-top: -50px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 2; }
+    .photo-credit {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-top: 15px;
+      text-align: right;
+    }
+
+    /* Section 6: Pull Quote */
+    .s6-quote {
+      background: var(--burgundy);
+      color: var(--blush);
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .pull-quote {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      font-style: italic;
+      text-transform: none;
+      font-weight: 400;
+    }
+    .quote-mark {
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 0;
+      vertical-align: middle;
+      font-family: 'Bodoni Moda', serif;
+    }
+
+    /* Section 7: Moments */
+    .s7-moments {
+      background: var(--cream);
+    }
+    .moment-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 35px;
+      background: var(--white);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(91, 35, 51, 0.05);
+    }
+    .moment-img {
+      width: 90px;
+      height: 110px;
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 3px;
+    }
+    .moment-text h4 {
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+      color: var(--burgundy);
+    }
+    .moment-text p {
+      font-size: 0.85rem;
+      margin: 0;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    /* Section 8: Art Gallery */
+    .s8-gallery {
+      background: var(--blush);
+    }
+    .gal-layout {
+      position: relative;
+    }
+    .gal-main {
+      width: 85%;
+      height: 400px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .gal-sub {
+      position: absolute;
+      bottom: -30px;
+      right: 0;
+      width: 55%;
+      height: 220px;
+      object-fit: cover;
+      border: 6px solid var(--blush);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Section 9: Typography */
+    .s9-typo {
+      background: var(--cream);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .s9-typo::before {
+      content: "";
+      position: absolute;
+      top: 15px; left: 15px; right: 15px; bottom: 15px;
+      border: 2px solid var(--gold);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .huge-typo {
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--burgundy);
+      word-wrap: break-word;
+    }
+    .huge-typo span {
+      display: block;
+      color: var(--gold);
+      font-style: italic;
+      font-size: 4.5rem;
+      margin: 10px 0;
+    }
+
+    /* Section 10: Future */
+    .s10-future {
+      background: var(--burgundy);
+      color: var(--blush);
+    }
+    .future-p {
+      font-size: 0.95rem;
+      line-height: 2;
+      text-align: justify;
+      color: #EEDDDF;
+    }
+
+    /* Section 11: Full Screen 2 */
+    .s11-full {
+      background-image: url('https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800');
+      background-size: cover;
+      background-position: center;
+    }
+    .s11-full::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(91, 35, 51, 0.7), transparent);
+    }
+
+    /* Section 12: Back Cover */
+    .s12-back {
+      background: var(--blush);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px 20px;
+      border: 10px solid var(--cream);
+    }
+    .barcode {
+      width: 150px;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+    .barcode div { background: var(--burgundy); }
+    .back-logo {
+      font-size: 2.5rem;
+      letter-spacing: 6px;
+      color: var(--burgundy);
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- S1: Cover -->
+  <section class="section s1-cover full-vh">
+    <div class="cover-top" data-aos="fade-down" data-aos-duration="1500">
+      <p class="cover-issue">THE ROMANCE ISSUE</p>
+      <h1 class="cover-title">MUSE</h1>
+    </div>
+    <div class="cover-lines" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+      <h2 class="cover-headline vogue-font">THE ONE<br>& ONLY</h2>
+      <p class="cover-sub">Một ấn phẩm đặc biệt dành riêng cho em.<br>Người mang đến định nghĩa mới về vẻ đẹp và tình yêu.</p>
+    </div>
+  </section>
+
+  <!-- S2: Contents -->
+  <section class="section s2-toc pad-sec">
+    <div class="line-header" data-aos="fade-in">
+      <h2 class="vogue-font" style="font-size: 1.5rem; color: var(--burgundy);">Contents</h2>
+    </div>
+    <ul class="toc-list">
+      <li class="toc-item" data-aos="fade-up" data-aos-delay="100">
+        <span class="toc-num">01</span>
+        <span class="toc-title">Editor's Note: The Reasons</span>
+      </li>
+      <li class="toc-item" data-aos="fade-up" data-aos-delay="200">
+        <span class="toc-num">02</span>
+        <span class="toc-title">Effortless Beauty</span>
+      </li>
+      <li class="toc-item" data-aos="fade-up" data-aos-delay="300">
+        <span class="toc-num">03</span>
+        <span class="toc-title">The Collection</span>
+      </li>
+      <li class="toc-item" data-aos="fade-up" data-aos-delay="400">
+        <span class="toc-num">04</span>
+        <span class="toc-title">Best Moments</span>
+      </li>
+      <li class="toc-item" data-aos="fade-up" data-aos-delay="500">
+        <span class="toc-num">05</span>
+        <span class="toc-title">Looking Forward</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- S3: Article -->
+  <section class="section s3-article pad-sec">
+    <h3 class="vogue-font mb-4" style="color: var(--burgundy);" data-aos="fade-right">01. The<br>Reasons</h3>
+    <div class="article-col" data-aos="fade-up">
+      <p class="text-justify drop-cap">
+        Có một sự thật là, không một ống kính nào có thể bắt trọn được vẻ đẹp thực sự của em. Nó không chỉ nằm ở ánh mắt hay nụ cười, mà còn ở cách em tỏa sáng trong những khoảnh khắc bình dị nhất. Bài viết này không có đủ trang giấy để kể hết những lý do, vì mỗi ngày anh lại tìm thấy một lý do mới để yêu em nhiều hơn.
+      </p>
+      <p class="text-justify mt-3">
+        Giống như một cuốn tạp chí mà người ta muốn giữ lại trên kệ sách cả đời, em là sự hiện diện vượt thời gian trong cuộc đời anh. Độc bản. Sang trọng. Và duy nhất.
+      </p>
+    </div>
+  </section>
+
+  <!-- S4: Editorial -->
+  <section class="section s4-editorial full-vh">
+    <div class="editorial-text vogue-font" data-aos="zoom-in" data-aos-duration="2000">
+      EFFORTLESS<br><span style="color: var(--gold);">BEAUTY</span>
+    </div>
+  </section>
+
+  <!-- S5: Collection -->
+  <section class="section s5-collection pad-sec">
+    <div class="line-header" data-aos="fade-in">
+      <h2 class="vogue-font" style="font-size: 1.5rem; color: var(--burgundy);">03. The Collection</h2>
+    </div>
+    <div class="coll-grid">
+      <img src="https://images.pexels.com/photos/1963030/pexels-photo-1963030.jpeg?auto=compress&cs=tinysrgb&w=800" class="img-fluid img-cover coll-img-1 warm-filter" data-aos="fade-up" alt="Editorial 1">
+      <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=400" class="img-fluid img-cover coll-img-2 warm-filter" data-aos="fade-up" data-aos-delay="100" alt="Editorial 2">
+      <img src="https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=400" class="img-fluid img-cover coll-img-3 warm-filter" data-aos="fade-up" data-aos-delay="200" alt="Editorial 3">
+    </div>
+    <p class="photo-credit">Photography by The Heart</p>
+  </section>
+
+  <!-- S6: Pull Quote -->
+  <section class="section s6-quote pad-sec full-vh">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <span class="quote-mark">“</span>
+      <h2 class="vogue-font pull-quote mt-3 mb-4">
+        Em không cần phải<br>trở thành một ai khác,<br>vì phiên bản nguyên thủy<br>của em đã là một<br><span style="color: var(--gold);">kiệt tác.</span>
+      </h2>
+      <span class="quote-mark">”</span>
+    </div>
+  </section>
+
+  <!-- S7: Moments -->
+  <section class="section s7-moments pad-sec">
+    <h3 class="vogue-font mb-5 text-end" style="color: var(--burgundy);" data-aos="fade-left">04. Best<br>Moments</h3>
+    
+    <div class="moment-row" data-aos="fade-up">
+      <img src="https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=400" class="moment-img warm-filter" alt="Moment 1">
+      <div class="moment-text">
+        <h4 class="vogue-font">The First Glance</h4>
+        <p>Khoảnh khắc ánh mắt chạm nhau, thế giới dường như tĩnh lại.</p>
+      </div>
+    </div>
+    
+    <div class="moment-row" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=400" class="moment-img warm-filter" alt="Moment 2">
+      <div class="moment-text">
+        <h4 class="vogue-font">The Silence</h4>
+        <p>Sự bình yên khi bên nhau mà không cần thốt lên lời nào.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8: Art Gallery -->
+  <section class="section s8-gallery pad-sec" style="padding-bottom: 100px;">
+    <div class="gal-layout">
+      <img src="https://images.pexels.com/photos/1575005/pexels-photo-1575005.jpeg?auto=compress&cs=tinysrgb&w=800" class="img-fluid gal-main warm-filter" data-aos="fade-right" alt="Art Main">
+      <img src="https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=400" class="img-fluid gal-sub warm-filter" data-aos="fade-up" data-aos-delay="200" alt="Art Sub">
+    </div>
+  </section>
+
+  <!-- S9: Typography -->
+  <section class="section s9-typo full-vh">
+    <div data-aos="zoom-in" data-aos-duration="1500">
+      <h1 class="vogue-font huge-typo">
+        YOU<br>ARE<br><span>PURE</span><br>MAGIC
+      </h1>
+    </div>
+  </section>
+
+  <!-- S10: Future -->
+  <section class="section s10-future pad-sec">
+    <div class="line-header" data-aos="fade-in">
+      <h2 class="vogue-font" style="font-size: 1.5rem; color: var(--gold);">05. Looking Forward</h2>
+    </div>
+    <div data-aos="fade-up">
+      <h3 class="vogue-font mb-4" style="color: var(--blush);">The Next Chapter</h3>
+      <p class="future-p">
+        Nếu cuộc đời là một chuỗi các ấn bản, anh hy vọng rằng em sẽ luôn là trang bìa, là nội dung chính và là nguồn cảm hứng bất tận của anh cho đến ấn bản cuối cùng. Chúng ta sẽ cùng nhau viết tiếp những chuyên mục mới, những chuyến đi mới, và những kỷ niệm không bao giờ phai nhạt.
+      </p>
+    </div>
+  </section>
+
+  <!-- S11: Full Screen 2 -->
+  <section class="section s11-full full-vh" data-aos="fade-in" data-aos-duration="2000">
+    <!-- Just an image with burgundy tint overlay -->
+  </section>
+
+  <!-- S12: Back Cover -->
+  <section class="section s12-back full-vh">
+    <div style="margin-top: 20px;" data-aos="fade-down">
+      <p style="font-size: 0.85rem; letter-spacing: 4px; color: var(--burgundy); text-transform: uppercase; font-weight: 500;">Limited Edition</p>
+      <p style="font-size: 0.75rem; color: var(--burgundy-dark); font-style: italic;">Published by Love</p>
+    </div>
+    
+    <h1 class="vogue-font back-logo" data-aos="zoom-in">MUSE</h1>
+    
+    <div style="margin-bottom: 20px;" data-aos="fade-up">
+      <div class="barcode" style="display:flex; height: 40px; justify-content: space-between;">
+        <div style="width: 3px;"></div>
+        <div style="width: 1px;"></div>
+        <div style="width: 5px;"></div>
+        <div style="width: 2px;"></div>
+        <div style="width: 4px;"></div>
+        <div style="width: 1px;"></div>
+        <div style="width: 3px;"></div>
+        <div style="width: 6px;"></div>
+        <div style="width: 2px;"></div>
+        <div style="width: 1px;"></div>
+        <div style="width: 4px;"></div>
+      </div>
+      <p style="font-family: 'Montserrat', sans-serif; font-size: 0.85rem; letter-spacing: 5px; margin-top: 8px; color: var(--burgundy); font-weight: 600;">1402 2024</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Animations
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1000
+    });
+  </script>
+</body>
+</html>
