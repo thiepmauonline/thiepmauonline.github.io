@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Story Of Us - Tình Yêu Của Anh | Happy Card</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Thiệp tình yêu dạng storytelling cinematic cao cấp, lãng mạn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/app.css">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  <style>
+    :root {
+      --night-purple: #160B2A;
+      --navy-blue: #0A1128;
+      --star-yellow: #F9D976;
+      --starlight: #FFF5C3;
+      --text-main: #EAEAEA;
+    }
+    html {
+      background-color: #050505;
+    }
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--night-purple);
+      color: var(--text-main);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      min-height: 100vh;
+    }
+    h1, h2, h3, .cinzel { font-family: 'Cinzel', serif; }
+    .text-glow { text-shadow: 0 0 10px var(--star-yellow), 0 0 20px var(--starlight); color: var(--starlight); }
+    .bg-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(22,11,42,0.8), rgba(10,17,40,0.9)); z-index: 1; }
+    .img-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .content-z { position: relative; z-index: 2; }
+    
+    /* Section 1: Hero */
+    .s1-hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
+    .s1-hero .img-bg { animation: zoomBg 20s infinite alternate linear; }
+    @keyframes zoomBg { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+    .girl-name { font-size: 2.5rem; font-weight: 700; opacity: 0; animation: fadeInGlow 3s forwards 1s; }
+    .s1-quote { font-size: 1rem; letter-spacing: 2px; margin-top: 20px; opacity: 0; animation: fadeInUp 2s forwards 3s; padding: 0 15px; }
+    @keyframes fadeInGlow { to { opacity: 1; text-shadow: 0 0 20px var(--star-yellow), 0 0 40px var(--starlight); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Particles */
+    .stars { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: transparent; z-index: 1; pointer-events: none; }
+
+    /* Section 2: Constellations */
+    .s2-parallax { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--navy-blue); position: relative; padding: 80px 20px; }
+    .constellation-node { width: 10px; height: 10px; background: var(--star-yellow); border-radius: 50%; box-shadow: 0 0 15px var(--star-yellow); position: relative; margin: 20px auto; }
+    .constellation-line { width: 2px; background: rgba(249, 217, 118, 0.3); margin: 0 auto; }
+    .moment-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(249, 217, 118, 0.2); padding: 15px; border-radius: 10px; backdrop-filter: blur(10px); text-align: center; transition: all 0.3s; font-size: 0.9rem; margin-bottom: 0; }
+    .moment-card:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); box-shadow: 0 0 20px rgba(249, 217, 118, 0.2); }
+
+    /* Section 3: Art Gallery */
+    .s3-gallery { min-height: 100vh; padding: 80px 20px; background: var(--night-purple); }
+    .art-img { width: 100%; border-radius: 15px; transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); filter: grayscale(40%) sepia(20%) hue-rotate(-20deg) brightness(0.8); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .art-img:hover { transform: scale(1.05); filter: grayscale(0%) sepia(0%) brightness(1); }
+
+    /* Section 4: Timeline */
+    .s4-timeline { padding: 80px 20px; background: linear-gradient(to bottom, var(--night-purple), var(--navy-blue)); position: relative; }
+    .timeline-path { position: absolute; left: 25px; top: 180px; bottom: 80px; width: 2px; background: linear-gradient(to bottom, transparent, var(--star-yellow), transparent); }
+    .timeline-item { position: relative; padding-left: 35px; margin-bottom: 50px; }
+    .timeline-item .constellation-node { position: absolute; left: -2px; top: 5px; margin: 0; width: 12px; height: 12px; transform: translateX(-50%); }
+
+    /* Section 5: Typewriter */
+    .s5-message { height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: #000; position: relative; overflow: hidden; padding: 20px; }
+    .typewriter-text { font-size: 1.1rem; line-height: 1.8; text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+
+    /* Section 6: Planets */
+    .s6-planets { height: 100vh; background: var(--navy-blue); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .center-sun { width: 80px; height: 80px; font-size: 1.2rem; background: radial-gradient(circle, var(--starlight) 0%, var(--star-yellow) 100%); border-radius: 50%; box-shadow: 0 0 60px var(--star-yellow), 0 0 100px rgba(249, 217, 118, 0.4); display: flex; align-items: center; justify-content: center; color: var(--night-purple); font-weight: bold; z-index: 10; font-family: 'Cinzel', serif; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .orbit { position: absolute; border: 1px dashed rgba(255,255,255,0.15); border-radius: 50%; animation: spin linear infinite; }
+    .planet { width: 50px; height: 50px; font-size: 0.7rem; top: -25px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; font-weight: 600; color: #333; text-align: center; padding: 5px; box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5), 0 0 15px rgba(255,255,255,0.5); border-radius: 50%; position: absolute; animation: counter-spin linear infinite reverse; }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+    @keyframes counter-spin { 100% { transform: translateX(-50%) rotate(360deg); } }
+
+    /* Section 7: Big Quote */
+    .s7-quote { height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle, var(--navy-blue), var(--night-purple)); text-align: center; padding: 20px; }
+    .big-quote { font-size: 2rem; line-height: 1.4; background: linear-gradient(45deg, var(--starlight), var(--star-yellow), #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 40px rgba(249, 217, 118, 0.3); }
+
+    /* Section 8: Portfolio */
+    .s8-portfolio { background: var(--navy-blue); padding: 80px 20px; }
+    .portfolio-img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; transition: all 0.5s ease; box-shadow: 0 15px 35px rgba(0,0,0,0.4); }
+    .portfolio-item { overflow: hidden; border-radius: 12px; height: 300px; margin-bottom: 15px; }
+
+    /* Section 9: Sunrise */
+    .s9-sunrise { height: 100vh; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; overflow: hidden; padding: 20px; }
+    .s9-sunrise .bg-overlay { background: linear-gradient(to top, rgba(250,150,100,0.6), rgba(10,17,40,0.9)); }
+    .s9-sunrise h2 { font-size: 2.5rem; }
+    .s9-sunrise p { font-size: 1rem; }
+
+    /* Section 10: End */
+    .s10-end { height: 100vh; background: radial-gradient(circle at center, #2e091e, #05010a); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; padding: 20px; }
+    .heart-glow { font-size: 5rem; color: #ff3366; animation: pulseHeart 1.5s infinite alternate; text-shadow: 0 0 30px #ff3366; margin-bottom: 30px; }
+    @keyframes pulseHeart { 0% { transform: scale(1); text-shadow: 0 0 20px #ff3366; } 100% { transform: scale(1.15); text-shadow: 0 0 50px #ff3366, 0 0 100px #ff3366; } }
+    .final-words { font-size: 1.8rem; letter-spacing: 2px; }
+
+
+  </style>
+</head>
+<body>
+
+
+
+  <!-- Section 1: Hero -->
+  <section class="s1-hero">
+    <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1920" class="img-bg" alt="Starry Sky">
+    <div class="bg-overlay"></div>
+    <div class="stars" id="particles-js-hero"></div>
+    <div class="content-z container">
+      <h1 class="girl-name text-glow cinzel">ANH THƯ</h1>
+      <p class="s1-quote">"Giữa hàng tỷ vì sao, anh vẫn nhìn thấy em."</p>
+    </div>
+  </section>
+
+  <!-- Section 2: Constellations -->
+  <section class="s2-parallax">
+    <div class="content-z w-100 text-center mb-5" data-aos="fade-up" data-aos-duration="1500">
+      <h2 class="cinzel text-glow mb-3">Những Chòm Sao Kỷ Niệm</h2>
+      <p class="text-muted" style="font-size: 0.95rem;">Từ khoảnh khắc đầu tiên chạm mắt, những chuỗi ngày bên em được kết nối như những chòm sao sáng nhất.</p>
+    </div>
+    <div class="content-z w-100 text-center" data-aos="fade-up" data-aos-duration="1500">
+      <div class="constellation-node"></div>
+      <div class="constellation-line" style="height: 40px;"></div>
+      <div class="moment-card d-inline-block">Lần đầu gặp gỡ</div>
+      
+      <div class="constellation-line" style="height: 50px; transform: rotate(15deg); transform-origin: top center;"></div>
+      <div class="moment-card d-inline-block" style="transform: translateX(20px);">Cái nắm tay vụng về</div>
+      
+      <div class="constellation-line" style="height: 50px; transform: rotate(-10deg) translateX(10px); transform-origin: top center;"></div>
+      <div class="moment-card d-inline-block" style="transform: translateX(-10px);">Nụ hôn dưới mưa</div>
+    </div>
+  </section>
+
+  <!-- Section 3: Art Gallery -->
+  <section class="s3-gallery">
+    <div class="w-100">
+      <h2 class="text-center cinzel text-glow mb-5" data-aos="zoom-in">Mảnh Ghép Ký Ức</h2>
+      
+      <div class="mb-5" data-aos="fade-up">
+        <img src="https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800" class="art-img mb-3" alt="Memory 1">
+        <h3 class="cinzel text-glow mb-2 text-center">Từng nhịp đập</h3>
+        <p class="text-muted text-center px-3" style="font-size: 0.9rem;">Từng bức ảnh là một nhịp đập, anh gom nhặt mọi khoảnh khắc để xây nên thế giới của riêng đôi ta.</p>
+      </div>
+      
+      <div data-aos="fade-up">
+        <img src="https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=800" class="art-img mb-3" alt="Memory 2">
+        <h3 class="cinzel text-glow mb-2 text-center">Bình yên</h3>
+        <p class="text-muted text-center px-3" style="font-size: 0.9rem;">Dù thế giới ngoài kia có xoay vần thế nào, bình yên nhất vẫn là lúc anh được nắm lấy bàn tay em.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Timeline -->
+  <section class="s4-timeline">
+    <div class="timeline-path"></div>
+    <div class="w-100">
+      <h2 class="text-center cinzel text-glow mb-5">Dải Ngân Hà<br>Của Chúng Ta</h2>
+      
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="constellation-node"></div>
+        <h4 class="text-glow cinzel">14 Tháng 2</h4>
+        <p class="text-muted" style="font-size: 0.9rem;">Lần đầu tiên anh lấy hết can đảm để nói lời yêu với cô gái đẹp nhất thế gian.</p>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="constellation-node"></div>
+        <h4 class="text-glow cinzel">Chuyến Đi Đầu Tiên</h4>
+        <p class="text-muted" style="font-size: 0.9rem;">Cùng nhau ngắm hoàng hôn rực rỡ, nghe tiếng sóng vỗ và hứa hẹn về những ngày xanh.</p>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="constellation-node"></div>
+        <h4 class="text-glow cinzel">Hiện Tại & Tương Lai</h4>
+        <p class="text-muted" style="font-size: 0.9rem;">Hành trình này vẫn sẽ tiếp tục kéo dài vô tận, miễn là tay vẫn đan tay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Typewriter -->
+  <section class="s5-message">
+    <div class="stars" id="particles-js-msg"></div>
+    <div class="content-z">
+      <div class="typewriter-text" id="typewriter">
+        <!-- Text will be typed by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Planets -->
+  <section class="s6-planets">
+    <div class="text-center content-z w-100">
+      <h2 class="cinzel text-glow mb-5 position-absolute w-100" style="top: 10%; left:0;">Vũ Trụ Quanh Em</h2>
+      <div class="position-relative" style="width: 250px; height: 250px; margin: 150px auto;">
+        <div class="center-sun">EM</div>
+        
+        <div class="orbit" style="width: 150px; height: 150px; top: 50px; left: 50px; animation-duration: 8s;">
+          <div class="planet" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">Nụ Cười</div>
+        </div>
+        
+        <div class="orbit" style="width: 230px; height: 230px; top: 10px; left: 10px; animation-duration: 14s; animation-direction: reverse;">
+          <div class="planet" style="background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); animation-direction: normal;">Ánh Mắt</div>
+        </div>
+        
+        <div class="orbit" style="width: 310px; height: 310px; top: -30px; left: -30px; animation-duration: 20s;">
+          <div class="planet" style="background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);">Dịu Dàng</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Big Quote -->
+  <section class="s7-quote" data-aos="zoom-in" data-aos-duration="1500">
+    <div class="content-z">
+      <div class="big-quote cinzel">
+        "Vì em là<br>ngoại lệ duy nhất,<br>
+        trong quy luật<br>của đời anh."
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Portfolio Gallery -->
+  <section class="s8-portfolio">
+    <div class="w-100">
+      <h2 class="text-center cinzel text-glow mb-4">Thước Phim Tình Yêu</h2>
+      
+      <div class="portfolio-item" data-aos="fade-up">
+        <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 1">
+      </div>
+      
+      <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.pexels.com/photos/1963030/pexels-photo-1963030.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 2">
+      </div>
+      
+      <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 3">
+      </div>
+      
+      <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.pexels.com/photos/3228723/pexels-photo-3228723.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 9: Sunrise -->
+  <section class="s9-sunrise">
+    <img src="https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=1920" class="img-bg" alt="Sunrise">
+    <div class="bg-overlay"></div>
+    <div class="content-z w-100" data-aos="fade-up" data-aos-duration="1500">
+      <h2 class="cinzel mb-4 text-glow">Bình Minh<br>Của Chúng Ta</h2>
+      <p class="text-white px-3" style="text-shadow: 0 0 10px rgba(0,0,0,0.9); font-size: 1rem;">Màn đêm có dài đến mấy rồi cũng sẽ nhường chỗ cho ngày mới. Tình yêu của anh dành cho em sẽ luôn rực rỡ và ấm áp như ánh bình minh, đánh thức mọi hy vọng về tương lai.</p>
+    </div>
+  </section>
+
+  <!-- Section 10: Confession -->
+  <section class="s10-end">
+    <div class="stars" id="particles-js-end"></div>
+    <div class="content-z w-100" data-aos="zoom-in" data-aos-duration="2000">
+      <div class="heart-glow">
+        <i class="fa-solid fa-heart"></i>
+      </div>
+      <h2 class="final-words cinzel text-glow mb-3">Làm Vợ Anh Nhé?</h2>
+      <p class="text-muted" style="letter-spacing: 1px; font-size: 0.9rem;">Hoặc chỉ đơn giản là:<br>Anh yêu em, mãi mãi.</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- Particles JS -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Initialize Animations
+    AOS.init({
+      once: false,
+      offset: 100,
+      duration: 1000
+    });
+
+
+
+    // Typewriter Effect
+    const textToType = "Anh không giỏi nói những lời đường mật. Nhưng anh biết rằng, mỗi ngày thức dậy, điều anh muốn làm đầu tiên là nghĩ về em. Cảm ơn em đã bước vào cuộc đời anh, biến những chuỗi ngày bình thường thành phép màu...";
+    let i = 0;
+    let typeStarted = false;
+    const speed = 60;
+    const typeTarget = document.getElementById("typewriter");
+
+    function typeWriter() {
+      if (i < textToType.length) {
+        typeTarget.innerHTML += textToType.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting && !typeStarted) {
+          typeStarted = true;
+          typeWriter();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector('.s5-message'));
+
+    // Particles Configuration
+    const particlesConfig = {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 400 } },
+        "color": { "value": "#f9d976" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.8, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.5, "direction": "top", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true } },
+      "retina_detect": true
+    };
+
+    particlesJS("particles-js-hero", particlesConfig);
+    particlesJS("particles-js-msg", Object.assign({}, particlesConfig, {
+      particles: { ...particlesConfig.particles, color: { value: "#ffffff" }, move: { ...particlesConfig.particles.move, direction: "none", speed: 1 } }
+    }));
+    particlesJS("particles-js-end", Object.assign({}, particlesConfig, {
+      particles: { ...particlesConfig.particles, size: { value: 4, random: true }, move: { ...particlesConfig.particles.move, speed: 2, direction: "top" } }
+    }));
+  </script>
+</body>
+</html>
