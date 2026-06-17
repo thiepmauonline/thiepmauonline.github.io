@@ -12,6 +12,23 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2": "https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3": "https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4": "https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5": "https://images.pexels.com/photos/2180092/pexels-photo-2180092.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img6": "https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "img7": "https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "img8": "https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img9": "https://images.pexels.com/photos/1820141/pexels-photo-1820141.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img10": "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=800",
+      "img11": "https://images.pexels.com/photos/1820141/pexels-photo-1820141.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+
   <style>
     :root {
       --cream: #FAF9F6;
@@ -275,7 +292,6 @@
 
     /* Section 9: Cinematic */
     .s9-cinematic {
-      background-image: url('https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=800');
       background-size: cover;
       background-position: center;
       background-attachment: fixed; /* Parallax effect */
@@ -328,7 +344,7 @@
   <section class="section s1-hero">
     <div class="content-z w-100">
       <div class="hero-img-wrap frame" data-aos="fade-down" data-aos-duration="1500">
-        <img src="https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Exhibition Art">
+        <img src="" data-img="img2" alt="Exhibition Art">
       </div>
       <h1 class="serif" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">The Most Beautiful Story I Ever Found</h1>
       <p data-aos="fade-in" data-aos-duration="1500" data-aos-delay="600">A Curated Exhibition Of Love</p>
@@ -342,14 +358,14 @@
       
       <div class="corridor-item" data-aos="fade-right">
         <div class="frame">
-          <img src="https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Art 1">
+          <img src="" data-img="img3" alt="Art 1">
         </div>
         <p class="caption text-end">01. The Beginning</p>
       </div>
 
       <div class="corridor-item" data-aos="fade-left">
         <div class="frame">
-          <img src="https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Art 2">
+          <img src="" data-img="img4" alt="Art 2">
         </div>
         <p class="caption">02. Serendipity</p>
       </div>
@@ -385,16 +401,16 @@
       <h2 class="serif text-center mb-4" data-aos="zoom-in">The Gallery</h2>
       <div class="mag-layout">
         <div class="mag-item-large frame p-2" data-aos="fade-up">
-          <img src="https://images.pexels.com/photos/2180092/pexels-photo-2180092.jpeg?auto=compress&cs=tinysrgb&w=800" class="mag-img" style="height: 250px;" alt="Mag 1">
+          <img src="" data-img="img5" class="mag-img" style="height: 250px;" alt="Mag 1">
         </div>
         <div class="frame p-1" data-aos="fade-up" data-aos-delay="100">
-          <img src="https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=600" class="mag-img" style="height: 180px;" alt="Mag 2">
+          <img src="" data-img="img6" class="mag-img" style="height: 180px;" alt="Mag 2">
         </div>
         <div class="frame p-1" data-aos="fade-up" data-aos-delay="200">
-          <img src="https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=600" class="mag-img" style="height: 180px;" alt="Mag 3">
+          <img src="" data-img="img7" class="mag-img" style="height: 180px;" alt="Mag 3">
         </div>
         <div class="mag-item-large frame p-2" data-aos="fade-up" data-aos-delay="300">
-          <img src="https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800" class="mag-img" style="height: 200px;" alt="Mag 4">
+          <img src="" data-img="img8" class="mag-img" style="height: 200px;" alt="Mag 4">
         </div>
       </div>
     </div>
@@ -437,9 +453,9 @@
   <!-- Section 7: Photo Wall -->
   <section class="section s7-wall">
     <div class="wall-track">
-      <img src="https://images.pexels.com/photos/1820141/pexels-photo-1820141.jpeg?auto=compress&cs=tinysrgb&w=800" class="wall-img" alt="Wall">
-      <img src="https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=800" class="wall-img" alt="Wall">
-      <img src="https://images.pexels.com/photos/1820141/pexels-photo-1820141.jpeg?auto=compress&cs=tinysrgb&w=800" class="wall-img" alt="Wall">
+      <img src="" data-img="img9" class="wall-img" alt="Wall">
+      <img src="" data-img="img10" class="wall-img" alt="Wall">
+      <img src="" data-img="img11" class="wall-img" alt="Wall">
     </div>
     <div class="wall-overlay content-z" data-aos="zoom-in">
       <h2 class="serif">Living Canvas</h2>
@@ -460,7 +476,7 @@
   </section>
 
   <!-- Section 9: Cinematic -->
-  <section class="section s9-cinematic">
+  <section class="section s9-cinematic" data-img="img1">
     <div class="content-z" data-aos="fade-up" data-aos-duration="2000">
       <div class="cine-quote serif">
         "Tình yêu không phải là tìm một người hoàn hảo, mà là học cách nhìn một người không hoàn hảo một cách tuyệt mỹ nhất."
@@ -488,6 +504,21 @@
       once: false,
       offset: 80,
       duration: 1000
+    });
+
+    // Load dynamic images from PAGE_IMAGES
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
     });
 
     // Elegant floating particles for Section 3

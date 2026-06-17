@@ -13,6 +13,24 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/2058498/pexels-photo-2058498.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2": "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3": "https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4": "https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5": "https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img6": "https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img7": "https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img8": "https://images.pexels.com/photos/36813771/pexels-photo-36813771.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img9": "https://images.pexels.com/photos/4006151/pexels-photo-4006151.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img10": "https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img11": "https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img12": "https://images.pexels.com/photos/1488312/pexels-photo-1488312.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+  
   <style>
     :root {
       --pink-pastel: #FFF0F2;
@@ -266,7 +284,7 @@
       <span class="cursive" style="font-size: 2.2rem; letter-spacing: 2px;">Người yêu dấu của tôi</span>
     </div>
     <div style="z-index: 2;">
-      <h1 class="cursive" style="font-size: 4.8rem; line-height: 1; margin-bottom: 20px;" data-aos="zoom-in" data-aos-duration="1500">Sùng Thị My♥️</h1>
+      <h1 class="cursive" style="font-size: 4.8rem; line-height: 1; margin-bottom: 20px;" data-aos="zoom-in" data-aos-duration="1500">Thị My♥️</h1>
       <p style="font-size: 0.95rem; font-weight: 400; letter-spacing: 1.5px; color: var(--text-dark); margin: 0 10px; line-height: 1.8;" data-aos="fade-up" data-aos-delay="400">
         "Anh không thể tạo cả thế giới...<br>
         Nhưng anh có thể tạo một thế giới dành riêng cho em."
@@ -297,7 +315,7 @@
   <!-- SECTION 3: Postcard cao cấp -->
   <section class="section justify-content-center bg-pure-pink">
     <div class="postcard" data-aos="fade-up" data-aos-duration="1200">
-      <img src="https://images.pexels.com/photos/2058498/pexels-photo-2058498.jpeg?auto=compress&cs=tinysrgb&w=800" class="postcard-img" alt="Postcard ảnh ngọt ngào">
+      <img src="" data-img="img1" class="postcard-img" alt="Postcard ảnh ngọt ngào">
       <div style="padding: 24px 8px 12px 8px;">
         <span class="cursive" style="font-size: 1.8rem; display: block; margin-bottom: 8px;">Dear My,</span>
         <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-dark); margin: 0;">
@@ -314,17 +332,17 @@
   <section class="section justify-content-center bg-peach-soft">
     <h3 class="text-center mb-5" style="font-size: 2.2rem; font-style: italic;" data-aos="fade-up">Góc Nhỏ Của Chúng Mình</h3>
     <div class="collage-container">
-      <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800" 
+      <img src="" data-img="img2" 
            class="collage-img" 
            style="width: 200px; height: 260px; top: 10px; left: 10px; transform: rotate(-5deg); z-index: 1;" 
            data-aos="fade-right" data-aos-duration="1000" alt="Collage 1">
       
-      <img src="https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=800" 
+      <img src="" data-img="img3" 
            class="collage-img" 
            style="width: 180px; height: 180px; bottom: 30px; right: 20px; transform: rotate(8deg); z-index: 2;" 
            data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" alt="Collage 2">
 
-      <img src="https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800" 
+      <img src="" data-img="img4" 
            class="collage-img" 
            style="width: 160px; height: 220px; bottom: 180px; right: 15px; transform: rotate(-3deg); z-index: 3;" 
            data-aos="fade-down" data-aos-delay="400" data-aos-duration="1000" alt="Collage 3">
@@ -385,12 +403,12 @@
     
     <div class="pin-grid">
       <div class="pin-item gap-3">
-        <img src="https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" alt="Gallery 1">
-        <img src="https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" data-aos-delay="100" alt="Gallery 2">
+        <img src="" data-img="img5" class="pin-img" data-aos="fade-up" alt="Gallery 1">
+        <img src="" data-img="img6" class="pin-img" data-aos="fade-up" data-aos-delay="100" alt="Gallery 2">
       </div>
       <div class="pin-item gap-3" style="padding-top: 30px;">
-        <img src="https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" data-aos-delay="200" alt="Gallery 3">
-        <img src="https://images.pexels.com/photos/36813771/pexels-photo-36813771.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" data-aos-delay="300" alt="Gallery 4">
+        <img src="" data-img="img7" class="pin-img" data-aos="fade-up" data-aos-delay="200" alt="Gallery 3">
+        <img src="" data-img="img8" class="pin-img" data-aos="fade-up" data-aos-delay="300" alt="Gallery 4">
       </div>
     </div>
   </section>
@@ -400,18 +418,18 @@
     <h3 class="text-center mb-5" style="font-size: 2.2rem; font-style: italic;" data-aos="fade-up">Nhật Ký Hạnh Phúc</h3>
     
     <div class="polaroid mb-4" data-aos="fade-up" style="transform: rotate(-3deg);">
-      <img src="https://images.pexels.com/photos/4006151/pexels-photo-4006151.jpeg?auto=compress&cs=tinysrgb&w=800" class="polaroid-img" alt="Nhật ký 1">
+      <img src="" data-img="img9" class="polaroid-img" alt="Nhật ký 1">
       <div class="polaroid-caption">Những tin nhắn thâu đêm...</div>
     </div>
 
     <div class="polaroid" data-aos="fade-up" data-aos-delay="150" style="transform: rotate(3deg); margin-top: 20px;">
-      <img src="https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=800" class="polaroid-img" alt="Nhật ký 2">
+      <img src="" data-img="img10" class="polaroid-img" alt="Nhật ký 2">
       <div class="polaroid-caption">Nụ cười tỏa nắng của em...</div>
     </div>
   </section>
 
   <!-- SECTION 9: Ảnh toàn màn hình (Parallax effect) -->
-  <section class="section parallax-section full-vh" style="background-image: url('https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800');">
+  <section class="section parallax-section full-vh" data-img="img11">
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 240, 242, 0.25);"></div>
     <div class="w-100 text-center" style="z-index: 2;" data-aos="fade-up">
       <span class="cursive" style="font-size: 3rem; color: var(--milk-white); text-shadow: 2px 2px 10px rgba(92, 75, 78, 0.4);">Dành cho người anh thương</span>
@@ -455,7 +473,7 @@
   </section>
 
   <!-- SECTION 12: Bầu trời hoàng hôn hoàng tráng -->
-  <section class="section full-vh parallax-section justify-content-end align-items-center text-center pb-5" style="background-image: url('https://images.pexels.com/photos/1488312/pexels-photo-1488312.jpeg?auto=compress&cs=tinysrgb&w=800');">
+  <section class="section full-vh parallax-section justify-content-end align-items-center text-center pb-5" data-img="img12">
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(255, 240, 242, 0.1) 0%, rgba(92, 75, 78, 0.7) 100%);"></div>
     
     <div class="w-100 px-4" style="z-index: 2; margin-bottom: 60px;" data-aos="fade-up" data-aos-duration="1500">
@@ -476,6 +494,21 @@
       once: false,
       offset: 50,
       duration: 1000
+    });
+
+    // Load dynamic images from PAGE_IMAGES
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
     });
 
     // Particles canvas anim

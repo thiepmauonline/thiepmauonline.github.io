@@ -12,6 +12,22 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2": "https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3": "https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4": "https://images.pexels.com/photos/2088208/pexels-photo-2088208.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5": "https://images.pexels.com/photos/1820141/pexels-photo-1820141.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img6": "https://images.pexels.com/photos/1488313/pexels-photo-1488313.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img7": "https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img8": "https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img9": "https://images.pexels.com/photos/2567221/pexels-photo-2567221.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img10": "https://images.pexels.com/photos/338936/pexels-photo-338936.jpeg?auto=compress&cs=tinysrgb&w=400"
+    };
+  </script>
+
   <style>
     :root {
       --p1: #FFFDFD;
@@ -178,7 +194,8 @@
 
     /* Section 5: Glassmorphism */
     .s5-glass {
-      background: url('https://images.pexels.com/photos/1963030/pexels-photo-1963030.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+      background-size: cover;
+      background-position: center;
       position: relative;
     }
     .s5-glass::before {
@@ -275,7 +292,6 @@
 
     /* Section 9: Parallax */
     .s9-parallax {
-      background-image: url('https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=800');
       background-attachment: fixed;
       background-size: cover;
       background-position: center;
@@ -342,7 +358,7 @@
   <section class="section s3-photo">
     <div class="content-z w-100" data-aos="zoom-in" data-aos-duration="1500">
       <div class="app-card">
-        <img src="https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Beautiful Moment">
+        <img src="" data-img="img3" alt="Beautiful Moment">
         <div class="app-caption serif">The First Chapter</div>
       </div>
     </div>
@@ -353,15 +369,15 @@
     <div class="content-z w-100">
       <h2 class="serif text-center mb-5" data-aos="fade-in">Khung Hình Nhỏ</h2>
       <div class="album-container">
-        <img src="https://images.pexels.com/photos/2088208/pexels-photo-2088208.jpeg?auto=compress&cs=tinysrgb&w=800" class="album-img img-main" data-aos="fade-right" data-aos-duration="1200" alt="Album 1">
-        <img src="https://images.pexels.com/photos/1820141/pexels-photo-1820141.jpeg?auto=compress&cs=tinysrgb&w=400" class="album-img img-sub1" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" alt="Album 2">
-        <img src="https://images.pexels.com/photos/1488313/pexels-photo-1488313.jpeg?auto=compress&cs=tinysrgb&w=400" class="album-img img-sub2" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400" alt="Album 3">
+        <img src="" data-img="img4" class="album-img img-main" data-aos="fade-right" data-aos-duration="1200" alt="Album 1">
+        <img src="" data-img="img5" class="album-img img-sub1" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200" alt="Album 2">
+        <img src="" data-img="img6" class="album-img img-sub2" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400" alt="Album 3">
       </div>
     </div>
   </section>
 
   <!-- S5: Glassmorphism -->
-  <section class="section s5-glass">
+  <section class="section s5-glass" data-img="img1">
     <div class="content-z w-100">
       <h2 class="serif text-center mb-5" style="color: var(--text);">Tại Sao Là Em?</h2>
       
@@ -391,10 +407,10 @@
     <div class="content-z w-100">
       <h2 class="serif text-center mb-5" data-aos="fade-in">Moodboard</h2>
       <div class="pin-grid">
-        <div class="pin-item" data-aos="fade-up"><img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cafe Aesthetic"></div>
-        <div class="pin-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Soft Flowers"></div>
-        <div class="pin-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.pexels.com/photos/2567221/pexels-photo-2567221.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Garden Aesthetic"></div>
-        <div class="pin-item" data-aos="fade-up" data-aos-delay="150"><img src="https://images.pexels.com/photos/338936/pexels-photo-338936.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pink Sky"></div>
+        <div class="pin-item" data-aos="fade-up"><img src="" data-img="img7" alt="Cafe Aesthetic"></div>
+        <div class="pin-item" data-aos="fade-up" data-aos-delay="100"><img src="" data-img="img8" alt="Soft Flowers"></div>
+        <div class="pin-item" data-aos="fade-up" data-aos-delay="200"><img src="" data-img="img9" alt="Garden Aesthetic"></div>
+        <div class="pin-item" data-aos="fade-up" data-aos-delay="150"><img src="" data-img="img10" alt="Pink Sky"></div>
       </div>
     </div>
   </section>
@@ -419,7 +435,7 @@
   </section>
 
   <!-- S9: Parallax -->
-  <section class="section s9-parallax">
+  <section class="section s9-parallax" data-img="img2">
     <div class="parallax-overlay"></div>
     <div class="content-z w-100 text-center" data-aos="zoom-in" data-aos-duration="2000">
       <h2 class="serif" style="font-size: 2.5rem; color: var(--text); mix-blend-mode: multiply;">DREAMY</h2>
@@ -445,6 +461,21 @@
       offset: 50,
       duration: 1200,
       easing: 'ease-in-out-cubic'
+    });
+
+    // Load dynamic images from PAGE_IMAGES
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
     });
 
     // Soft elegant floating particles

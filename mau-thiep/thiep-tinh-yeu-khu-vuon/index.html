@@ -13,6 +13,24 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2": "https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img3": "https://images.pexels.com/photos/1031588/pexels-photo-1031588.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "img4": "https://images.pexels.com/photos/2088210/pexels-photo-2088210.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "img5": "https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "img6": "https://images.pexels.com/photos/1488313/pexels-photo-1488313.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img7": "https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img8": "https://images.pexels.com/photos/1031588/pexels-photo-1031588.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img9": "https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img10": "https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img11": "https://images.pexels.com/photos/813269/pexels-photo-813269.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img12": "https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=400"
+    };
+  </script>
+
   <style>
     :root {
       --sage: #B5C1B4;
@@ -280,7 +298,6 @@
 
     /* Section 10: Bright Ending */
     .s10-ending {
-      background-image: url('https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800');
       background-size: cover;
       background-position: center;
       text-align: center;
@@ -313,7 +330,7 @@
   <section class="section s1-hero">
     <div id="particles-js"></div>
     <div class="content-z w-100">
-      <img src="https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Flowers" class="floral-accent" style="border-radius: 50%; object-fit: cover; height: 150px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+      <img src="" data-img="img2" alt="Flowers" class="floral-accent" style="border-radius: 50%; object-fit: cover; height: 150px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
       <h1 class="hero-title serif">Khu Vườn<br>Bí Mật</h1>
       <p class="hero-subtitle">Nơi tình yêu bắt đầu</p>
     </div>
@@ -346,9 +363,9 @@
     <div class="content-z w-100">
       <h2 class="serif text-center mb-5" data-aos="fade-in">Những Khung Hình Bỏ Ngỏ</h2>
       <div class="bush-container">
-        <img src="https://images.pexels.com/photos/1031588/pexels-photo-1031588.jpeg?auto=compress&cs=tinysrgb&w=600" class="hidden-img img-1" data-aos="fade-down" data-aos-duration="1500" alt="Garden 1">
-        <img src="https://images.pexels.com/photos/2088210/pexels-photo-2088210.jpeg?auto=compress&cs=tinysrgb&w=600" class="hidden-img img-2" data-aos="fade-left" data-aos-duration="1500" alt="Garden 2">
-        <img src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&w=600" class="hidden-img img-3" data-aos="fade-up" data-aos-duration="1500" alt="Couple">
+        <img src="" data-img="img3" class="hidden-img img-1" data-aos="fade-down" data-aos-duration="1500" alt="Garden 1">
+        <img src="" data-img="img4" class="hidden-img img-2" data-aos="fade-left" data-aos-duration="1500" alt="Garden 2">
+        <img src="" data-img="img5" class="hidden-img img-3" data-aos="fade-up" data-aos-duration="1500" alt="Couple">
       </div>
     </div>
   </section>
@@ -378,11 +395,11 @@
   <!-- Section 5: Mixed Gallery -->
   <section class="section s5-gallery" style="padding: 0;">
     <div class="content-z w-100">
-      <img src="https://images.pexels.com/photos/1488313/pexels-photo-1488313.jpeg?auto=compress&cs=tinysrgb&w=800" class="gal-full" data-aos="fade-in" alt="Flowers full">
+      <img src="" data-img="img6" class="gal-full" data-aos="fade-in" alt="Flowers full">
       
       <div class="gal-grid">
-        <img src="https://images.pexels.com/photos/333850/pexels-photo-333850.jpeg?auto=compress&cs=tinysrgb&w=400" class="gal-half" data-aos="fade-right" alt="Flower small">
-        <img src="https://images.pexels.com/photos/1031588/pexels-photo-1031588.jpeg?auto=compress&cs=tinysrgb&w=400" class="gal-half" data-aos="fade-left" alt="Leaf small">
+        <img src="" data-img="img7" class="gal-half" data-aos="fade-right" alt="Flower small">
+        <img src="" data-img="img8" class="gal-half" data-aos="fade-left" alt="Leaf small">
       </div>
     </div>
   </section>
@@ -416,10 +433,10 @@
     <div class="content-z w-100">
       <h2 class="serif text-center mb-5" data-aos="fade-up">Góc Nhỏ Của Ta</h2>
       <div class="masonry-wrapper">
-        <div class="masonry-item" data-aos="fade-up"><img src="https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
-        <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
-        <div class="masonry-item" data-aos="fade-up" data-aos-delay="200"><img src="https://images.pexels.com/photos/813269/pexels-photo-813269.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
-        <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=400" class="masonry-img" alt="Gallery"></div>
+        <div class="masonry-item" data-aos="fade-up"><img src="" data-img="img9" class="masonry-img" alt="Gallery"></div>
+        <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="" data-img="img10" class="masonry-img" alt="Gallery"></div>
+        <div class="masonry-item" data-aos="fade-up" data-aos-delay="200"><img src="" data-img="img11" class="masonry-img" alt="Gallery"></div>
+        <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="" data-img="img12" class="masonry-img" alt="Gallery"></div>
       </div>
     </div>
   </section>
@@ -437,7 +454,7 @@
   </section>
 
   <!-- Section 10: Bright Ending -->
-  <section class="section s10-ending">
+  <section class="section s10-ending" data-img="img1">
     <div class="s10-overlay"></div>
     <div class="content-z w-100" data-aos="zoom-in" data-aos-duration="2000">
       <h2 class="ending-quote serif">Cảm Ơn Em<br>Vì Đã Đến</h2>
@@ -455,6 +472,21 @@
       once: false,
       offset: 80,
       duration: 1200
+    });
+
+    // Load dynamic images from PAGE_IMAGES
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
     });
 
     // Soft Petals falling

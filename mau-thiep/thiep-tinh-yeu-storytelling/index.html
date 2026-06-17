@@ -14,6 +14,20 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/css/app.css">
   <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1920",
+      "img2": "https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3": "https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4": "https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5": "https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img6": "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img7": "https://images.pexels.com/photos/3228723/pexels-photo-3228723.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img8": "https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=1920"
+    };
+  </script>
+
   <style>
     :root {
       --night-purple: #160B2A;
@@ -104,17 +118,13 @@
     .heart-glow { font-size: 5rem; color: #ff3366; animation: pulseHeart 1.5s infinite alternate; text-shadow: 0 0 30px #ff3366; margin-bottom: 30px; }
     @keyframes pulseHeart { 0% { transform: scale(1); text-shadow: 0 0 20px #ff3366; } 100% { transform: scale(1.15); text-shadow: 0 0 50px #ff3366, 0 0 100px #ff3366; } }
     .final-words { font-size: 1.8rem; letter-spacing: 2px; }
-
-
   </style>
 </head>
 <body>
 
-
-
   <!-- Section 1: Hero -->
   <section class="s1-hero">
-    <img src="https://images.pexels.com/photos/1624496/pexels-photo-1624496.jpeg?auto=compress&cs=tinysrgb&w=1920" class="img-bg" alt="Starry Sky">
+    <img src="" data-img="img1" class="img-bg" alt="Starry Sky">
     <div class="bg-overlay"></div>
     <div class="stars" id="particles-js-hero"></div>
     <div class="content-z container">
@@ -148,13 +158,13 @@
       <h2 class="text-center cinzel text-glow mb-5" data-aos="zoom-in">Mảnh Ghép Ký Ức</h2>
       
       <div class="mb-5" data-aos="fade-up">
-        <img src="https://images.pexels.com/photos/1024960/pexels-photo-1024960.jpeg?auto=compress&cs=tinysrgb&w=800" class="art-img mb-3" alt="Memory 1">
+        <img src="" data-img="img2" class="art-img mb-3" alt="Memory 1">
         <h3 class="cinzel text-glow mb-2 text-center">Từng nhịp đập</h3>
         <p class="text-muted text-center px-3" style="font-size: 0.9rem;">Từng bức ảnh là một nhịp đập, anh gom nhặt mọi khoảnh khắc để xây nên thế giới của riêng đôi ta.</p>
       </div>
       
       <div data-aos="fade-up">
-        <img src="https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=800" class="art-img mb-3" alt="Memory 2">
+        <img src="" data-img="img3" class="art-img mb-3" alt="Memory 2">
         <h3 class="cinzel text-glow mb-2 text-center">Bình yên</h3>
         <p class="text-muted text-center px-3" style="font-size: 0.9rem;">Dù thế giới ngoài kia có xoay vần thế nào, bình yên nhất vẫn là lúc anh được nắm lấy bàn tay em.</p>
       </div>
@@ -182,7 +192,7 @@
       <div class="timeline-item" data-aos="fade-up">
         <div class="constellation-node"></div>
         <h4 class="text-glow cinzel">Hiện Tại & Tương Lai</h4>
-        <p class="text-muted" style="font-size: 0.9rem;">Hành trình này vẫn sẽ tiếp tục kéo dài vô tận, miễn là tay vẫn đan tay.</p>
+        <p class="text-muted" style="font-size: 0.9rem;">Hành trình này vẫn sẽ tiếp tục kéo dài vô chậm, miễn là tay vẫn đan tay.</p>
       </div>
     </div>
   </section>
@@ -235,26 +245,26 @@
       <h2 class="text-center cinzel text-glow mb-4">Thước Phim Tình Yêu</h2>
       
       <div class="portfolio-item" data-aos="fade-up">
-        <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 1">
+        <img src="" data-img="img4" class="portfolio-img" alt="Love 1">
       </div>
       
       <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.pexels.com/photos/1963030/pexels-photo-1963030.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 2">
+        <img src="" data-img="img5" class="portfolio-img" alt="Love 2">
       </div>
       
       <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 3">
+        <img src="" data-img="img6" class="portfolio-img" alt="Love 3">
       </div>
       
       <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
-        <img src="https://images.pexels.com/photos/3228723/pexels-photo-3228723.jpeg?auto=compress&cs=tinysrgb&w=800" class="portfolio-img" alt="Love 4">
+        <img src="" data-img="img7" class="portfolio-img" alt="Love 4">
       </div>
     </div>
   </section>
 
   <!-- Section 9: Sunrise -->
   <section class="s9-sunrise">
-    <img src="https://images.pexels.com/photos/1486974/pexels-photo-1486974.jpeg?auto=compress&cs=tinysrgb&w=1920" class="img-bg" alt="Sunrise">
+    <img src="" data-img="img8" class="img-bg" alt="Sunrise">
     <div class="bg-overlay"></div>
     <div class="content-z w-100" data-aos="fade-up" data-aos-duration="1500">
       <h2 class="cinzel mb-4 text-glow">Bình Minh<br>Của Chúng Ta</h2>
@@ -286,7 +296,20 @@
       duration: 1000
     });
 
-
+    // Load dynamic images from PAGE_IMAGES
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+    });
 
     // Typewriter Effect
     const textToType = "Anh không giỏi nói những lời đường mật. Nhưng anh biết rằng, mỗi ngày thức dậy, điều anh muốn làm đầu tiên là nghĩ về em. Cảm ơn em đã bước vào cuộc đời anh, biến những chuỗi ngày bình thường thành phép màu...";
