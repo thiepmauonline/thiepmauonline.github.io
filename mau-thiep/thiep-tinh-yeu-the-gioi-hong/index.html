@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Một Thế Giới Màu Hồng | Happy Card</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Thiệp tình yêu phong cách Thế Giới Màu Hồng dễ thương, nhẹ nhàng, nữ tính.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  <style>
+    :root {
+      --pink-pastel: #FFF0F2;
+      --pink-peach: #FFE3E7;
+      --pink-cream: #FFD1D7;
+      --pink-accent: #FF8FA3;
+      --milk-white: #FAFAFA;
+      --gold-champagne: #D9B48F;
+      --text-dark: #5C4B4E;
+      --text-muted: #9E8E91;
+    }
+
+    html {
+      background-color: #0c0809;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--pink-pastel);
+      color: var(--text-dark);
+      font-family: 'Mulish', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.3);
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    .cursive {
+      font-family: 'Great Vibes', cursive;
+      color: var(--pink-accent);
+    }
+
+    /* Floating particles canvas style */
+    #particles-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .section {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 24px;
+      min-height: 100vh;
+    }
+
+    .full-vh {
+      min-height: 100vh;
+    }
+
+    .bg-gradient-pink {
+      background: linear-gradient(180deg, #FFF2F4 0%, #FFE5E9 100%);
+    }
+
+    .bg-dark-pink {
+      background-color: #FFE5E9;
+    }
+
+    .bg-pure-pink {
+      background-color: #FFF0F2;
+    }
+
+    .bg-peach-soft {
+      background-color: #FFF5F6;
+    }
+
+    /* Custom Webkit scrollbar */
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    /* Utility designs */
+    .postcard {
+      background: var(--milk-white);
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: 0 15px 35px rgba(255, 143, 163, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .postcard-img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+
+    /* Glassmorphism styling */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(255, 143, 163, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Floating Clouds style */
+    .cloud-container {
+      position: relative;
+      width: 100%;
+    }
+    .cloud-shape {
+      background: #FFF8F9;
+      border-radius: 100px;
+      position: absolute;
+      opacity: 0.8;
+      filter: blur(4px);
+      z-index: 0;
+    }
+
+    /* Collage style */
+    .collage-container {
+      position: relative;
+      height: 480px;
+      width: 100%;
+    }
+
+    .collage-img {
+      position: absolute;
+      border-radius: 20px;
+      box-shadow: 0 12px 28px rgba(255, 143, 163, 0.15);
+      border: 4px solid var(--milk-white);
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .collage-img:hover {
+      transform: scale(1.05) rotate(0deg) !important;
+      z-index: 10 !important;
+    }
+
+    /* Polaroid journal */
+    .polaroid {
+      background: var(--milk-white);
+      padding: 16px 16px 40px 16px;
+      border-radius: 4px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transform: rotate(-2deg);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .polaroid-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+    .polaroid-caption {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      text-align: center;
+      color: var(--text-dark);
+    }
+
+    /* Pinterest style grid */
+    .pin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pin-item {
+      display: flex;
+      flex-direction: column;
+      break-inside: avoid;
+    }
+    .pin-img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      box-shadow: 0 8px 20px rgba(255, 143, 163, 0.08);
+    }
+
+    /* Custom quote decorative lines */
+    .quote-decoration {
+      width: 40px;
+      height: 1px;
+      background-color: var(--gold-champagne);
+      margin: 20px auto;
+    }
+
+    /* Parallax section */
+    .parallax-section {
+      background-attachment: scroll;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Footer styling */
+    .back-cover {
+      background: linear-gradient(180deg, #FFE5E9 0%, #FFF0F2 100%);
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .nav-arrow {
+      animation: bounce 2s infinite;
+      color: var(--pink-accent);
+      font-size: 1.5rem;
+      margin-top: 30px;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Canvas for floating particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- SECTION 1: Hero Fullscreen -->
+  <section class="section full-vh bg-gradient-pink justify-content-between text-center py-5">
+    <div style="z-index: 2; margin-top: 40px;">
+      <span class="cursive" style="font-size: 2.2rem; letter-spacing: 2px;">My Sweetheart</span>
+    </div>
+    <div style="z-index: 2;">
+      <h1 class="cursive" style="font-size: 4.8rem; line-height: 1; margin-bottom: 20px;" data-aos="zoom-in" data-aos-duration="1500">Bảo Ngọc</h1>
+      <p style="font-size: 0.95rem; font-weight: 400; letter-spacing: 1.5px; color: var(--text-dark); margin: 0 10px; line-height: 1.8;" data-aos="fade-up" data-aos-delay="400">
+        "Anh không thể tạo cả thế giới...<br>
+        Nhưng anh có thể tạo một thế giới dành riêng cho em."
+      </p>
+    </div>
+    <div style="z-index: 2; margin-bottom: 20px;">
+      <i class="fa-solid fa-chevron-down nav-arrow"></i>
+    </div>
+  </section>
+
+  <!-- SECTION 2: Mây hồng mềm mại -->
+  <section class="section justify-content-center bg-peach-soft text-center" style="position: relative;">
+    <!-- Decorative Cloud Shapes -->
+    <div class="cloud-shape" style="width: 140px; height: 60px; top: 15%; left: -40px;"></div>
+    <div class="cloud-shape" style="width: 180px; height: 80px; bottom: 20%; right: -50px;"></div>
+    
+    <div style="z-index: 2;">
+      <h3 style="font-size: 2.2rem; font-style: italic; margin-bottom: 40px;" data-aos="fade-up">Trong thế giới hồng này...</h3>
+      <p style="font-size: 1.1rem; line-height: 2; font-weight: 300;" data-aos="fade-up" data-aos-delay="200">
+        Em chính là áng mây bồng bềnh nhất.<br>
+        Từng lời nói, từng cử chỉ ngọt ngào<br>
+        đều được anh nâng niu và cất giữ.<br>
+        Nơi đây chỉ có sự dịu dàng ôm lấy em.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Postcard cao cấp -->
+  <section class="section justify-content-center bg-pure-pink">
+    <div class="postcard" data-aos="fade-up" data-aos-duration="1200">
+      <img src="https://images.pexels.com/photos/1028725/pexels-photo-1028725.jpeg?auto=compress&cs=tinysrgb&w=800" class="postcard-img" alt="Postcard ảnh ngọt ngào">
+      <div style="padding: 24px 8px 12px 8px;">
+        <span class="cursive" style="font-size: 1.8rem; display: block; margin-bottom: 8px;">Dear Ngọc,</span>
+        <p style="font-size: 0.9rem; line-height: 1.7; color: var(--text-dark); margin: 0;">
+          Có những ngày thế giới ngoài kia thật ồn ào và mệt mỏi. Hy vọng tấm thiệp nhỏ này mang lại cho em một chút ngọt ngào ngọt lịm vào cuối ngày. Em luôn xứng đáng được yêu thương vô điều kiện.
+        </p>
+        <div style="text-align: right; margin-top: 15px; color: var(--gold-champagne); font-weight: 500; font-size: 0.85rem;">
+          — From My Heart
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: Album ảnh ngẫu nhiên -->
+  <section class="section justify-content-center bg-peach-soft">
+    <h3 class="text-center mb-5" style="font-size: 2.2rem; font-style: italic;" data-aos="fade-up">Góc Nhỏ Của Chúng Mình</h3>
+    <div class="collage-container">
+      <img src="https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800" 
+           class="collage-img" 
+           style="width: 200px; height: 260px; top: 10px; left: 10px; transform: rotate(-5deg); z-index: 1;" 
+           data-aos="fade-right" data-aos-duration="1000" alt="Collage 1">
+      
+      <img src="https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=800" 
+           class="collage-img" 
+           style="width: 180px; height: 180px; bottom: 30px; right: 20px; transform: rotate(8deg); z-index: 2;" 
+           data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000" alt="Collage 2">
+
+      <img src="https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800" 
+           class="collage-img" 
+           style="width: 160px; height: 220px; bottom: 180px; right: 15px; transform: rotate(-3deg); z-index: 3;" 
+           data-aos="fade-down" data-aos-delay="400" data-aos-duration="1000" alt="Collage 3">
+    </div>
+  </section>
+
+  <!-- SECTION 5: Những điều anh yêu ở em (Glassmorphic) -->
+  <section class="section justify-content-center bg-pure-pink">
+    <h3 class="text-center mb-5" style="font-size: 2.2rem; font-style: italic;" data-aos="fade-up">Những Điều Anh Yêu...</h3>
+    
+    <div class="d-flex flex-column gap-4">
+      <div class="glass-card" data-aos="fade-up">
+        <h4 style="font-size: 1.4rem; color: var(--pink-accent); margin-bottom: 8px;">
+          <i class="fa-solid fa-face-smile me-2"></i> Nụ Cười Của Em
+        </h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin: 0;">
+          Nụ cười trong trẻo tỏa nắng có thể xua tan mọi đám mây xám xịt trong suy nghĩ của anh.
+        </p>
+      </div>
+
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+        <h4 style="font-size: 1.4rem; color: var(--pink-accent); margin-bottom: 8px;">
+          <i class="fa-solid fa-heart-pulse me-2"></i> Sự Ấm Áp Dịu Dàng
+        </h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin: 0;">
+          Mỗi cái chạm tay, mỗi cái ôm khẽ khàng đều khiến anh có cảm giác được về nhà, thật bình yên.
+        </p>
+      </div>
+
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+        <h4 style="font-size: 1.4rem; color: var(--pink-accent); margin-bottom: 8px;">
+          <i class="fa-solid fa-sparkles me-2"></i> Sự Ngọt Ngào Đáng Yêu
+        </h4>
+        <p style="font-size: 0.9rem; line-height: 1.6; margin: 0;">
+          Cách em hờn dỗi nhẹ nhàng hay cười ngốc nghếch đều cực kỳ đáng yêu, khiến anh muốn bảo vệ em mãi.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Big Quote -->
+  <section class="section justify-content-center bg-dark-pink text-center">
+    <div data-aos="zoom-in" data-aos-duration="1500">
+      <h2 style="font-size: 2.8rem; font-style: italic; line-height: 1.4; font-weight: 300;">
+        "Có em bên đời,<br>
+        thế giới này bỗng<br>
+        <span style="color: var(--pink-accent); font-weight: 600;">hoá mềm mại</span><br>
+        và ngát hương."
+      </h2>
+      <div class="quote-decoration"></div>
+      <p style="font-size: 0.9rem; letter-spacing: 2px; color: var(--text-muted); text-transform: uppercase;">A Beautiful Life</p>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Pinterest Gallery -->
+  <section class="section justify-content-center bg-pure-pink">
+    <h3 class="text-center mb-5" style="font-size: 2.2rem; font-style: italic;" data-aos="fade-up">Sweet Moments</h3>
+    
+    <div class="pin-grid">
+      <div class="pin-item gap-3">
+        <img src="https://images.pexels.com/photos/1366630/pexels-photo-1366630.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" alt="Gallery 1">
+        <img src="https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" data-aos-delay="100" alt="Gallery 2">
+      </div>
+      <div class="pin-item gap-3" style="padding-top: 30px;">
+        <img src="https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" data-aos-delay="200" alt="Gallery 3">
+        <img src="https://images.pexels.com/photos/36813771/pexels-photo-36813771.jpeg?auto=compress&cs=tinysrgb&w=800" class="pin-img" data-aos="fade-up" data-aos-delay="300" alt="Gallery 4">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: Nhật ký hồng -->
+  <section class="section justify-content-center bg-peach-soft">
+    <h3 class="text-center mb-5" style="font-size: 2.2rem; font-style: italic;" data-aos="fade-up">Nhật Ký Hạnh Phúc</h3>
+    
+    <div class="polaroid mb-4" data-aos="fade-up" style="transform: rotate(-3deg);">
+      <img src="https://images.pexels.com/photos/1963030/pexels-photo-1963030.jpeg?auto=compress&cs=tinysrgb&w=800" class="polaroid-img" alt="Nhật ký 1">
+      <div class="polaroid-caption">Những tin nhắn thâu đêm...</div>
+    </div>
+
+    <div class="polaroid" data-aos="fade-up" data-aos-delay="150" style="transform: rotate(3deg); margin-top: 20px;">
+      <img src="https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=800" class="polaroid-img" alt="Nhật ký 2">
+      <div class="polaroid-caption">Nụ cười tỏa nắng của em...</div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: Ảnh toàn màn hình (Parallax effect) -->
+  <section class="section parallax-section full-vh" style="background-image: url('https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800');">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 240, 242, 0.25);"></div>
+    <div class="w-100 text-center" style="z-index: 2;" data-aos="fade-up">
+      <span class="cursive" style="font-size: 3rem; color: var(--milk-white); text-shadow: 2px 2px 10px rgba(92, 75, 78, 0.4);">Dành cho người anh thương</span>
+    </div>
+  </section>
+
+  <!-- SECTION 10: Bức tường lời chúc -->
+  <section class="section justify-content-center bg-pure-pink">
+    <h3 class="text-center mb-5" style="font-size: 2.2rem; font-style: italic;" data-aos="fade-up">Gửi Ngọc Những Điều Tốt Đẹp</h3>
+    
+    <div class="d-flex flex-column gap-4">
+      <div class="glass-card" data-aos="fade-up" style="border-radius: 16px; padding: 18px;">
+        <p style="font-size: 0.9rem; line-height: 1.6; font-style: italic; margin: 0;">
+          "Mong em mỗi ngày thức dậy đều tràn đầy niềm vui, cười thật nhiều và không cần bận lòng vì những điều nhỏ nhặt."
+        </p>
+      </div>
+
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="100" style="border-radius: 16px; padding: 18px; align-self: flex-end; width: 90%;">
+        <p style="font-size: 0.9rem; line-height: 1.6; font-style: italic; margin: 0;">
+          "Mong em luôn giữ mãi sự hồn nhiên, đáng yêu này. Hãy luôn tin tưởng rằng bên cạnh em luôn có anh đồng hành."
+        </p>
+      </div>
+
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="200" style="border-radius: 16px; padding: 18px; width: 90%;">
+        <p style="font-size: 0.9rem; line-height: 1.6; font-style: italic; margin: 0;">
+          "Chúc thế giới của em luôn ngập tràn sắc hồng tươi đẹp, ấm áp như cách em đã sưởi ấm tâm hồn anh."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: Pastel pink message -->
+  <section class="section justify-content-center bg-dark-pink text-center">
+    <div class="w-100" data-aos="zoom-in" data-aos-duration="1500">
+      <h2 style="font-size: 3rem; font-style: italic; font-weight: 400; line-height: 1.3;">
+        "Cảm ơn em<br>
+        đã đến bên anh."
+      </h2>
+      <p class="cursive" style="font-size: 2.5rem; margin-top: 15px;">— My Miracle</p>
+    </div>
+  </section>
+
+  <!-- SECTION 12: Bầu trời hoàng hôn hoàng tráng -->
+  <section class="section full-vh parallax-section justify-content-end align-items-center text-center pb-5" style="background-image: url('https://images.pexels.com/photos/1488312/pexels-photo-1488312.jpeg?auto=compress&cs=tinysrgb&w=800');">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(255, 240, 242, 0.1) 0%, rgba(92, 75, 78, 0.7) 100%);"></div>
+    
+    <div class="w-100 px-4" style="z-index: 2; margin-bottom: 60px;" data-aos="fade-up" data-aos-duration="1500">
+      <p style="font-size: 1.1rem; line-height: 1.8; color: var(--milk-white); font-weight: 400; text-shadow: 1px 1px 8px rgba(0,0,0,0.5);">
+        "Và nếu có thêm một lần nữa...<br>
+        Anh vẫn sẽ chọn em."
+      </p>
+      <div class="quote-decoration" style="background-color: var(--milk-white); opacity: 0.5;"></div>
+      <p class="cursive" style="font-size: 2.2rem; color: var(--pink-pastel); margin: 0;">Forever & Always</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Animations init
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1000
+    });
+
+    // Particles canvas anim
+    document.addEventListener("DOMContentLoaded", function () {
+      const canvas = document.getElementById('particles-canvas');
+      const ctx = canvas.getContext('2d');
+      
+      function resizeCanvas() {
+        canvas.width = canvas.parentElement.clientWidth;
+        canvas.height = canvas.parentElement.clientHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      let particles = [];
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 4 + 1.5;
+          this.speedY = -(Math.random() * 0.6 + 0.3);
+          this.speedX = Math.sin(Math.random() * 2) * 0.15;
+          this.opacity = Math.random() * 0.4 + 0.15;
+        }
+        update() {
+          this.y += this.speedY;
+          this.x += this.speedX;
+          if (this.y < -10) {
+            this.y = canvas.height + 10;
+            this.x = Math.random() * canvas.width;
+          }
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 143, 163, ${this.opacity})`;
+          ctx.fill();
+        }
+      }
+
+      function init() {
+        for (let i = 0; i < 45; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+          p.update();
+          p.draw();
+        });
+        requestAnimationFrame(animate);
+      }
+
+      init();
+      animate();
+    });
+  </script>
+</body>
+</html>
