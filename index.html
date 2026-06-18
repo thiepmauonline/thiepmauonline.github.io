@@ -775,10 +775,10 @@
             }
 
             // Show the "Xem thêm" button wrapper
-            loadMoreWrapper.style.display = "block";
-            btnLoadMore.style.display = "inline-block";
+            if (loadMoreWrapper) loadMoreWrapper.style.display = "block";
+            if (btnLoadMore) btnLoadMore.style.display = "inline-block";
           } else {
-            loadMoreWrapper.style.display = "none";
+            if (loadMoreWrapper) loadMoreWrapper.style.display = "none";
           }
         });
       }
