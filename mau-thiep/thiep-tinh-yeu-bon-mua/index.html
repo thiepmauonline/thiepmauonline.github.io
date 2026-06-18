@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nếu Em Là Một Mùa | Happy Card</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Triển lãm nghệ thuật cảm xúc về bốn mùa mang hình bóng em.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img_hero": "https://images.pexels.com/photos/1450082/pexels-photo-1450082.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_spring": "https://images.pexels.com/photos/1122409/pexels-photo-1122409.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_spring_g1": "https://images.pexels.com/photos/414413/pexels-photo-414413.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_spring_g2": "https://images.pexels.com/photos/414343/pexels-photo-414343.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_summer": "https://images.pexels.com/photos/33044/sunflower-sun-summer-yellow.jpg?auto=compress&cs=tinysrgb&w=800",
+      "img_autumn": "https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&w=800",
+      "img_autumn_g1": "https://images.pexels.com/photos/1590549/pexels-photo-1590549.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_autumn_g2": "https://images.pexels.com/photos/1769317/pexels-photo-1769317.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_winter": "https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_quote": "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_ending": "https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+  
+  <style>
+    :root {
+      --spring-bg: #FDF4F6;
+      --spring-text: #B77B82;
+      --summer-bg: #FFF9E6;
+      --summer-text: #D28C33;
+      --autumn-bg: #F5EFEB;
+      --autumn-text: #8C5D3E;
+      --winter-bg: #F0F5F9;
+      --winter-text: #6B8296;
+      
+      --text-dark: #2A2A2A;
+      --text-light: #888888;
+    }
+
+    html {
+      background-color: #111;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: #fff;
+      color: var(--text-dark);
+      font-family: 'Mulish', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.1);
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin: 0;
+    }
+    
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .section {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 24px;
+      min-height: 100vh;
+      transition: background-color 1s ease;
+    }
+
+    .full-vh {
+      min-height: 100vh;
+    }
+
+    ::-webkit-scrollbar { width: 0px; }
+
+    /* TYPOGRAPHY */
+    .title-large {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+    .text-body {
+      font-size: 1.1rem;
+      line-height: 2;
+      letter-spacing: 0.5px;
+    }
+
+    /* IMAGES */
+    .img-editorial {
+      width: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 16px;
+      padding: 30px 20px;
+      margin-bottom: 20px;
+    }
+
+    /* CUSTOM GALLERIES */
+    .spring-gallery {
+      position: relative;
+      height: 450px;
+      margin-top: 40px;
+    }
+    .sg-1 {
+      position: absolute;
+      top: 0; left: 0;
+      width: 65%; height: 250px;
+      border-radius: 20px 100px 20px 20px;
+      z-index: 2;
+      box-shadow: 0 10px 30px rgba(183, 123, 130, 0.1);
+    }
+    .sg-2 {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 55%; height: 280px;
+      border-radius: 20px 20px 100px 20px;
+      z-index: 1;
+    }
+
+    .autumn-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 40px;
+    }
+    .ag-1 {
+      grid-column: 1 / -1;
+      height: 300px;
+      border-radius: 4px;
+    }
+    .ag-2 {
+      height: 200px;
+      border-radius: 4px;
+    }
+
+    /* SECTION COLORS */
+    .bg-spring { background-color: var(--spring-bg); }
+    .bg-summer { background-color: var(--summer-bg); }
+    .bg-autumn { background-color: var(--autumn-bg); }
+    .bg-winter { background-color: var(--winter-bg); }
+
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1 - HERO -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; background-position: center; background-size: cover;" data-img="img_hero"></div>
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.9) 100%); z-index: 1;"></div>
+    
+    <div style="z-index: 2; position: relative; padding: 0 30px; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+      
+      <p style="font-family: 'Mulish', sans-serif; font-size: 0.8rem; letter-spacing: 5px; text-transform: uppercase; color: var(--text-light); margin-bottom: 30px;" data-aos="fade-down" data-aos-duration="1500">
+        A love exhibition
+      </p>
+
+      <h1 class="title-large" style="color: var(--text-dark); margin-bottom: 30px;" data-aos="fade-up" data-aos-duration="2000">
+        Nếu Em Là<br>
+        <span style="font-style: italic;">Một Mùa</span>
+      </h1>
+      
+      <p class="font-cormorant" style="font-size: 1.4rem; font-style: italic; color: #555;" data-aos="fade-up" data-aos-delay="500">
+        "Thì em chính là cả bốn mùa trong anh."
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 2 - MÙA XUÂN -->
+  <section class="section bg-spring text-center">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <p style="font-size: 0.8rem; letter-spacing: 3px; color: var(--spring-text); text-transform: uppercase; margin-bottom: 20px;">Chapter I — Spring</p>
+      
+      <img src="" data-img="img_spring" class="img-editorial" style="height: 380px; margin-bottom: 40px;" alt="Mùa Xuân">
+      
+      <h2 style="font-size: 2.5rem; font-style: italic; color: var(--spring-text); margin-bottom: 20px;">Dịu Dàng Nhẹ Nhánh</h2>
+      
+      <p class="text-body" style="color: var(--text-dark);">
+        Em đến nhẹ nhàng như mùa xuân, mang theo những tia nắng mỏng manh sưởi ấm trái tim anh sau chuỗi ngày đông lạnh giá.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 - GALLERY XUÂN -->
+  <section class="section bg-spring">
+    <div data-aos="fade-up">
+      <h2 style="font-size: 2rem; font-style: italic; color: var(--spring-text); text-align: right;">Sự Khởi Đầu...</h2>
+      
+      <div class="spring-gallery">
+        <img src="" data-img="img_spring_g1" class="img-editorial sg-1" data-aos="fade-right" data-aos-duration="1200" alt="Spring Art">
+        <img src="" data-img="img_spring_g2" class="img-editorial sg-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200" alt="Spring Art 2">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4 - MÙA HẠ -->
+  <section class="section bg-summer text-center">
+    <div data-aos="fade-up">
+      <p style="font-size: 0.8rem; letter-spacing: 3px; color: var(--summer-text); text-transform: uppercase; margin-bottom: 20px;">Chapter II — Summer</p>
+      
+      <h2 style="font-size: 2.8rem; color: var(--summer-text); margin-bottom: 30px;">Rực Rỡ &<br><span style="font-style: italic;">Cháy Bỏng</span></h2>
+      
+      <div style="position: relative; margin-bottom: 40px;">
+        <img src="" data-img="img_summer" class="img-editorial" style="height: 400px; border-radius: 200px 200px 0 0;" alt="Mùa Hạ">
+      </div>
+      
+      <p class="text-body" style="color: var(--text-dark);">
+        Có những ngày em rực rỡ như ánh mặt trời mùa hạ. Nụ cười em thắp sáng cả không gian, nồng nhiệt và đầy sức sống.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 5 - MÙA THU -->
+  <section class="section bg-autumn">
+    <div data-aos="fade-up">
+      <p style="font-size: 0.8rem; letter-spacing: 3px; color: var(--autumn-text); text-transform: uppercase; margin-bottom: 40px; text-align: center;">Chapter III — Autumn</p>
+      
+      <h2 style="font-size: 3.2rem; line-height: 1.2; color: var(--autumn-text); margin-bottom: 40px;">
+        Trầm Lắng<br>
+        <span style="font-style: italic; padding-left: 40px;">& Bình Yên</span>
+      </h2>
+      
+      <p class="text-body" style="color: var(--text-dark);">
+        Em cũng có những lúc tĩnh lặng như mùa thu. Đôi mắt em chứa đựng những khoảng không gian bình yên, nơi anh chỉ muốn đắm chìm vào mãi mãi.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 6 - GALLERY THU -->
+  <section class="section bg-autumn" style="padding-top: 0;">
+    <div class="autumn-gallery">
+      <img src="" data-img="img_autumn_g1" class="img-editorial ag-1" data-aos="fade-up" alt="Thu 1">
+      <img src="" data-img="img_autumn_g2" class="img-editorial ag-2" data-aos="fade-up" data-aos-delay="100" alt="Thu 2">
+      <div style="background: var(--autumn-text); border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 20px;" data-aos="fade-up" data-aos-delay="200">
+        <p class="font-cormorant" style="color: #fff; font-size: 1.2rem; font-style: italic; text-align: center; margin: 0;">Falling for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 - MÙA ĐÔNG -->
+  <section class="section bg-winter text-center">
+    <div data-aos="fade-up">
+      <p style="font-size: 0.8rem; letter-spacing: 3px; color: var(--winter-text); text-transform: uppercase; margin-bottom: 20px;">Chapter IV — Winter</p>
+      
+      <img src="" data-img="img_winter" class="img-editorial" style="height: 350px; margin-bottom: 40px; border-radius: 50%; width: 280px; margin-left: auto; margin-right: auto;" alt="Mùa Đông">
+      
+      <h2 style="font-size: 2.5rem; font-style: italic; color: var(--winter-text); margin-bottom: 20px;">Cần Được Chở Che</h2>
+      
+      <p class="text-body" style="color: var(--text-dark);">
+        Và có những ngày em bé nhỏ như bông tuyết mùa đông, yếu đuối cần được ôm ấp và vỗ về. Anh ở đây, để làm chiếc áo ấm cho em.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 8 - ĐIỀU ANH THÍCH -->
+  <section class="section bg-winter">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 style="font-size: 2rem; color: var(--winter-text); font-style: italic;">Vì Sao Anh Yêu Em?</h2>
+    </div>
+    
+    <div>
+      <div class="glass-card" data-aos="fade-up">
+        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--winter-text);">Sự thấu cảm</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Em luôn biết cách lắng nghe, dù là những điều anh chưa kịp nói ra.</p>
+      </div>
+      
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--winter-text);">Nụ cười của em</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Nụ cười xua tan mọi mỏi mệt trong anh sau những ngày dài bận rộn.</p>
+      </div>
+      
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+        <h3 style="font-size: 1.2rem; margin-bottom: 10px; color: var(--winter-text);">Chính là em</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; margin: 0;">Không cần lý do, vì em là mảnh ghép anh tìm kiếm bấy lâu nay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9 - QUOTE -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; background-position: center; background-size: cover; filter: blur(5px) opacity(0.6);" data-img="img_quote"></div>
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: #fff; opacity: 0.5; z-index: 1;"></div>
+    
+    <div style="z-index: 2; position: relative; padding: 0 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;">
+      
+      <h2 class="font-cormorant" style="font-size: 2.8rem; font-style: italic; line-height: 1.5; color: var(--text-dark);" data-aos="zoom-in" data-aos-duration="1500">
+        "Điều đẹp nhất không phải là mùa nào...<br><br>
+        Mà là mùa nào cũng có em."
+      </h2>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 10 - KẾT THÚC -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; background-position: center; background-size: cover; filter: brightness(0.8);" data-img="img_ending"></div>
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,0.6) 100%); z-index: 1;"></div>
+    
+    <div style="z-index: 2; position: relative; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100vh; padding: 0 30px 80px 30px;">
+      
+      <h2 style="font-size: 2.6rem; font-style: italic; line-height: 1.3; color: #fff; margin-bottom: 40px; text-shadow: 0 4px 15px rgba(0,0,0,0.5);" data-aos="fade-up" data-aos-duration="1500">
+        Cảm ơn em đã xuất hiện trong cuộc đời anh.
+      </h2>
+
+      <a href="../../index.html" class="btn btn-outline-light rounded-pill px-5 py-3" style="font-family: 'Mulish', sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;" data-aos="fade-up" data-aos-delay="500">
+        Về trang chủ
+      </a>
+      
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1000
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

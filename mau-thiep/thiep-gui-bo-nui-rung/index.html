@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Người Cha Miền Núi | Happy Card</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Lời cảm ơn sâu sắc dành cho người cha bình dị nơi miền núi, lặng thầm hy sinh vì con.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img_hero": "https://images.pexels.com/photos/3482441/pexels-photo-3482441.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_morning": "https://images.pexels.com/photos/1684882/pexels-photo-1684882.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_road": "https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gal1": "https://images.pexels.com/photos/1619488/pexels-photo-1619488.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gal2": "https://images.pexels.com/photos/1105058/pexels-photo-1105058.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gal3": "https://images.pexels.com/photos/2085717/pexels-photo-2085717.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_hands": "https://images.pexels.com/photos/1852026/pexels-photo-1852026.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_behind": "https://images.pexels.com/photos/894819/pexels-photo-894819.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_sunset": "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+  
+  <style>
+    :root {
+      --forest-green: #2E4A35;
+      --wood-brown: #5A3D2B;
+      --stone-gray: #7E807D;
+      --sunset-orange: #D17A43;
+      --mist-white: #F0F4F2;
+      --text-dark: #2C2621;
+      --text-light: #6E645A;
+    }
+
+    html {
+      background-color: #1a1a1a;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--mist-white);
+      color: var(--text-dark);
+      font-family: 'Lora', serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.3);
+      font-weight: 400;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin: 0;
+    }
+    
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .section {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 24px;
+      min-height: 100vh;
+    }
+
+    .full-vh {
+      min-height: 100vh;
+    }
+    
+    .bg-mist { background-color: var(--mist-white); }
+    .bg-stone { background-color: #E2E5E3; }
+    .bg-forest { background-color: var(--forest-green); color: var(--mist-white); }
+    .bg-forest h2, .bg-forest p, .bg-forest h3 { color: var(--mist-white); }
+
+    ::-webkit-scrollbar { width: 0px; }
+
+    /* PARALLAX EFFECTS */
+    .bg-parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .overlay-dark {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(20, 25, 20, 0.65);
+      z-index: 1;
+    }
+    .overlay-warm {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(0deg, rgba(44, 38, 33, 0.9) 0%, rgba(90, 61, 43, 0.5) 100%);
+      z-index: 1;
+    }
+
+    /* STORY BLOCKS */
+    .story-card {
+      background: var(--mist-white);
+      padding: 35px 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border-top: 3px solid var(--sunset-orange);
+    }
+    
+    /* GALLERY */
+    .nature-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .nature-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 2px;
+      filter: grayscale(20%) contrast(1.1);
+    }
+
+    /* LETTER */
+    .memoir-box {
+      background: #FAF9F6;
+      padding: 50px 30px;
+      border-left: 1px solid var(--stone-gray);
+      border-right: 1px solid var(--stone-gray);
+      position: relative;
+    }
+    .memoir-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 20px; right: 20px;
+      height: 1px;
+      background: var(--stone-gray);
+      opacity: 0.3;
+    }
+    .memoir-box::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 20px; right: 20px;
+      height: 1px;
+      background: var(--stone-gray);
+      opacity: 0.3;
+    }
+
+    .divider-masculine {
+      width: 40px;
+      height: 3px;
+      background-color: var(--sunset-orange);
+      margin: 25px 0;
+    }
+    .divider-center {
+      margin: 25px auto;
+    }
+    
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: rgba(90, 61, 43, 0.15);
+      line-height: 0;
+      position: relative;
+      top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1 - HERO -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div class="bg-parallax" data-img="img_hero" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></div>
+    <div class="overlay-dark"></div>
+    
+    <div style="z-index: 2; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 0 30px;">
+      
+      <p style="font-family: 'Mulish', sans-serif; font-size: 0.85rem; letter-spacing: 5px; text-transform: uppercase; color: var(--stone-gray); margin-bottom: 25px;" data-aos="fade-down" data-aos-duration="1500">
+        Câu chuyện của sự hy sinh
+      </p>
+
+      <h1 style="font-size: 4rem; line-height: 1.1; color: var(--mist-white); margin-bottom: 40px; text-shadow: 0 4px 15px rgba(0,0,0,0.5);" data-aos="zoom-in" data-aos-duration="2000">
+        Người Cha<br>Miền Núi
+      </h1>
+      
+      <div style="width: 1px; height: 60px; background-color: var(--sunset-orange); margin: 0 auto;" data-aos="fade-up" data-aos-delay="400"></div>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 2 - SÁNG ĐI LÀM SỚM -->
+  <section class="section bg-stone">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      
+      <h2 style="font-size: 2.2rem; font-style: italic; margin-bottom: 20px;">Lặng Lẽ Sương Mai</h2>
+      <div class="divider-masculine"></div>
+
+      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark); margin-bottom: 30px;">
+        Khi sương chưa tan trên những tán lá rừng, tiếng bước chân quen thuộc đã vang lên ngoài ngõ. Bố bắt đầu ngày mới trước cả bình minh.
+      </p>
+      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark); margin-bottom: 40px;">
+        Người đàn ông ấy chưa từng than vãn về những giấc ngủ không tròn giấc. Chỉ lặng lẽ rời nhà khi chúng con vẫn còn chìm trong những giấc mơ êm đềm.
+      </p>
+      
+      <img src="" data-img="img_morning" style="width: 100%; height: 350px; object-fit: cover; filter: grayscale(15%);" alt="Sương sớm">
+    </div>
+  </section>
+
+  <!-- SECTION 3 - CON ĐƯỜNG DÀI -->
+  <section class="section full-vh bg-parallax" data-img="img_road">
+    <div class="overlay-warm"></div>
+    <div style="z-index: 2; position: relative; padding: 0 20px; text-align: center;">
+      
+      <div data-aos="fade-up">
+        <h2 style="font-size: 2.5rem; font-style: italic; margin-bottom: 30px; color: var(--sunset-orange);">Dấu Chân Mồ Hôi</h2>
+        <p class="font-cormorant" style="font-size: 1.4rem; line-height: 1.8; color: var(--mist-white); margin-bottom: 20px;">
+          Những con đường đất đỏ dài tít tắp.<br>
+          Những ngày nắng gắt đổ lửa.<br>
+          Những chiều mưa rừng lạnh buốt xương.
+        </p>
+        <p class="font-cormorant" style="font-size: 1.4rem; line-height: 1.8; color: var(--stone-gray);">
+          Bố đã đi qua biết bao đoạn đường như thế, gánh trên vai cả tương lai của một gia đình.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 4 - GALLERY -->
+  <section class="section bg-mist">
+    <div class="text-center" data-aos="fade-up">
+      <h2 style="font-size: 2.2rem; font-style: italic;">Sự Khắc Nghiệt Cuộc Sống</h2>
+      <div class="divider-masculine divider-center"></div>
+    </div>
+    
+    <div class="nature-gallery">
+      <img src="" data-img="img_gal1" class="nature-img" style="height: 280px;" data-aos="fade-up" alt="Lao động">
+      <img src="" data-img="img_gal2" class="nature-img" style="height: 200px;" data-aos="fade-up" data-aos-delay="100" alt="Bản làng">
+      <img src="" data-img="img_gal3" class="nature-img" style="height: 240px;" data-aos="fade-up" data-aos-delay="200" alt="Thiên nhiên">
+    </div>
+  </section>
+
+  <!-- SECTION 5 - ĐÔI BÀN TAY -->
+  <section class="section bg-forest">
+    <div data-aos="fade-up">
+      
+      <div class="quote-mark text-center mb-2">“</div>
+      <h2 style="font-size: 2.2rem; font-style: italic; text-align: center; margin-bottom: 40px; line-height: 1.4;">
+        Đôi bàn tay chai sần<br>ôm trọn một gia đình.
+      </h2>
+      
+      <img src="" data-img="img_hands" style="width: 100%; height: 350px; object-fit: cover; margin-bottom: 40px; border-radius: 2px; filter: sepia(0.2) contrast(1.2);" alt="Đôi bàn tay">
+      
+      <p style="font-size: 1.15rem; line-height: 1.9; text-align: center;">
+        Từng vết chai sạn, từng vết nứt nẻ là minh chứng cho sự nhọc nhằn. Bàn tay thô ráp ấy chưa từng vỗ về bằng những lời ngọt ngào, nhưng luôn là bàn tay vững chãi nhất kéo con đứng lên sau mỗi lần vấp ngã.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 6 - ÂM THẦM GIÚP ĐỠ -->
+  <section class="section bg-mist">
+    <div data-aos="fade-up">
+      <h2 style="font-size: 2.2rem; font-style: italic; margin-bottom: 20px;">Tình Yêu Không Lời</h2>
+      <div class="divider-masculine"></div>
+      
+      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark); margin-bottom: 30px;">
+        Người đàn ông ấy chưa từng nói câu "Bố thương con".
+      </p>
+      <p style="font-size: 1.15rem; line-height: 1.9; color: var(--text-dark); margin-bottom: 40px;">
+        Nhưng mỗi lần chiếc xe đạp của con bị hỏng, sáng hôm sau đã thấy được bơm căng. Mỗi lần con rời nhà, bao giờ cũng có một bóng dáng đứng lặng im nhìn theo ở cuối ngõ. Sự ấm áp của bố giống như ngọn núi kia, trầm mặc mà vững vàng.
+      </p>
+
+      <img src="" data-img="img_behind" style="width: 100%; height: 300px; object-fit: cover; filter: grayscale(30%);" alt="Bóng lưng bố">
+    </div>
+  </section>
+
+  <!-- SECTION 7 - NHỮNG ĐIỀU CHƯA NHẬN RA -->
+  <section class="section bg-stone">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 style="font-size: 2.2rem; font-style: italic;">Giờ Con Mới Hiểu</h2>
+      <div class="divider-masculine divider-center"></div>
+    </div>
+    
+    <div class="story-card" data-aos="fade-up">
+      <h3 style="font-size: 1.4rem; font-style: italic; margin-bottom: 15px; color: var(--wood-brown);">Sự Nghiêm Khắc</h3>
+      <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-light);">
+        Bố từng rất nghiêm khắc, roi vọt khi con phạm lỗi. Nhưng con đâu biết, mỗi lần đánh con xong, lòng bố cũng đau như cắt. Bố chỉ sợ con vấp ngã ngoài xã hội, nên thà để bố làm người xấu dạy dỗ con nên người.
+      </p>
+    </div>
+
+    <div class="story-card" data-aos="fade-up" data-aos-delay="150">
+      <h3 style="font-size: 1.4rem; font-style: italic; margin-bottom: 15px; color: var(--wood-brown);">Sự Lo Lắng Giấu Kín</h3>
+      <p style="font-size: 1.05rem; line-height: 1.8; margin: 0; color: var(--text-light);">
+        Lúc con ốm, mẹ là người thức chăm, còn bố là người lầm lũi đi bộ hàng chục cây số giữa đêm để gọi bác sĩ. Tình yêu của bố không thể hiện qua lời nói, mà hóa thành những hành động thầm lặng nhất.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 8 - THƯ GỬI BỐ -->
+  <section class="section bg-mist">
+    <div class="memoir-box" data-aos="fade-up" data-aos-duration="1500">
+      <p class="font-cormorant" style="font-size: 1.5rem; font-style: italic; line-height: 1.8; color: var(--wood-brown); margin-bottom: 30px; text-align: center;">
+        Kính gửi bố,
+      </p>
+      
+      <p style="font-size: 1.05rem; line-height: 2.2; color: var(--text-dark); margin-bottom: 25px;">
+        Trong ký ức của con, bố là một người đàn ông lấm lem bùn đất, mùi mồ hôi chua nồng đượm trên chiếc áo sờn vai. 
+      </p>
+      <p style="font-size: 1.05rem; line-height: 2.2; color: var(--text-dark); margin-bottom: 25px;">
+        Chưa bao giờ con nghe bố oán thán nửa lời về sự nghèo khó. Bố luôn dùng đôi vai gầy guộc ấy chống đỡ cả một bầu trời rộng lớn cho con. Dù thế giới ngoài kia có bao nhiêu người hùng, với con, bố mới là anh hùng vĩ đại nhất.
+      </p>
+      
+      <div class="divider-masculine divider-center" style="width: 30px; margin-top: 30px; margin-bottom: 30px; height: 2px;"></div>
+    </div>
+  </section>
+
+  <!-- SECTION 9 - LỜI CẢM ƠN VÀ LỜI HỨA -->
+  <section class="section bg-forest text-center">
+    <div data-aos="fade-up">
+      <h2 style="font-size: 2.4rem; font-style: italic; margin-bottom: 30px;">Lời Hứa Của Con</h2>
+      
+      <p class="font-cormorant" style="font-size: 1.45rem; line-height: 1.9; color: var(--mist-white); font-style: italic;">
+        Con sẽ bước tiếp con đường của mình, <br>
+        với sự cứng cỏi và kiên định như một người đàn ông thực thụ mà bố đã dạy.<br>
+        Bố hãy yên tâm nghỉ ngơi, gánh nặng gia đình từ nay hãy để con lo.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 10 - KẾT THÚC -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div class="bg-parallax" data-img="img_sunset" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; filter: brightness(0.7) contrast(1.1);"></div>
+    <div class="overlay-dark" style="background: rgba(44, 38, 33, 0.5);"></div>
+    
+    <div style="z-index: 2; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 0 24px;">
+      
+      <h2 class="font-cormorant" style="font-size: 2.6rem; font-style: italic; line-height: 1.4; color: var(--mist-white); margin-bottom: 40px; text-shadow: 0 4px 20px rgba(0,0,0,0.8);" data-aos="fade-up" data-aos-duration="1500">
+        "Con lớn lên từ những giọt mồ hôi và sự hy sinh thầm lặng của bố."
+      </h2>
+
+      <a href="../../index.html" class="btn btn-outline-light rounded-0 px-5 py-3" style="font-family: 'Mulish', sans-serif; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase;" data-aos="zoom-in" data-aos-delay="600">
+        Trở về
+      </a>
+      
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1000
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

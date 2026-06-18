@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mẹ Nơi Núi Rừng | Happy Card</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Câu chuyện cảm động về người mẹ nơi miền núi, lặng thầm hi sinh vì gia đình.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img_hero": "https://images.pexels.com/photos/1598122/pexels-photo-1598122.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_morning": "https://images.pexels.com/photos/1367192/pexels-photo-1367192.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_hands": "https://images.pexels.com/photos/1852026/pexels-photo-1852026.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gal1": "https://images.pexels.com/photos/1105058/pexels-photo-1105058.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gal2": "https://images.pexels.com/photos/235648/pexels-photo-235648.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gal3": "https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_meal": "https://images.pexels.com/photos/61127/pexels-photo-61127.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_road": "https://images.pexels.com/photos/1406354/pexels-photo-1406354.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_sunset": "https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+  
+  <style>
+    :root {
+      --rice-yellow: #F6D365;
+      --mountain-green: #3F5F45;
+      --light-cream: #F9F6F0;
+      --earth-brown: #6C5340;
+      --dew-white: #F4F7F6;
+      --text-dark: #3A322C;
+      --text-light: #7A6F68;
+    }
+
+    html {
+      background-color: #1a201c;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--light-cream);
+      color: var(--text-dark);
+      font-family: 'Mulish', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.2);
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin: 0;
+    }
+    
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .section {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 24px;
+      min-height: 100vh;
+    }
+
+    .full-vh {
+      min-height: 100vh;
+    }
+    
+    .bg-cream { background-color: var(--light-cream); }
+    .bg-dew { background-color: var(--dew-white); }
+    .bg-earth { background-color: var(--earth-brown); color: var(--light-cream); }
+    .bg-earth h2, .bg-earth p { color: var(--light-cream); }
+
+    ::-webkit-scrollbar { width: 0px; }
+
+    /* PARALLAX EFFECTS */
+    .bg-parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .overlay-dark {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(40, 45, 40, 0.5);
+      z-index: 1;
+    }
+    .overlay-gradient {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(249, 246, 240, 0) 0%, rgba(249, 246, 240, 1) 100%);
+      z-index: 1;
+    }
+
+    /* STORY BLOCKS */
+    .story-block {
+      background: var(--dew-white);
+      border-left: 2px solid var(--mountain-green);
+      padding: 30px 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+    }
+    
+    /* GALLERY */
+    .nature-gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .nature-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 2px;
+      filter: sepia(0.1) contrast(1.05);
+    }
+
+    /* LETTER */
+    .letter-box {
+      background: #FFFFFF;
+      padding: 60px 30px;
+      border: 1px solid rgba(108, 83, 64, 0.2);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.02);
+      position: relative;
+    }
+    .letter-box::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: 50%;
+      transform: translateX(-50%);
+      width: 40px; height: 40px;
+      background: var(--mountain-green);
+      border-radius: 50%;
+      opacity: 0.1;
+    }
+
+    .divider-nature {
+      width: 60px;
+      height: 2px;
+      background-color: var(--mountain-green);
+      margin: 30px 0;
+      opacity: 0.5;
+    }
+    .divider-center {
+      margin: 30px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1 - HERO -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div class="bg-parallax" data-img="img_hero" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0;"></div>
+    <div class="overlay-dark" style="background: rgba(20, 25, 20, 0.6);"></div>
+    
+    <div style="z-index: 2; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 0 30px;">
+      
+      <p style="font-family: 'Mulish', sans-serif; font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--rice-yellow); margin-bottom: 20px;" data-aos="fade-down" data-aos-duration="1500">
+        Câu Chuyện Bình Dị
+      </p>
+
+      <h1 style="font-size: 4.5rem; line-height: 1.1; color: var(--light-cream); margin-bottom: 30px; text-shadow: 0 4px 15px rgba(0,0,0,0.3);" data-aos="zoom-in" data-aos-duration="2000">
+        Mẹ Nơi<br>Núi Rừng
+      </h1>
+      
+      <div style="width: 1px; height: 80px; background-color: var(--light-cream); margin: 0 auto; opacity: 0.5;" data-aos="fade-up" data-aos-delay="400"></div>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 2 - SƯƠNG SỚM -->
+  <section class="section bg-cream">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <img src="" data-img="img_morning" style="width: 100%; height: 350px; object-fit: cover; margin-bottom: 40px; filter: grayscale(20%);" alt="Sương sớm">
+      
+      <h2 style="font-size: 2.4rem; font-style: italic; margin-bottom: 25px;">Sương Sớm Chưa Tan</h2>
+      
+      <div class="divider-nature"></div>
+
+      <p class="font-cormorant" style="font-size: 1.3rem; line-height: 1.9; color: var(--text-dark);">
+        Mẹ thức dậy từ rất sớm.<br>
+        Khi sương mù còn phủ kín những ngọn đồi mờ ảo.<br>
+        Bếp lửa bập bùng cháy, xua đi cái lạnh giá của miền sơn cước.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 3 - ĐÔI TAY -->
+  <section class="section bg-dew">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      
+      <h2 style="font-size: 2.4rem; font-style: italic; margin-bottom: 25px;">Những Ngày Lao Động</h2>
+      
+      <div class="divider-nature"></div>
+
+      <p style="font-size: 1.05rem; line-height: 2; color: var(--text-dark); margin-bottom: 40px;">
+        Đôi tay mẹ đã chai sần vì sương gió, vì những vụ mùa nhọc nhằn trên lưng chừng núi. Không một tiếng than vãn, mẹ lặng lẽ gánh vác cả một bầu trời bình yên cho những đứa con.
+      </p>
+      
+      <img src="" data-img="img_hands" style="width: 100%; height: 300px; object-fit: cover; filter: sepia(0.3);" alt="Đôi tay mẹ">
+      
+    </div>
+  </section>
+
+  <!-- SECTION 4 - GALLERY -->
+  <section class="section bg-cream">
+    <div class="text-center" data-aos="fade-up">
+      <h2 style="font-size: 2.2rem; font-style: italic;">Hơi Thở Của Núi Rừng</h2>
+      <div class="divider-nature divider-center"></div>
+    </div>
+    
+    <div class="nature-gallery">
+      <img src="" data-img="img_gal1" class="nature-img" data-aos="fade-up" alt="Bản làng">
+      <img src="" data-img="img_gal2" class="nature-img" style="height: 200px;" data-aos="fade-up" data-aos-delay="100" alt="Ruộng lúa">
+      <img src="" data-img="img_gal3" class="nature-img" style="height: 300px;" data-aos="fade-up" data-aos-delay="200" alt="Thiên nhiên">
+    </div>
+  </section>
+
+  <!-- SECTION 5 - BỮA CƠM ĐƠN SƠ -->
+  <section class="section bg-earth">
+    <div data-aos="fade-up">
+      <h2 style="font-size: 2.4rem; font-style: italic; margin-bottom: 30px;">Bữa Cơm Đơn Sơ</h2>
+      
+      <img src="" data-img="img_meal" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 30px; opacity: 0.9;" alt="Bữa cơm">
+      
+      <p class="font-cormorant" style="font-size: 1.35rem; line-height: 1.8; margin-bottom: 20px; font-style: italic;">
+        "Mẹ không thích ăn thịt, mẹ chỉ thích ăn cơm chan canh."
+      </p>
+      <p style="font-size: 1.05rem; line-height: 1.9; opacity: 0.8;">
+        Gia tài của mẹ chẳng có gì nhiều ngoài tình thương bao la. Có những ngày cạn hạt gạo, mẹ nhường phần no ấm, phần ngon nhất cho đàn con đang tuổi lớn.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 6 - ĐƯỜNG ĐI HỌC -->
+  <section class="section full-vh bg-parallax" data-img="img_road">
+    <div class="overlay-gradient"></div>
+    <div style="z-index: 2; position: relative; padding-top: 150px;">
+      
+      <div data-aos="fade-up" style="background: rgba(249, 246, 240, 0.9); padding: 40px 25px; border-radius: 4px; margin-top: 100px;">
+        <h2 style="font-size: 2.2rem; font-style: italic; margin-bottom: 20px; color: var(--mountain-green);">Đường Đến Trường</h2>
+        <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-dark);">
+          Những buổi sáng sớm mờ sương, những đoạn đường đèo dốc quanh co, những ngày mưa rừng lạnh buốt. Mẹ dắt tay con băng qua mọi gian khó, chỉ mong con có được cái chữ để thoát khỏi cảnh nghèo của bản làng.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 7 - NHỮNG ĐIỀU CHƯA HIỂU -->
+  <section class="section bg-dew">
+    <div data-aos="fade-up" class="mb-5">
+      <h2 style="font-size: 2.4rem; font-style: italic;">Những Điều Con<br>Chưa Hiểu</h2>
+      <div class="divider-nature"></div>
+    </div>
+    
+    <div class="story-block" data-aos="fade-right">
+      <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--earth-brown);">Vì sao mẹ luôn tiết kiệm?</h3>
+      <p style="font-size: 1rem; line-height: 1.8; margin: 0; color: var(--text-light);">
+        Bộ quần áo cũ mèm vá chằng vá đụp, đôi dép nhựa đã mòn vẹt gót. Mẹ chẳng bao giờ dám mua gì cho mình, để gom góp từng đồng cho con yên tâm theo đuổi con chữ nơi phố thị.
+      </p>
+    </div>
+
+    <div class="story-block" data-aos="fade-right" data-aos-delay="150">
+      <h3 style="font-size: 1.3rem; margin-bottom: 15px; color: var(--earth-brown);">Vì sao mẹ luôn lo lắng?</h3>
+      <p style="font-size: 1rem; line-height: 1.8; margin: 0; color: var(--text-light);">
+        Nơi núi rừng xa xôi, mỗi lần con rời nhà là mỗi lần mẹ tựa cửa ngóng trông. Tình yêu của người mẹ quê nghèo chỉ biết gửi gắm qua những lời dặn dò mộc mạc và những bao gạo nếp gửi xuống xuôi.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 8 - THƯ CẢM ƠN MẸ -->
+  <section class="section bg-cream">
+    <div class="letter-box" data-aos="fade-up" data-aos-duration="1500">
+      <p class="font-cormorant" style="font-size: 1.4rem; font-style: italic; line-height: 2; color: var(--text-dark); margin-bottom: 30px; text-align: center;">
+        Gửi mẹ của con,
+      </p>
+      
+      <p style="font-size: 1.05rem; line-height: 2.2; color: var(--text-light); margin-bottom: 25px;">
+        Giữa chốn phồn hoa đô hội, con bỗng thèm vô cùng mùi khói bếp cay xè mắt, thèm nghe tiếng củi lửa nổ lép bép trong đêm đông giá rét.
+      </p>
+      <p style="font-size: 1.05rem; line-height: 2.2; color: var(--text-light); margin-bottom: 25px;">
+        Cảm ơn mẹ đã sinh ra con giữa đại ngàn, nuôi dưỡng tâm hồn con bằng sự bao dung và mộc mạc của núi rừng. Cảm ơn mẹ vì cả một đời tảo tần sương gió không lời oán than.
+      </p>
+      
+      <div class="divider-nature divider-center" style="width: 40px; margin-top: 40px; margin-bottom: 40px;"></div>
+      
+      <p class="font-cormorant" style="font-size: 1.4rem; font-style: italic; color: var(--text-dark); text-align: center; margin: 0;">
+        Con yêu mẹ rất nhiều.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 9 - LỜI HỨA -->
+  <section class="section bg-dew text-center">
+    <div data-aos="fade-up">
+      <i class="fa-solid fa-seedling" style="font-size: 2.5rem; color: var(--mountain-green); margin-bottom: 30px;"></i>
+      
+      <h2 style="font-size: 2.2rem; font-style: italic; margin-bottom: 30px;">Lời Hứa Của Con</h2>
+      
+      <p class="font-cormorant" style="font-size: 1.4rem; line-height: 1.8; color: var(--text-dark);">
+        Con sẽ giống như mầm cây mọc trên đá,<br>
+        luôn vươn lên và mạnh mẽ như cách mẹ đã dạy con.<br>
+        Để một ngày, con trở thành bóng mát che chở cho mẹ lúc xế chiều.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 10 - KẾT THÚC -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div class="bg-parallax" data-img="img_sunset" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:0; filter: brightness(0.85);"></div>
+    <div class="overlay-dark" style="background: rgba(60, 45, 30, 0.4);"></div>
+    
+    <div style="z-index: 2; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 0 24px;">
+      
+      <h2 class="font-cormorant" style="font-size: 3rem; font-style: italic; line-height: 1.3; color: var(--light-cream); margin-bottom: 50px; text-shadow: 0 4px 20px rgba(0,0,0,0.6);" data-aos="fade-up" data-aos-duration="1500">
+        "Cảm ơn mẹ vì đã dành cả tuổi xuân để yêu thương con."
+      </h2>
+
+      <a href="../../index.html" class="btn btn-outline-light rounded-0 px-5 py-3" style="font-family: 'Mulish', sans-serif; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase;" data-aos="zoom-in" data-aos-delay="800">
+        Trở về
+      </a>
+      
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1000
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
