@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuổi 18 Dưới Ánh Nắng | Kỷ Yếu Điện Ảnh</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Tuổi 18 Dưới Ánh Nắng - Kỷ yếu điện tử điện ảnh">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  <script>
+    const PAGE_IMAGES = {
+      "img1":  "https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2":  "https://images.pexels.com/photos/1462631/pexels-photo-1462631.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3":  "https://images.pexels.com/photos/1648376/pexels-photo-1648376.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4":  "https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5":  "https://images.pexels.com/photos/1462626/pexels-photo-1462626.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img6":  "https://images.pexels.com/photos/3184395/pexels-photo-3184395.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img7":  "https://images.pexels.com/photos/1181403/pexels-photo-1181403.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img8":  "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img9":  "https://images.pexels.com/photos/1181619/pexels-photo-1181619.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img10": "https://images.pexels.com/photos/1231367/pexels-photo-1231367.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img11": "https://images.pexels.com/photos/1453499/pexels-photo-1453499.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img12": "https://images.pexels.com/photos/1462631/pexels-photo-1462631.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img13": "https://images.pexels.com/photos/1462631/pexels-photo-1462631.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+  <style>
+    :root {
+      --cream: #FEFCF7;
+      --sun: #FFF5D6;
+      --sky: #E8F4FD;
+      --peach: #FDF0EC;
+      --film: #F5EFE6;
+      --ink: #1C1917;
+      --muted: #6B6560;
+      --gold: #C9A84C;
+    }
+    html { background: #ddd; overflow-x: hidden; scroll-behavior: smooth; }
+    body {
+      max-width: 480px; margin: 0 auto;
+      background: var(--cream); color: var(--ink);
+      font-family: 'DM Sans', sans-serif; font-weight: 300;
+      overflow-x: hidden; box-shadow: 0 0 60px rgba(0,0,0,.2);
+    }
+    h1,h2,h3 { font-family: 'DM Serif Display', serif; margin: 0; line-height: 1.2; }
+    .hand { font-family: 'Caveat', cursive; }
+    .full-vh { min-height: 100vh; }
+    .pad { padding: 72px 22px; }
+    p { font-size: .92rem; line-height: 1.85; color: var(--muted); }
+    img { display: block; }
+    .bg-img { background-size: cover; background-position: center; }
+
+    /* Film grain overlay */
+    @keyframes grain {
+      0%,100% { transform: translate(0,0); }
+      25% { transform: translate(-1px,1px); }
+      50% { transform: translate(1px,-1px); }
+      75% { transform: translate(-1px,-1px); }
+    }
+    .film-grain::before {
+      content: "";
+      position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
+      opacity: .25; animation: grain 0.5s steps(1) infinite;
+    }
+
+    /* ── S1 HERO ── */
+    .s1 { position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 48px 22px; }
+    .s1::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(255,245,214,.15) 0%, rgba(28,25,23,.8) 100%);
+    }
+    /* Sun flare */
+    .s1::before {
+      content: ""; position: absolute; top: -20%; right: -20%; width: 70%; height: 70%;
+      background: radial-gradient(circle, rgba(255,220,100,.45) 0%, transparent 70%);
+      z-index: 1; pointer-events: none;
+    }
+    .s1-inner { position: relative; z-index: 2; color: #fff; }
+    .s1-label { font-size: .7rem; letter-spacing: 6px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .s1-class { font-size: 5.5rem; font-weight: 700; line-height: .9; letter-spacing: -4px; }
+    .s1-sub { font-family: 'Caveat', cursive; font-size: 1.4rem; margin-top: 14px; opacity: .9; }
+
+    /* ── S2 QUOTE ── */
+    .s2 { background: var(--sun); min-height: 55vh; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .s2 h2 { font-size: 1.9rem; line-height: 1.45; max-width: 88%; font-style: italic; }
+
+    /* ── S3 MORNING ── */
+    .s3 { background: var(--sky); }
+    .s3-img-big { width: 100%; height: 55vw; max-height: 280px; object-fit: cover; border-radius: 0 0 30px 30px; margin-bottom: 35px; }
+    .s3-img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .s3-img-pair img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; }
+
+    /* ── S4 FASHION GALLERY ── */
+    .s4 { background: var(--film); }
+    .fashion { position: relative; height: 620px; }
+    .f-img { position: absolute; object-fit: cover; box-shadow: 0 12px 35px rgba(0,0,0,.12); }
+    .f1 { top: 0; left: 0; width: 70%; height: 340px; border-radius: 4px 4px 80px 4px; }
+    .f2 { top: 100px; right: 0; width: 52%; height: 240px; border-radius: 4px; }
+    .f3 { bottom: 0; left: 8%; width: 84%; height: 200px; border-radius: 4px; }
+    .f-caption { position: absolute; bottom: 12px; right: 8%; font-size: .65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+
+    /* ── S5 FRIENDS ── */
+    .s5 { background: var(--cream); }
+    .friends-scrap { position: relative; height: 540px; }
+    .fr-card {
+      position: absolute; background: white; padding: 10px 10px 28px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.1);
+    }
+    .fr-card img { width: 100%; height: 100%; object-fit: cover; }
+    .fr-card .fr-name { font-family: 'Caveat', cursive; font-size: 1rem; text-align: center; margin-top: 6px; color: var(--ink); }
+    .fr1 { top: 0; left: 4%; width: 55%; height: 220px; transform: rotate(-4deg); }
+    .fr2 { top: 30px; right: 3%; width: 48%; height: 190px; transform: rotate(3deg); }
+    .fr3 { bottom: 20px; left: 12%; width: 50%; height: 200px; transform: rotate(2deg); }
+    .fr4 { bottom: 0; right: 6%; width: 44%; height: 175px; transform: rotate(-3deg); }
+
+    /* ── S6 FUN MOMENTS ── */
+    .s6 { background: var(--peach); }
+    .moments-row { display: flex; gap: 14px; margin-bottom: 14px; }
+    .moments-row img { flex: 1; height: 180px; object-fit: cover; border-radius: 16px; }
+    .moments-row img:first-child { flex: 1.4; }
+
+    /* ── S7 POLAROID GALLERY ── */
+    .s7 { background: var(--sun); }
+    .polar-wrap { display: flex; flex-direction: column; gap: 30px; }
+    .polar {
+      background: white; padding: 12px 12px 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      transform-origin: center;
+      position: relative;
+    }
+    .polar img { width: 100%; height: 220px; object-fit: cover; }
+    .polar .polar-note { font-family: 'Caveat', cursive; font-size: 1.1rem; text-align: center; margin-top: 8px; color: var(--muted); }
+    .polar:nth-child(odd) { transform: rotate(-2.5deg); margin-left: 12px; }
+    .polar:nth-child(even) { transform: rotate(2deg); margin-right: 12px; }
+    /* sticky note */
+    .sticky {
+      position: absolute; top: -18px; right: -10px;
+      background: #fff9c4; padding: 8px 14px;
+      font-family: 'Caveat', cursive; font-size: .9rem;
+      box-shadow: 2px 3px 8px rgba(0,0,0,.1); transform: rotate(4deg);
+    }
+
+    /* ── S8 FULL QUOTE ── */
+    .s8 { position: relative; display: flex; align-items: center; justify-content: center; text-align: center; }
+    .s8::after { content: ""; position: absolute; inset: 0; background: rgba(28,25,23,.55); backdrop-filter: blur(6px); }
+    .s8-inner { position: relative; z-index: 2; padding: 30px; color: #fff; }
+    .s8-inner h2 { font-size: 2rem; line-height: 1.5; font-style: italic; color: rgba(255,255,255,.95); }
+
+    /* ── S9 TEACHERS ── */
+    .s9 { background: var(--sky); text-align: center; }
+    .teacher-img { width: 100%; height: 56vw; max-height: 290px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; }
+
+    /* ── S10 NOTES ── */
+    .s10 { background: var(--cream); }
+    .note-grid { display: flex; flex-direction: column; gap: 20px; }
+    .note-item {
+      background: white; border-left: 3px solid var(--gold);
+      padding: 20px 22px; border-radius: 0 12px 12px 0;
+      box-shadow: 0 5px 18px rgba(0,0,0,.05);
+    }
+    .note-item .from { font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .note-item .msg { font-family: 'Caveat', cursive; font-size: 1.2rem; color: var(--ink); line-height: 1.5; }
+
+    /* ── S11 GOLDEN HOUR ── */
+    .s11 { background: var(--peach); }
+    .golden-img { width: 100%; height: 70vw; max-height: 360px; object-fit: cover; border-radius: 24px; margin-bottom: 30px; box-shadow: 0 25px 60px rgba(201,168,76,.25); }
+
+    /* ── S12 FILM ── */
+    .s12 { background: var(--ink); position: relative; overflow: hidden; }
+    .film-strip { display: flex; flex-direction: column; gap: 4px; }
+    .film-frame { position: relative; overflow: hidden; }
+    .film-frame img { width: 100%; height: 60vw; max-height: 280px; object-fit: cover; filter: sepia(30%) contrast(1.1); }
+    .film-frame::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,220,100,.15) 0%, rgba(120,80,40,.2) 100%);
+    }
+    .film-holes { display: flex; justify-content: space-between; padding: 6px 10px; }
+    .film-holes span { display: block; width: 16px; height: 10px; background: rgba(255,255,255,.15); border-radius: 3px; }
+
+    /* ── S13 ENDING ── */
+    .s13 { position: relative; display: flex; align-items: flex-end; padding-bottom: 60px; }
+    .s13::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,25,23,.9) 0%, rgba(28,25,23,.1) 60%, transparent 100%); }
+    .s13-inner { position: relative; z-index: 2; color: #fff; padding: 0 24px; width: 100%; text-align: center; }
+    .s13-inner h2 { font-size: 1.6rem; line-height: 1.7; font-style: italic; text-transform: none; }
+    .s13-inner .yr { font-size: .7rem; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  </style>
+  <link rel="stylesheet" href="../../assets/css/contact-modal.css">
+</head>
+<body>
+
+  <!-- S1: HERO -->
+  <section class="section s1 full-vh bg-img film-grain" data-img="img1">
+    <div class="s1-inner" data-aos="fade-up" data-aos-duration="1400">
+      <div class="s1-label">Kỷ yếu · 2024 – 2025</div>
+      <h1 class="s1-class">12A1</h1>
+      <div class="s1-sub">Ngày cuối cùng của tuổi 18</div>
+    </div>
+  </section>
+
+  <!-- S2: QUOTE -->
+  <section class="section s2 pad">
+    <h2 data-aos="fade-in" data-aos-duration="1600">
+      "Chúng ta từng nghĩ những ngày này sẽ rất dài..."
+    </h2>
+  </section>
+
+  <!-- S3: MORNING -->
+  <section class="section s3 pad" style="padding-top:0">
+    <img src="" data-img="img2" class="s3-img-big" alt="" data-aos="fade-down">
+    <div class="s3-img-pair">
+      <img src="" data-img="img3" alt="" data-aos="fade-right">
+      <img src="" data-img="img4" alt="" data-aos="fade-left">
+    </div>
+    <p data-aos="fade-up" style="margin-top:24px">Buổi sáng đầu ngày. Hành lang quen thuộc. Tiếng cười quen thuộc.</p>
+  </section>
+
+  <!-- S4: FASHION GALLERY -->
+  <section class="section s4 pad">
+    <h2 style="font-size:1.8rem; margin-bottom:40px" data-aos="fade-in">Bộ ảnh đầu tiên.</h2>
+    <div class="fashion">
+      <img src="" data-img="img5" class="f-img f1" alt="" data-aos="fade-right">
+      <img src="" data-img="img6" class="f-img f2" alt="" data-aos="fade-left" data-aos-delay="150">
+      <img src="" data-img="img7" class="f-img f3" alt="" data-aos="fade-up" data-aos-delay="300">
+      <div class="f-caption" data-aos="fade-in">12A1 · Senior Portrait</div>
+    </div>
+  </section>
+
+  <!-- S5: FRIENDS SCRAPBOOK -->
+  <section class="section s5 pad">
+    <h2 style="font-size:1.8rem; margin-bottom:40px" data-aos="fade-down">Những người bạn.</h2>
+    <div class="friends-scrap" data-aos="fade-in" data-aos-duration="1500">
+      <div class="fr-card fr1"><img src="" data-img="img3" alt=""><div class="fr-name">Minh Anh ✨</div></div>
+      <div class="fr-card fr2"><img src="" data-img="img4" alt=""><div class="fr-name">Thành Đạt 📚</div></div>
+      <div class="fr-card fr3"><img src="" data-img="img5" alt=""><div class="fr-name">Hà Linh 🌸</div></div>
+      <div class="fr-card fr4"><img src="" data-img="img6" alt=""><div class="fr-name">Tuấn Kiệt 🎵</div></div>
+    </div>
+  </section>
+
+  <!-- S6: FUN MOMENTS -->
+  <section class="section s6 pad">
+    <h2 style="font-size:1.8rem; margin-bottom:30px" data-aos="fade-in">Khoảnh khắc vui.</h2>
+    <div class="moments-row" data-aos="fade-up">
+      <img src="" data-img="img7" alt="">
+      <img src="" data-img="img8" alt="">
+    </div>
+    <div class="moments-row" data-aos="fade-up" data-aos-delay="100">
+      <img src="" data-img="img9" alt="">
+      <img src="" data-img="img10" alt="">
+    </div>
+  </section>
+
+  <!-- S7: POLAROID GALLERY -->
+  <section class="section s7 pad">
+    <h2 style="font-size:1.8rem; margin-bottom:40px; text-align:center" data-aos="fade-down">Album Polaroid.</h2>
+    <div class="polar-wrap">
+      <div class="polar" data-aos="fade-up">
+        <div class="sticky">Ngày đẹp nhất!</div>
+        <img src="" data-img="img11" alt="">
+        <div class="polar-note">Chụp lần cuối trước khi tan trường 📸</div>
+      </div>
+      <div class="polar" data-aos="fade-up" data-aos-delay="100">
+        <img src="" data-img="img12" alt="">
+        <div class="polar-note">Bọn mình đã cười nhiều thật 😄</div>
+      </div>
+      <div class="polar" data-aos="fade-up" data-aos-delay="200">
+        <img src="" data-img="img2" alt="">
+        <div class="polar-note">Nhớ mãi khoảnh khắc này 🌿</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8: FULLSCREEN QUOTE -->
+  <section class="section s8 full-vh bg-img" data-img="img8">
+    <div class="s8-inner" data-aos="zoom-in" data-aos-duration="2000">
+      <h2>"Rồi sẽ có ngày chúng ta nhớ về hôm nay."</h2>
+    </div>
+  </section>
+
+  <!-- S9: TEACHERS -->
+  <section class="section s9 pad">
+    <img src="" data-img="img9" class="teacher-img" alt="" data-aos="fade-up" data-aos-duration="1500">
+    <h2 style="font-size:2rem; margin-bottom:16px" data-aos="fade-up">Thầy cô kính yêu.</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Ba năm được dạy dỗ, chỉ bảo — chúng em sẽ mang theo mãi không chỉ kiến thức mà còn là tấm lòng của thầy cô.</p>
+  </section>
+
+  <!-- S10: NOTES -->
+  <section class="section s10 pad">
+    <h2 style="font-size:1.8rem; margin-bottom:35px" data-aos="fade-in">Những điều muốn nói.</h2>
+    <div class="note-grid">
+      <div class="note-item" data-aos="fade-right">
+        <div class="from">Minh Anh</div>
+        <div class="msg">Cảm ơn vì đã luôn ở đó mỗi khi mình cần. Bạn là thứ tốt nhất mình gặp được ở trường này.</div>
+      </div>
+      <div class="note-item" data-aos="fade-right" data-aos-delay="100">
+        <div class="from">Hà Linh</div>
+        <div class="msg">Tụi mình hứa sẽ gặp lại nhau — dù mỗi người sẽ đi theo một con đường khác.</div>
+      </div>
+      <div class="note-item" data-aos="fade-right" data-aos-delay="200">
+        <div class="from">Tuấn Kiệt</div>
+        <div class="msg">12A1 mãi là nhà. Không biết ở đâu cũng nhớ về chỗ này.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S11: GOLDEN HOUR -->
+  <section class="section s11 pad">
+    <img src="" data-img="img10" class="golden-img" alt="" data-aos="zoom-in" data-aos-duration="1500">
+    <h2 style="font-size:2rem; margin-bottom:16px; text-align:center" data-aos="fade-up">Hoàng hôn sân trường.</h2>
+    <p data-aos="fade-up" data-aos-delay="100" style="text-align:center">Buổi chiều cuối — ánh nắng như muốn ở lại thêm một chút.</p>
+  </section>
+
+  <!-- S12: FILM -->
+  <section class="section s12 pad film-grain">
+    <h2 style="font-size:1.8rem; margin-bottom:35px; color:rgba(255,255,255,.85); text-align:center" data-aos="fade-in">Những khung phim cuối.</h2>
+    <div class="film-strip">
+      <div class="film-holes"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="film-frame" data-aos="fade-up"><img src="" data-img="img11" alt=""></div>
+      <div class="film-holes"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="film-frame" data-aos="fade-up" data-aos-delay="100"><img src="" data-img="img12" alt=""></div>
+      <div class="film-holes"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+  </section>
+
+  <!-- S13: ENDING -->
+  <section class="section s13 full-vh bg-img" data-img="img13">
+    <div class="s13-inner" data-aos="fade-up" data-aos-duration="2500">
+      <div class="yr">12A1 · 2022 – 2025</div>
+      <h2>"Có những người chỉ xuất hiện vài năm.<br>Nhưng ở lại trong ký ức cả một đời."</h2>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, offset: 60, duration: 950 });
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const src = PAGE_IMAGES[el.getAttribute("data-img")];
+        if (!src) return;
+        if (el.tagName.toLowerCase() === "img") el.src = src;
+        else el.style.backgroundImage = `url('${src}')`;
+      });
+    });
+  </script>
+  <script src="../../assets/js/contact-modal.js"></script>
+</body>
+</html>

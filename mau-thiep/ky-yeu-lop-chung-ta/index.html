@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lớp Chúng Ta | Kỷ Yếu Thanh Xuân</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Lớp Chúng Ta - Kỷ yếu điện tử thanh xuân">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+
+  <script>
+    const PAGE_IMAGES = {
+      "img1":  "https://images.pexels.com/photos/1462631/pexels-photo-1462631.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2":  "https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3":  "https://images.pexels.com/photos/1648376/pexels-photo-1648376.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4":  "https://images.pexels.com/photos/3184395/pexels-photo-3184395.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5":  "https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img6":  "https://images.pexels.com/photos/1462626/pexels-photo-1462626.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img7":  "https://images.pexels.com/photos/1181403/pexels-photo-1181403.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img8":  "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img9":  "https://images.pexels.com/photos/1181619/pexels-photo-1181619.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img10": "https://images.pexels.com/photos/1231367/pexels-photo-1231367.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img11": "https://images.pexels.com/photos/1462631/pexels-photo-1462631.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img12": "https://images.pexels.com/photos/1453499/pexels-photo-1453499.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+
+  <style>
+    :root {
+      --cream: #FDFAF5;
+      --sky: #D6EAF8;
+      --sun: #FFF3CD;
+      --pink: #FCE4EC;
+      --gray: #F0F0F0;
+      --ink: #1A1A2E;
+      --ink-soft: #5A5A7A;
+      --gold: #D4A843;
+    }
+
+    html { background: #eee; overflow-x: hidden; scroll-behavior: smooth; }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      box-shadow: 0 0 60px rgba(0,0,0,0.15);
+    }
+
+    h1,h2,h3 { font-family: 'Playfair Display', serif; margin: 0; }
+    .hand { font-family: 'Caveat', cursive; }
+    .full-vh { min-height: 100vh; }
+    .pad-sec { padding: 70px 22px; }
+    p { line-height: 1.8; color: var(--ink-soft); font-size: 0.92rem; }
+
+    .bg-img { background-size: cover; background-position: center; background-repeat: no-repeat; }
+
+    /* ── S1 HERO ── */
+    .s1 {
+      position: relative;
+      display: flex; flex-direction: column;
+      justify-content: flex-end; align-items: flex-start;
+      padding: 50px 24px;
+    }
+    .s1::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,46,.85) 0%, rgba(26,26,46,.2) 60%, transparent 100%);
+    }
+    .s1-content { position: relative; z-index: 2; color: #fff; }
+    .s1-class {
+      font-size: 5rem; font-weight: 700; line-height: 1;
+      color: #fff; letter-spacing: -2px;
+    }
+    .s1-tagline {
+      font-family: 'Caveat', cursive; font-size: 1.5rem;
+      color: rgba(255,255,255,.85); margin-top: 8px;
+    }
+    .s1-year {
+      font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--gold); margin-top: 20px;
+    }
+
+    /* ── S2 OPENING ── */
+    .s2 { background: var(--sky); text-align: center; }
+    .s2-img {
+      width: 100%; height: 55vw; max-height: 260px;
+      object-fit: cover; border-radius: 0 0 40px 40px;
+      margin-bottom: 40px;
+    }
+    .s2-title { font-size: 2.2rem; line-height: 1.3; }
+
+    /* ── S3 DAILY LIFE ── */
+    .s3 { background: var(--cream); }
+    .s3-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .s3-grid img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; }
+    .s3-grid img:first-child { grid-column: 1 / -1; height: 240px; }
+
+    /* ── S4 SCRAPBOOK ── */
+    .s4 { background: var(--sun); }
+    .scrap-title { font-size: 2rem; text-align: center; margin-bottom: 40px; }
+    .scrap-board { position: relative; height: 580px; }
+    .scrap-photo {
+      position: absolute;
+      background: white;
+      padding: 10px 10px 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,.1);
+    }
+    .scrap-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .scrap-photo .note {
+      font-family: 'Caveat', cursive;
+      font-size: 0.85rem; color: var(--ink-soft);
+      text-align: center; margin-top: 5px;
+    }
+    .sp1 { top: 0; left: 5%; width: 58%; height: 200px; transform: rotate(-3deg); }
+    .sp2 { top: 60px; right: 3%; width: 48%; height: 170px; transform: rotate(4deg); }
+    .sp3 { top: 280px; left: 8%; width: 50%; height: 180px; transform: rotate(2deg); }
+    .sp4 { top: 330px; right: 5%; width: 45%; height: 160px; transform: rotate(-2deg); }
+    .sticky-note {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%) rotate(-1deg);
+      background: #fff9c4; padding: 12px 18px; font-family: 'Caveat', cursive;
+      font-size: 1rem; color: var(--ink); box-shadow: 2px 3px 8px rgba(0,0,0,.12);
+      white-space: nowrap;
+    }
+
+    /* ── S5 FRIENDS ── */
+    .s5 { background: var(--pink); }
+    .friend-wrap { display: flex; flex-direction: column; gap: 25px; }
+    .friend-card {
+      background: white; border-radius: 18px; overflow: hidden;
+      display: flex; align-items: center; gap: 18px;
+      padding: 16px; box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    }
+    .friend-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .friend-info h4 { font-size: 1.1rem; margin-bottom: 4px; }
+    .friend-info p { margin: 0; font-size: 0.85rem; }
+
+    /* ── S6 ACTIVITIES ── */
+    .s6 { background: var(--cream); }
+    .act-img { width: 100%; height: 60vw; max-height: 300px; object-fit: cover; border-radius: 20px; margin-bottom: 25px; }
+
+    /* ── S7 PINTEREST GALLERY ── */
+    .s7 { background: var(--gray); }
+    .pint-grid { columns: 2; column-gap: 12px; }
+    .pint-grid div { break-inside: avoid; margin-bottom: 12px; }
+    .pint-grid img { width: 100%; border-radius: 12px; display: block; }
+
+    /* ── S8 QUOTES ── */
+    .s8 { background: var(--ink); color: white; }
+    .quote-block { margin-bottom: 50px; }
+    .quote-block .qtext {
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: 1.6rem; line-height: 1.5; color: rgba(255,255,255,.9);
+    }
+    .quote-block .qsource {
+      font-family: 'Caveat', cursive; font-size: 1rem;
+      color: var(--gold); margin-top: 12px;
+    }
+    .quote-divider { width: 40px; height: 2px; background: var(--gold); margin: 35px 0; }
+
+    /* ── S9 TEACHERS ── */
+    .s9 { background: var(--sky); text-align: center; }
+    .teacher-img { width: 100%; height: 65vw; max-height: 320px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; }
+
+    /* ── S10 DREAMS ── */
+    .s10 {
+      background: linear-gradient(135deg, var(--sky) 0%, var(--pink) 100%);
+      text-align: center;
+    }
+    .dream-title { font-size: 2.8rem; line-height: 1.2; }
+    .dream-subs { margin-top: 30px; display: flex; flex-direction: column; gap: 15px; }
+    .dream-item {
+      background: rgba(255,255,255,.7); backdrop-filter: blur(10px);
+      border-radius: 12px; padding: 16px 22px; text-align: left;
+    }
+    .dream-item .label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 5px; }
+    .dream-item .val { font-family: 'Caveat', cursive; font-size: 1.3rem; color: var(--ink); }
+
+    /* ── S11 GOODBYE ── */
+    .s11 { background: var(--cream); text-align: center; min-height: 60vh; display: flex; flex-direction: column; justify-content: center; }
+    .bye-img { width: 80%; height: 55vw; max-height: 280px; object-fit: cover; border-radius: 100px 100px 20px 20px; margin: 0 auto 35px; display: block; box-shadow: 0 20px 50px rgba(0,0,0,.1); }
+    .bye-title { font-size: 2.5rem; }
+
+    /* ── S12 ENDING ── */
+    .s12 {
+      position: relative;
+      display: flex; align-items: flex-end;
+      padding-bottom: 60px;
+    }
+    .s12::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,26,46,.9) 0%, rgba(26,26,46,.1) 60%, transparent 100%);
+    }
+    .s12-text { position: relative; z-index: 2; color: white; padding: 0 24px; width: 100%; text-align: center; }
+    .s12-text h2 { font-size: 1.5rem; line-height: 1.6; font-style: italic; text-transform: none; color: rgba(255,255,255,.95); }
+    .s12-text .school { font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 15px; }
+  </style>
+  <link rel="stylesheet" href="../../assets/css/contact-modal.css">
+</head>
+<body>
+
+  <!-- S1: HERO -->
+  <section class="section s1 full-vh bg-img" data-img="img1">
+    <div class="s1-content" data-aos="fade-up" data-aos-duration="1200">
+      <div class="s1-year">Trường THPT Nguyễn Huệ · 2024</div>
+      <h1 class="s1-class">12A1</h1>
+      <div class="s1-tagline">Thanh xuân của chúng ta</div>
+    </div>
+  </section>
+
+  <!-- S2: OPENING -->
+  <section class="section s2 pad-sec" style="padding-top:0">
+    <img src="" data-img="img2" class="s2-img" alt="Lớp học" data-aos="fade-down" data-aos-duration="1000">
+    <h2 class="s2-title" data-aos="fade-up">Ngày đầu tiên gặp nhau.</h2>
+    <p data-aos="fade-up" data-aos-delay="100" style="margin-top:16px; color: var(--ink-soft)">
+      Chẳng ai biết rằng những người xa lạ ngồi chung một phòng hôm ấy sẽ trở thành một phần ký ức không thể xóa nhòa.
+    </p>
+  </section>
+
+  <!-- S3: DAILY LIFE -->
+  <section class="section s3 pad-sec">
+    <h2 style="font-size:2rem; margin-bottom:30px;" data-aos="fade-in">Những trò nghịch ngợm.</h2>
+    <div class="s3-grid">
+      <img src="" data-img="img3" alt="" data-aos="fade-up">
+      <img src="" data-img="img4" alt="" data-aos="fade-up" data-aos-delay="100">
+      <img src="" data-img="img5" alt="" data-aos="fade-up" data-aos-delay="200">
+    </div>
+  </section>
+
+  <!-- S4: SCRAPBOOK -->
+  <section class="section s4 pad-sec">
+    <h2 class="scrap-title" data-aos="fade-down">Sổ lưu bút.</h2>
+    <div class="scrap-board" data-aos="fade-in" data-aos-duration="1500">
+      <div class="scrap-photo sp1">
+        <img src="" data-img="img6" alt="">
+        <div class="note">Giờ ra chơi 😄</div>
+      </div>
+      <div class="scrap-photo sp2">
+        <img src="" data-img="img7" alt="">
+        <div class="note">Best squad</div>
+      </div>
+      <div class="scrap-photo sp3">
+        <img src="" data-img="img8" alt="">
+        <div class="note">Giờ thể dục 🏃</div>
+      </div>
+      <div class="scrap-photo sp4">
+        <img src="" data-img="img9" alt="">
+        <div class="note">Mà thôi kệ đi ✌️</div>
+      </div>
+      <div class="sticky-note">Nhớ lớp mình lắm...</div>
+    </div>
+  </section>
+
+  <!-- S5: FRIENDS -->
+  <section class="section s5 pad-sec">
+    <h2 style="font-size:2rem; margin-bottom:30px;" data-aos="fade-down">Những người bạn đáng nhớ.</h2>
+    <div class="friend-wrap">
+      <div class="friend-card" data-aos="fade-right">
+        <img src="" data-img="img3" alt="">
+        <div class="friend-info">
+          <h4>Nguyễn Minh Anh</h4>
+          <p>Lớp trưởng bất đắc dĩ, chưa bao giờ đúng giờ một lần nào.</p>
+        </div>
+      </div>
+      <div class="friend-card" data-aos="fade-right" data-aos-delay="100">
+        <img src="" data-img="img5" alt="">
+        <div class="friend-info">
+          <h4>Trần Thị Lan</h4>
+          <p>Người cười nhiều nhất lớp, khóc cũng nhiều nhất ngày bế giảng.</p>
+        </div>
+      </div>
+      <div class="friend-card" data-aos="fade-right" data-aos-delay="200">
+        <img src="" data-img="img7" alt="">
+        <div class="friend-info">
+          <h4>Lê Văn Đức</h4>
+          <p>Bao giờ cũng có câu chuyện hài để kể lúc buồn ngủ nhất.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: ACTIVITIES -->
+  <section class="section s6 pad-sec">
+    <h2 style="font-size:2rem; margin-bottom:25px;" data-aos="fade-up">Những lần cùng cố gắng.</h2>
+    <img src="" data-img="img10" class="act-img" alt="" data-aos="zoom-in" data-aos-duration="1200">
+    <p data-aos="fade-up">Có những buổi chiều cùng tập văn nghệ đến quên cả về. Có những kỳ thi cùng ôn bài đến nửa đêm. Tất cả đều là thanh xuân.</p>
+  </section>
+
+  <!-- S7: PINTEREST GALLERY -->
+  <section class="section s7 pad-sec">
+    <h2 style="font-size:2rem; margin-bottom:30px;" data-aos="fade-down">Album thanh xuân.</h2>
+    <div class="pint-grid">
+      <div data-aos="fade-up"><img src="" data-img="img11" alt=""></div>
+      <div data-aos="fade-up" data-aos-delay="100"><img src="" data-img="img4" alt=""></div>
+      <div data-aos="fade-up" data-aos-delay="200"><img src="" data-img="img8" alt=""></div>
+      <div data-aos="fade-up" data-aos-delay="300"><img src="" data-img="img6" alt=""></div>
+      <div data-aos="fade-up" data-aos-delay="400"><img src="" data-img="img2" alt=""></div>
+      <div data-aos="fade-up" data-aos-delay="500"><img src="" data-img="img9" alt=""></div>
+    </div>
+  </section>
+
+  <!-- S8: QUOTES -->
+  <section class="section s8 pad-sec">
+    <div class="quote-block" data-aos="fade-up">
+      <div class="qtext">"Đừng hỏi tụi mình học được gì – hỏi tụi mình cười được mấy lần."</div>
+      <div class="qsource">— 12A1, mãi mãi</div>
+    </div>
+    <div class="quote-divider"></div>
+    <div class="quote-block" data-aos="fade-up" data-aos-delay="100">
+      <div class="qtext">"Tình bạn đích thực là lúc chép bài nhau mà vẫn sai hết."</div>
+      <div class="qsource">— Ban cán sự lớp</div>
+    </div>
+    <div class="quote-divider"></div>
+    <div class="quote-block" data-aos="fade-up" data-aos-delay="200">
+      <div class="qtext">"Năm học cuối, chúng ta đã sống hết mình."</div>
+      <div class="qsource">— Cả lớp 12A1</div>
+    </div>
+  </section>
+
+  <!-- S9: TEACHERS -->
+  <section class="section s9 pad-sec">
+    <img src="" data-img="img12" class="teacher-img" alt="Thầy cô" data-aos="fade-up" data-aos-duration="1500">
+    <h2 style="font-size:2rem; margin-bottom:16px;" data-aos="fade-up">Thầy cô kính yêu.</h2>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Cảm ơn thầy cô đã không chỉ dạy chúng em bài học trong sách vở, mà còn dạy chúng em cách yêu thương và trân trọng từng ngày tháng.
+    </p>
+  </section>
+
+  <!-- S10: DREAMS -->
+  <section class="section s10 pad-sec">
+    <h2 class="dream-title" data-aos="zoom-in">Những ước mơ<br>phía trước.</h2>
+    <div class="dream-subs" data-aos="fade-up" data-aos-delay="200">
+      <div class="dream-item">
+        <div class="label">Mình sẽ trở thành</div>
+        <div class="val">Những người trưởng thành can đảm ✨</div>
+      </div>
+      <div class="dream-item">
+        <div class="label">Mình sẽ không quên</div>
+        <div class="val">Những ngày tháng ngồi đây cùng nhau 🌿</div>
+      </div>
+      <div class="dream-item">
+        <div class="label">Mình hẹn nhau</div>
+        <div class="val">10 năm sau gặp lại, kể chuyện cho nhau nghe 🎓</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S11: GOODBYE -->
+  <section class="section s11 pad-sec">
+    <img src="" data-img="img11" class="bye-img" alt="Chia tay" data-aos="fade-up" data-aos-duration="1500">
+    <h2 class="bye-title" data-aos="fade-up">Ngày chia tay.</h2>
+    <p data-aos="fade-up" data-aos-delay="100" style="margin-top:16px; max-width:340px; margin-left:auto; margin-right:auto; text-align:center;">
+      Ai cũng cố cười thật tươi. Nhưng mắt thì đỏ hoe.
+    </p>
+  </section>
+
+  <!-- S12: ENDING -->
+  <section class="section s12 full-vh bg-img" data-img="img1">
+    <div class="s12-text" data-aos="fade-up" data-aos-duration="2000">
+      <div class="school">12A1 · 2022 – 2025</div>
+      <h2>"Có thể sau này mỗi người một nơi, nhưng thanh xuân ấy sẽ luôn ở đây."</h2>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, offset: 60, duration: 950 });
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const src = PAGE_IMAGES[el.getAttribute("data-img")];
+        if (!src) return;
+        if (el.tagName.toLowerCase() === "img") el.src = src;
+        else el.style.backgroundImage = `url('${src}')`;
+      });
+    });
+  </script>
+  <script src="../../assets/js/contact-modal.js"></script>
+</body>
+</html>

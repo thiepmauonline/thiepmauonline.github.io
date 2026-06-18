@@ -22,8 +22,8 @@ function getRootPath() {
 async function loadSharedComponents() {
   const rootPath = getRootPath();
 
-  // 1. Mặc định tải social-buttons.html vào tất cả các trang
-  if (!document.getElementById('social-buttons-wrapper')) {
+  // 1. Chỉ tải social-buttons.html ở trang chủ (kiểm tra phần tử đặc trưng .hero-home)
+  if (document.querySelector('.hero-home') && !document.getElementById('social-buttons-wrapper')) {
     const socialWrapper = document.createElement('div');
     socialWrapper.id = 'social-buttons-wrapper';
     document.body.appendChild(socialWrapper);

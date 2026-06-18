@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golden Hour Wedding | Cinematic & Luxury</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Golden Hour Wedding - Mẫu thiệp cưới điện ảnh cao cấp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500&family=Alex+Brush&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg?auto=compress&cs=tinysrgb&w=800", // Hero
+      "img2": "https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg?auto=compress&cs=tinysrgb&w=800", // S3 Golden Light
+      "img3": "https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800", // S4 Gal
+      "img4": "https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=800", // S4 Gal
+      "img5": "https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800", // S4 Gal
+      "img6": "https://images.pexels.com/photos/2567221/pexels-photo-2567221.jpeg?auto=compress&cs=tinysrgb&w=800", // S5 Moments
+      "img7": "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800", // S5 Moments
+      "img8": "https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=800", // S6 Quote bg
+      "img9": "https://images.pexels.com/photos/3356058/pexels-photo-3356058.jpeg?auto=compress&cs=tinysrgb&w=800", // S7 Gal II
+      "img10": "https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=800", // S7 Gal II
+      "img11": "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800", // S8 Promise bg
+      "img12": "https://images.pexels.com/photos/19609200/pexels-photo-19609200.jpeg?auto=compress&cs=tinysrgb&w=800", // S10 Celebration
+      "img13": "https://images.pexels.com/photos/2480828/pexels-photo-2480828.jpeg?auto=compress&cs=tinysrgb&w=800"  // S12 Ending
+    };
+  </script>
+
+  <style>
+    :root {
+      --warm-white: #FFF8F0;
+      --champagne: #F7E7CE;
+      --soft-gold: #E8C4A2;
+      --beige: #F3D9C1;
+      --dusty-pink: #EFCFC4;
+      --dark-typo: #2D2A26;
+    }
+    
+    html {
+      background-color: #000;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: var(--warm-white);
+      color: var(--dark-typo);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+      margin: 0;
+      color: var(--dark-typo);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .script {
+      font-family: 'Alex Brush', cursive;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+
+    .full-vh { min-height: 100vh; }
+    .pad-sec { padding: 80px 24px; }
+    
+    p {
+      line-height: 1.8;
+      font-size: 0.95rem;
+      color: var(--dark-typo);
+      opacity: 0.85;
+    }
+
+    .bg-img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* BOKEH EFFECT */
+    .bokeh {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,196,162,0.8) 0%, rgba(232,196,162,0) 70%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      filter: blur(8px);
+      z-index: 1;
+    }
+    @keyframes floatBokeh {
+      0% { transform: translateY(0) scale(1); opacity: 0.3; }
+      50% { transform: translateY(-50px) scale(1.2); opacity: 0.7; }
+      100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    }
+
+    /* S1 HERO */
+    .s1-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--warm-white);
+    }
+    .s1-hero::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(to bottom, rgba(45,42,38,0.2) 0%, rgba(45,42,38,0.7) 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      z-index: 2;
+      padding: 20px;
+    }
+    .hero-names {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--champagne);
+      text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      text-transform: none;
+      letter-spacing: 1px;
+    }
+
+    /* S2 OPENING */
+    .s2-opening {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 50vh;
+      background-color: var(--warm-white);
+    }
+    .open-text {
+      font-size: 1.6rem;
+      line-height: 1.6;
+      font-style: italic;
+      text-transform: none;
+      max-width: 90%;
+      color: var(--dark-typo);
+    }
+
+    /* S3 GOLDEN LIGHT */
+    .s3-golden {
+      position: relative;
+    }
+    .s3-golden::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(135deg, rgba(232,196,162,0.4) 0%, rgba(0,0,0,0) 100%);
+      mix-blend-mode: overlay;
+    }
+
+    /* S4 GALLERY I */
+    .s4-gallery {
+      background-color: var(--champagne);
+    }
+    .gal-layout {
+      position: relative;
+      height: 650px;
+    }
+    .gal-img-1 {
+      position: absolute;
+      top: 0; left: 0;
+      width: 75%;
+      height: 350px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .gal-img-2 {
+      position: absolute;
+      top: 150px; right: 0;
+      width: 55%;
+      height: 250px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+    .gal-img-3 {
+      position: absolute;
+      bottom: 0; left: 10%;
+      width: 80%;
+      height: 220px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* S5 MOMENTS */
+    .s5-moments {
+      background-color: var(--beige);
+    }
+    .moment-card {
+      background: var(--warm-white);
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 40px;
+      box-shadow: 0 15px 35px rgba(45,42,38,0.05);
+    }
+    .moment-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .moment-card p {
+      text-align: center;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    /* S6 QUOTE */
+    .s6-quote {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .s6-quote::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: rgba(45,42,38,0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1;
+    }
+    .quote-wrap {
+      z-index: 2;
+      padding: 30px;
+      color: var(--warm-white);
+    }
+    .quote-wrap h2 {
+      font-size: 2rem;
+      line-height: 1.5;
+      text-transform: none;
+      color: var(--soft-gold);
+    }
+
+    /* S7 GALLERY II */
+    .s7-editorial {
+      background-color: var(--warm-white);
+    }
+    .ed-img {
+      width: 100%;
+      height: 60vh;
+      object-fit: cover;
+      margin-bottom: 30px;
+    }
+    .ed-text {
+      text-align: right;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: var(--soft-gold);
+      margin-bottom: 50px;
+    }
+
+    /* S8 THE PROMISE */
+    .s8-promise {
+      background-color: var(--dusty-pink);
+      position: relative;
+      text-align: center;
+    }
+    .s8-promise::before {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(to bottom, rgba(255,248,240,0.8), rgba(255,248,240,0.9));
+    }
+    .promise-content {
+      position: relative;
+      z-index: 2;
+    }
+    .promise-title {
+      font-size: 3rem;
+      color: var(--dark-typo);
+      margin-bottom: 30px;
+    }
+    .promise-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* S9 WEDDING DAY */
+    .s9-info {
+      background-color: var(--champagne);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      position: relative;
+    }
+    .info-card {
+      background: rgba(255, 248, 240, 0.5);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 248, 240, 0.8);
+      padding: 50px 30px;
+      text-align: center;
+      width: 85%;
+    }
+    .info-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 40px;
+      color: var(--dark-typo);
+    }
+    .info-item {
+      margin-bottom: 30px;
+    }
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      color: var(--soft-gold);
+      margin-bottom: 5px;
+    }
+    .info-value {
+      font-size: 1.4rem;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* S10 CELEBRATION */
+    .s10-celebration {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 60px;
+    }
+    .s10-celebration::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(to top, rgba(45,42,38,0.9), transparent);
+      z-index: 1;
+    }
+    .cel-text {
+      position: relative;
+      z-index: 2;
+      color: var(--warm-white);
+      text-align: center;
+      width: 100%;
+    }
+    .cel-text h2 {
+      color: var(--soft-gold);
+      font-size: 2.5rem;
+    }
+
+    /* S11 THANK YOU */
+    .s11-thanks {
+      background-color: var(--warm-white);
+      text-align: center;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .thanks-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* S12 ENDING */
+    .s12-ending {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .s12-ending::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: radial-gradient(circle, rgba(45,42,38,0.3) 0%, rgba(45,42,38,0.8) 100%);
+      z-index: 1;
+    }
+    .ending-content {
+      position: relative;
+      z-index: 2;
+      color: var(--warm-white);
+    }
+    .ending-text {
+      font-size: 1.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.6;
+      text-shadow: 0 5px 20px rgba(0,0,0,0.8);
+      font-style: italic;
+      text-transform: none;
+    }
+  </style>
+  <link rel="stylesheet" href="../../assets/css/contact-modal.css">
+</head>
+<body>
+
+  <!-- S1: HERO -->
+  <section class="section s1-hero full-vh bg-img" data-img="img1" id="hero-sec">
+    <div class="hero-content" data-aos="fade-in" data-aos-duration="2500">
+      <h1 class="hero-names">HẠNH ĐINHO<br>&<br>THỊ MY</h1>
+      <div class="hero-tagline">A Beautiful Beginning</div>
+    </div>
+  </section>
+
+  <!-- S2: OPENING -->
+  <section class="section s2-opening pad-sec">
+    <h2 class="open-text" data-aos="fade-up" data-aos-duration="1500">
+      "Giữa hàng triệu người,<br>chúng ta đã tìm thấy nhau."
+    </h2>
+  </section>
+
+  <!-- S3: GOLDEN LIGHT -->
+  <section class="section s3-golden full-vh bg-img" data-img="img2" data-aos="fade-in" data-aos-duration="2000"></section>
+
+  <!-- S4: GALLERY I -->
+  <section class="section s4-gallery pad-sec">
+    <h2 class="text-center mb-5" data-aos="fade-down" style="color: var(--dark-typo);">Moments</h2>
+    <div class="gal-layout">
+      <img src="" data-img="img3" class="gal-img-1" alt="Gal 1" data-aos="fade-right" data-aos-duration="1000">
+      <img src="" data-img="img4" class="gal-img-2" alt="Gal 2" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
+      <img src="" data-img="img5" class="gal-img-3" alt="Gal 3" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+    </div>
+  </section>
+
+  <!-- S5: MOMENTS -->
+  <section class="section s5-moments pad-sec">
+    <div class="moment-card" data-aos="fade-up">
+      <img src="" data-img="img6" alt="Moment 1">
+      <p>Nụ cười của em là ánh hoàng hôn rực rỡ nhất.</p>
+    </div>
+    <div class="moment-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="" data-img="img7" alt="Moment 2">
+      <p>Sự bình yên khi tựa vào vai nhau.</p>
+    </div>
+  </section>
+
+  <!-- S6: FULLSCREEN QUOTE -->
+  <section class="section s6-quote full-vh bg-img" data-img="img8">
+    <div class="quote-wrap" data-aos="zoom-in" data-aos-duration="2000">
+      <h2>"Tình yêu không phải là nhìn vào nhau.<br>Mà là cùng nhìn về một hướng."</h2>
+    </div>
+  </section>
+
+  <!-- S7: GALLERY II -->
+  <section class="section s7-editorial pad-sec">
+    <h2 class="text-center mb-5" data-aos="fade-down">The Journey</h2>
+    <img src="" data-img="img9" class="ed-img" alt="Editorial 1" data-aos="fade-up" data-aos-duration="1500">
+    <div class="ed-text" data-aos="fade-left">CHAPTER I</div>
+    <img src="" data-img="img10" class="ed-img" alt="Editorial 2" data-aos="fade-up" data-aos-duration="1500">
+    <div class="ed-text" data-aos="fade-left">CHAPTER II</div>
+  </section>
+
+  <!-- S8: THE PROMISE -->
+  <section class="section s8-promise pad-sec bg-img" data-img="img11">
+    <div class="promise-content" data-aos="fade-up" data-aos-duration="1500">
+      <h2 class="promise-title script">The Vows</h2>
+      <p class="promise-text">
+        Anh hứa sẽ luôn là người nắm tay em đi qua mọi giông bão, là nơi bình yên nhất để em trở về sau những ngày dài.
+      </p>
+    </div>
+  </section>
+
+  <!-- S9: WEDDING DAY -->
+  <section class="section s9-info">
+    <div class="info-card" data-aos="zoom-in" data-aos-duration="1500">
+      <h3>Wedding Day</h3>
+      <div class="info-item">
+        <div class="info-label">DATE</div>
+        <div class="info-value">Saturday, 14.12.2026</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">TIME</div>
+        <div class="info-value">17:30 PM</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">VENUE</div>
+        <div class="info-value">Luxury Palace<br><span style="font-size:1rem; font-family:'Montserrat', sans-serif;">123 Nguyen Van Cu, D5</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S10: CELEBRATION -->
+  <section class="section s10-celebration full-vh bg-img" data-img="img12" id="celeb-sec">
+    <div class="cel-text" data-aos="fade-up">
+      <h2 class="script">Celebration</h2>
+      <p style="color: var(--warm-white);">Cùng nâng ly cho một khởi đầu mới.</p>
+    </div>
+  </section>
+
+  <!-- S11: THANK YOU -->
+  <section class="section s11-thanks pad-sec">
+    <h2 class="thanks-title" data-aos="fade-down">Trân trọng Cảm ơn</h2>
+    <p data-aos="fade-up">
+      Sự hiện diện và những lời chúc phúc của gia đình, bạn bè là món quà vô giá nhất trong ngày vui của chúng tôi.
+    </p>
+  </section>
+
+  <!-- S12: ENDING -->
+  <section class="section s12-ending full-vh bg-img" data-img="img13" id="end-sec">
+    <div class="ending-content" data-aos="fade-in" data-aos-duration="3000">
+      <h2 class="ending-text">"Và từ hôm nay, chúng ta là gia đình."</h2>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, offset: 50, duration: 1000 });
+    
+    // Load Images
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+
+      // Create Bokeh Effects
+      function createBokeh(containerId, count) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        for (let i = 0; i < count; i++) {
+          const b = document.createElement("div");
+          b.classList.add("bokeh");
+          
+          const size = Math.random() * 60 + 20; // 20-80px
+          const left = Math.random() * 100;
+          const top = Math.random() * 100;
+          const duration = Math.random() * 5 + 3; // 3-8s
+          const delay = Math.random() * 3;
+          
+          b.style.width = `${size}px`;
+          b.style.height = `${size}px`;
+          b.style.left = `${left}%`;
+          b.style.top = `${top}%`;
+          b.style.animation = `floatBokeh ${duration}s ease-in-out ${delay}s infinite`;
+          
+          container.appendChild(b);
+        }
+      }
+
+      // Add Bokeh to specific sections
+      createBokeh('hero-sec', 15);
+      createBokeh('celeb-sec', 20);
+      createBokeh('end-sec', 20);
+    });
+  </script>
+  <script src="../../assets/js/contact-modal.js"></script>
+</body>
+</html>

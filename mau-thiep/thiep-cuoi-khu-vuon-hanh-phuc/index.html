@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Khu Vườn Hạnh Phúc | Dreamy Korean Wedding</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Khu Vườn Hạnh Phúc - Khu vườn tình yêu lãng mạn">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2": "https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3": "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4": "https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5": "https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img6": "https://images.pexels.com/photos/2567221/pexels-photo-2567221.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img7": "https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img8": "https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img9": "https://images.pexels.com/photos/2480828/pexels-photo-2480828.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img10": "https://images.pexels.com/photos/3356058/pexels-photo-3356058.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img11": "https://images.pexels.com/photos/1024340/pexels-photo-1024340.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img12": "https://images.pexels.com/photos/19609200/pexels-photo-19609200.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+
+  <style>
+    :root {
+      --pink-pastel: #FFF0F5;
+      --peach: #FFE4E1;
+      --cream: #FFFDF9;
+      --champagne: #F5E6D3;
+      --sun-yellow: #FFF9E6;
+      --text: #5A4A42;
+      --text-light: #8C7B73;
+      --pink-deep: #E8AAB1;
+    }
+    
+    html {
+      background-color: #f7f7f7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(255, 182, 193, 0.2);
+      position: relative;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Lora', serif;
+      margin: 0;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .cursive {
+      font-family: 'Great Vibes', cursive;
+      color: var(--pink-deep);
+    }
+
+    .full-vh { min-height: 100vh; }
+    .pad-sec { padding: 80px 24px; }
+    
+    p {
+      line-height: 1.8;
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .bg-img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Effects */
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      z-index: 10;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+    @keyframes fallDown {
+      0% { transform: translateY(-10vh) rotate(0deg) translateX(0); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { transform: translateY(100vh) rotate(360deg) translateX(50px); opacity: 0; }
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+    .bubble {
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0) 70%);
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: floatUp 8s linear infinite;
+    }
+    .petal {
+      background-color: rgba(255, 182, 193, 0.4);
+      border-radius: 150% 0 150% 0;
+      animation: fallDown 10s linear infinite;
+    }
+    .sparkle {
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px 2px rgba(255,255,255,0.8);
+      animation: twinkle 3s ease-in-out infinite;
+    }
+
+    /* S1 HERO */
+    .s1-hero {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .s1-hero::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(to bottom, rgba(255,240,245,0.2), rgba(255,228,225,0.6));
+      z-index: 1;
+    }
+    .hero-content {
+      z-index: 2;
+      padding: 20px;
+      width: 100%;
+    }
+    .hero-title {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 10px;
+      color: var(--text);
+      text-shadow: 0 2px 10px rgba(255,255,255,0.8);
+    }
+    .hero-tagline {
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: var(--text);
+      background: rgba(255,255,255,0.6);
+      padding: 8px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 30px;
+      backdrop-filter: blur(5px);
+    }
+
+    /* S2 INTRO */
+    .s2-intro {
+      background: linear-gradient(135deg, var(--cream), var(--pink-pastel));
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50vh;
+    }
+    .s2-intro p {
+      font-size: 1.2rem;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--text);
+      max-width: 85%;
+    }
+
+    /* S3 FIRST PHOTO */
+    .s3-first {
+      background-color: var(--peach);
+      text-align: center;
+    }
+    .first-img {
+      width: 90%;
+      height: 60vh;
+      object-fit: cover;
+      border-radius: 30px 30px 100px 30px;
+      box-shadow: 0 20px 40px rgba(232, 170, 177, 0.4);
+      margin: 0 auto;
+      display: block;
+      border: 8px solid white;
+    }
+
+    /* S4 REASONS */
+    .s4-reasons {
+      background-color: var(--cream);
+      position: relative;
+    }
+    .reason-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 10px 30px rgba(255, 228, 225, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    .reason-card::before {
+      content: "";
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 80px; height: 80px;
+      background: var(--pink-pastel);
+      border-radius: 50%;
+      z-index: 0;
+    }
+    .reason-card h4 {
+      position: relative;
+      z-index: 1;
+      font-size: 1.3rem;
+      color: var(--pink-deep);
+      margin-bottom: 10px;
+    }
+    .reason-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+
+    /* S5 GALLERY */
+    .s5-gallery {
+      background-color: var(--sun-yellow);
+    }
+    .gal-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .gal-img {
+      width: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    .gal-large { height: 350px; }
+    .gal-small { height: 200px; width: 80%; align-self: flex-end; }
+    .gal-small-2 { height: 250px; width: 70%; align-self: flex-start; }
+
+    /* S6 QUOTE */
+    .s6-quote {
+      background: var(--pink-pastel);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50vh;
+    }
+    .big-quote {
+      font-size: 2.2rem;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    /* S7 PINTEREST ALBUM */
+    .s7-pinterest {
+      background-color: var(--cream);
+    }
+    .masonry {
+      column-count: 2;
+      column-gap: 15px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 15px;
+    }
+    .masonry-item img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    /* S8 INFO */
+    .s8-info {
+      background: url('https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .s8-info::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: rgba(255, 253, 249, 0.4);
+    }
+    .glass-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 25px;
+      padding: 50px 30px;
+      text-align: center;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .glass-card h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: var(--pink-deep);
+    }
+    .info-row {
+      margin-bottom: 20px;
+    }
+    .info-row span {
+      display: block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-light);
+      margin-bottom: 5px;
+    }
+    .info-row strong {
+      font-family: 'Lora', serif;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* S9 MOMENTS */
+    .s9-magazine {
+      background-color: var(--cream);
+      padding: 0;
+    }
+    .mag-img {
+      width: 100%;
+      height: 70vh;
+      object-fit: cover;
+      display: block;
+    }
+    .mag-text-wrap {
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    /* S10 THANKS */
+    .s10-thanks {
+      background-color: var(--champagne);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 40vh;
+    }
+    .s10-thanks h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    /* S11 HIGHLIGHT */
+    .s11-highlight {
+      background-color: var(--pink-pastel);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hl-img {
+      width: 85%;
+      height: 60vh;
+      object-fit: cover;
+      border-radius: 200px 200px 0 0;
+      border: 10px solid white;
+      border-bottom: none;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 -10px 30px rgba(232, 170, 177, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* S12 ENDING */
+    .s12-ending {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .s12-ending::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.8));
+      z-index: 1;
+    }
+    .end-content {
+      z-index: 2;
+      padding: 20px;
+    }
+    .end-text {
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: var(--text);
+      text-shadow: 0 0 20px rgba(255,255,255,1);
+    }
+  </style>
+  <link rel="stylesheet" href="../../assets/css/contact-modal.css">
+</head>
+<body>
+
+  <!-- S1: HERO -->
+  <section class="section s1-hero full-vh bg-img" data-img="img1" id="hero-sec">
+    <div class="hero-content" data-aos="zoom-in" data-aos-duration="2000">
+      <h1 class="hero-title cursive" style="font-size: 4.5rem;">Hạnh<br>&<br>Thị My</h1>
+      <div class="hero-tagline">Chúng mình sắp về chung một nhà.</div>
+    </div>
+  </section>
+
+  <!-- S2: INTRO -->
+  <section class="section s2-intro pad-sec">
+    <p data-aos="fade-up">
+      Bước vào khu vườn của chúng mình, nơi tình yêu được ươm mầm từ những điều giản dị nhất, lớn lên qua những ngày tháng bình yên, và nở rộ vào ngày hôm nay.
+    </p>
+  </section>
+
+  <!-- S3: FIRST PHOTO -->
+  <section class="section s3-first pad-sec">
+    <img src="" data-img="img2" class="first-img" alt="First look" data-aos="fade-up" data-aos-duration="1500">
+  </section>
+
+  <!-- S4: REASONS -->
+  <section class="section s4-reasons pad-sec">
+    <h2 class="text-center cursive mb-5" style="font-size: 3rem;" data-aos="fade-in">Mảnh ghép hoàn hảo</h2>
+    
+    <div class="reason-card" data-aos="fade-right">
+      <h4>Sự đồng điệu</h4>
+      <p>Có thể ngồi cùng nhau hàng giờ chỉ để nghe chung một bản nhạc mà không cần nói lời nào.</p>
+    </div>
+    
+    <div class="reason-card" data-aos="fade-left" data-aos-delay="100">
+      <h4>Tiếng cười</h4>
+      <p>Luôn biết cách chọc ghẹo nhau và làm cho ngày dài trở nên nhẹ nhõm hơn bao giờ hết.</p>
+    </div>
+  </section>
+
+  <!-- S5: GALLERY -->
+  <section class="section s5-gallery pad-sec">
+    <div class="gal-wrap">
+      <img src="" data-img="img3" class="gal-img gal-large" alt="Gallery" data-aos="fade-up">
+      <img src="" data-img="img4" class="gal-img gal-small" alt="Gallery" data-aos="fade-up">
+      <img src="" data-img="img5" class="gal-img gal-small-2" alt="Gallery" data-aos="fade-up">
+    </div>
+  </section>
+
+  <!-- S6: QUOTE -->
+  <section class="section s6-quote pad-sec">
+    <h2 class="cursive big-quote" data-aos="zoom-in" data-aos-duration="1500">
+      "Giữa hàng triệu người,<br>chúng ta đã tìm thấy nhau."
+    </h2>
+  </section>
+
+  <!-- S7: PINTEREST ALBUM -->
+  <section class="section s7-pinterest pad-sec">
+    <div class="masonry">
+      <div class="masonry-item" data-aos="fade-up"><img src="" data-img="img6" alt="Pic"></div>
+      <div class="masonry-item" data-aos="fade-up" data-aos-delay="100"><img src="" data-img="img7" alt="Pic"></div>
+      <div class="masonry-item" data-aos="fade-up" data-aos-delay="200"><img src="" data-img="img8" alt="Pic"></div>
+      <div class="masonry-item" data-aos="fade-up" data-aos-delay="300"><img src="" data-img="img9" alt="Pic"></div>
+    </div>
+  </section>
+
+  <!-- S8: INFO -->
+  <section class="section s8-info full-vh">
+    <div class="glass-card" data-aos="fade-up" data-aos-duration="1500">
+      <h2 class="cursive">Lễ Cưới</h2>
+      <div class="info-row">
+        <span>Ngày</span>
+        <strong>Thứ Bảy, 14.12.2026</strong>
+      </div>
+      <div class="info-row">
+        <span>Thời gian</span>
+        <strong>17:30 PM</strong>
+      </div>
+      <div class="info-row">
+        <span>Địa điểm</span>
+        <strong>Khu Vườn Tình Yêu</strong>
+        <p style="font-size:0.85rem; margin-top:5px; color: var(--text);">Số 123 Đường Cổ Tích, Phường Hoa, Quận Lá</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S9: MOMENTS -->
+  <section class="section s9-magazine">
+    <img src="" data-img="img10" class="mag-img" alt="Moment" data-aos="fade-in" data-aos-duration="1500">
+    <div class="mag-text-wrap" data-aos="fade-up">
+      <h3 class="cursive" style="font-size: 2.5rem; margin-bottom: 10px;">Khoảnh khắc</h3>
+      <p>Lưu giữ trọn vẹn từng cái chạm, từng ánh mắt để làm hành trang cho những ngày tháng sau này.</p>
+    </div>
+  </section>
+
+  <!-- S10: THANKS -->
+  <section class="section s10-thanks pad-sec">
+    <h2 class="cursive" data-aos="fade-down">Trân trọng Cảm ơn</h2>
+    <p data-aos="fade-up">
+      Cảm ơn bạn đã là một đóa hoa xinh đẹp góp mặt trong khu vườn hạnh phúc của chúng mình ngày hôm nay.
+    </p>
+  </section>
+
+  <!-- S11: HIGHLIGHT -->
+  <section class="section s11-highlight pad-sec" style="padding-bottom: 0;" id="highlight-sec">
+    <img src="" data-img="img11" class="hl-img" alt="Highlight" data-aos="fade-up" data-aos-duration="1500">
+  </section>
+
+  <!-- S12: ENDING -->
+  <section class="section s12-ending full-vh bg-img" data-img="img12" id="end-sec">
+    <div class="end-content" data-aos="zoom-in" data-aos-duration="2000">
+      <h2 class="end-text">Từ hôm nay, mọi mùa trong cuộc đời đều có nhau.</h2>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, offset: 50, duration: 1000 });
+    
+    // Load Images
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+
+      // Create Particle Effects
+      function createParticles(containerId, type, count) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement("div");
+          p.classList.add("particle", type);
+          
+          // Random properties
+          const size = Math.random() * 15 + 5; // 5 to 20px
+          const left = Math.random() * 100; // 0 to 100%
+          const delay = Math.random() * 5; // 0 to 5s
+          const duration = Math.random() * 5 + 5; // 5 to 10s
+          
+          p.style.width = `${size}px`;
+          p.style.height = `${size}px`;
+          p.style.left = `${left}%`;
+          p.style.animationDelay = `${delay}s`;
+          
+          if(type === 'bubble' || type === 'petal') {
+            p.style.animationDuration = `${duration}s`;
+          }
+          
+          if (type === 'petal') {
+            p.style.top = `-20px`;
+          }
+          
+          container.appendChild(p);
+        }
+      }
+
+      // Add effects to Hero
+      createParticles('hero-sec', 'bubble', 15);
+      createParticles('hero-sec', 'sparkle', 20);
+      createParticles('hero-sec', 'petal', 10);
+      
+      // Add effects to Highlight & End
+      createParticles('highlight-sec', 'bubble', 10);
+      createParticles('end-sec', 'bubble', 20);
+      createParticles('end-sec', 'sparkle', 30);
+    });
+  </script>
+  <script src="../../assets/js/contact-modal.js"></script>
+</body>
+</html>

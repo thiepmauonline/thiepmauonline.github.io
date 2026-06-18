@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hành Trình Chúng Ta | Cinematic Wedding</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Từ hai người xa lạ đến một mái nhà - Câu chuyện của Hạnh Đinho và Thị My">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img1": "https://images.pexels.com/photos/19609201/pexels-photo-19609201.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img2": "https://images.pexels.com/photos/175568/pexels-photo-175568.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img3": "https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img4": "https://images.pexels.com/photos/1045541/pexels-photo-1045541.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img5": "https://images.pexels.com/photos/2088166/pexels-photo-2088166.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img6": "https://images.pexels.com/photos/1381679/pexels-photo-1381679.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img7": "https://images.pexels.com/photos/2567221/pexels-photo-2567221.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img8": "https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img9": "https://images.pexels.com/photos/2811089/pexels-photo-2811089.jpeg?auto=compress&cs=tinysrgb&w=400",
+      "img10": "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img11": "https://images.pexels.com/photos/1024340/pexels-photo-1024340.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img12": "https://images.pexels.com/photos/3317433/pexels-photo-3317433.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img13": "https://images.pexels.com/photos/19609200/pexels-photo-19609200.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+
+  <style>
+    :root {
+      --cream: #FDFBF7;
+      --champagne: #F4EBD0;
+      --gold: #C5A880;
+      --beige: #E8DCC4;
+      --brown: #8B7355;
+      --black: #1A1A1A;
+    }
+    
+    html {
+      background-color: #000;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      background-color: var(--cream);
+      color: var(--black);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      position: relative;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Cormorant Garamond', serif;
+      margin: 0;
+      color: var(--black);
+    }
+
+    .cinzel { font-family: 'Cinzel', serif; letter-spacing: 2px; }
+    .script-font { font-family: 'Pinyon Script', cursive; }
+    
+    .section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .full-vh { min-height: 100vh; }
+    .pad-sec { padding: 80px 24px; }
+    
+    p {
+      line-height: 1.8;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .bg-img {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* S1 HERO */
+    .s1-hero {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--cream);
+      position: relative;
+    }
+    .s1-hero::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: linear-gradient(to bottom, rgba(26,26,26,0.3), rgba(26,26,26,0.7));
+      z-index: 1;
+    }
+    .hero-content {
+      z-index: 2;
+      padding: 20px;
+      width: 100%;
+    }
+    .hero-subtitle {
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+      color: var(--champagne);
+    }
+    .hero-names {
+      font-size: 3.2rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--cream);
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .hero-heart {
+      font-size: 1.5rem;
+      display: block;
+      margin: 15px 0;
+      color: var(--gold);
+    }
+    .hero-tagline {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-top: 40px;
+      opacity: 0.9;
+    }
+
+    /* S2 LỜI MỞ ĐẦU */
+    .s2-intro {
+      background-color: var(--cream);
+      text-align: center;
+      justify-content: center;
+      min-height: 60vh;
+    }
+    .s2-intro p {
+      font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--brown);
+      font-size: 1.4rem;
+      line-height: 1.8;
+      max-width: 85%;
+      margin: 0 auto;
+    }
+
+    /* S3 NGÀY ĐẦU TIÊN */
+    .s3-first-day {
+      background-color: #fff;
+    }
+    .s3-img {
+      width: 100%;
+      height: 65vh;
+      object-fit: cover;
+      margin-bottom: 30px;
+    }
+    .s3-title {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    /* S4 NHỮNG KHOẢNH KHẮC ĐẸP */
+    .s4-gallery {
+      background-color: var(--beige);
+    }
+    .gallery-title {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .mag-layout {
+      position: relative;
+      height: 600px;
+    }
+    .mag-img-1 {
+      position: absolute;
+      top: 0; left: 0;
+      width: 70%;
+      height: 300px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .mag-img-2 {
+      position: absolute;
+      top: 200px; right: 0;
+      width: 60%;
+      height: 250px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+    .mag-img-3 {
+      position: absolute;
+      bottom: 0; left: 10%;
+      width: 80%;
+      height: 200px;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* S5 CHẶNG ĐƯỜNG ĐỒNG HÀNH */
+    .s5-journey {
+      background-color: var(--cream);
+    }
+    .journey-block {
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+    }
+    .journey-block.right {
+      align-items: flex-end;
+      text-align: right;
+    }
+    .journey-block.left {
+      align-items: flex-start;
+      text-align: left;
+    }
+    .journey-img {
+      width: 80%;
+      height: 280px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .journey-year {
+      font-size: 1.5rem;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      margin-bottom: 5px;
+    }
+    .journey-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--black);
+      max-width: 80%;
+    }
+
+    /* S6 NHỮNG ĐIỀU CHÚNG TA YÊU */
+    .s6-hobbies {
+      background-color: var(--brown);
+      color: var(--cream);
+      position: relative;
+    }
+    .s6-hobbies::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: url('https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+      opacity: 0.15;
+    }
+    .hobby-card {
+      background: rgba(253, 251, 247, 0.05);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(253, 251, 247, 0.1);
+      padding: 30px 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hobby-card h4 {
+      color: var(--champagne);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .hobby-card p {
+      color: rgba(253, 251, 247, 0.8);
+      margin: 0;
+    }
+
+    /* S7 ALBUM ẢNH */
+    .s7-album {
+      background-color: var(--black);
+      padding: 0;
+    }
+    .album-img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      position: sticky;
+      top: 0;
+    }
+
+    /* S8 KHOẢNH KHẮC CẦU HÔN */
+    .s8-proposal {
+      background-color: var(--cream);
+      text-align: center;
+    }
+    .proposal-img {
+      width: 100%;
+      height: 50vh;
+      object-fit: cover;
+      margin: 40px 0;
+    }
+    .proposal-title {
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    /* S9 THƯ GỬI NHAU */
+    .s9-letters {
+      background-color: var(--beige);
+    }
+    .letter-block {
+      background: var(--cream);
+      padding: 40px 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .letter-block::before {
+      content: '"';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 6rem;
+      color: var(--champagne);
+      position: absolute;
+      top: -10px; left: 20px;
+      line-height: 1;
+    }
+    .letter-text {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 1.8rem;
+      line-height: 1.6;
+      color: var(--brown);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .letter-author {
+      text-align: right;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--black);
+    }
+
+    /* S10 THÔNG TIN LỄ CƯỚI */
+    .s10-info {
+      background-color: #fff;
+      text-align: center;
+      min-height: 70vh;
+      display: flex;
+      justify-content: center;
+    }
+    .info-wrapper {
+      border: 1px solid var(--gold);
+      padding: 50px 30px;
+      width: 100%;
+    }
+    .info-title {
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+    }
+    .info-detail {
+      margin-bottom: 30px;
+    }
+    .info-detail h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .info-detail p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: var(--black);
+      margin: 0;
+    }
+
+    /* S11 LỜI CẢM ƠN */
+    .s11-thanks {
+      background-color: var(--champagne);
+      text-align: center;
+      justify-content: center;
+      min-height: 50vh;
+    }
+    .thanks-title {
+      font-size: 2.5rem;
+      font-style: italic;
+      color: var(--brown);
+      margin-bottom: 20px;
+    }
+
+    /* S12 KẾT THÚC */
+    .s12-ending {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: var(--black);
+    }
+    .s12-ending::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: radial-gradient(circle, rgba(253,251,247,0.4) 0%, rgba(253,251,247,0.9) 100%);
+      z-index: 1;
+    }
+    .ending-content {
+      z-index: 2;
+      padding: 20px;
+    }
+    .ending-text {
+      font-size: 1.6rem;
+      font-family: 'Cormorant Garamond', serif;
+      line-height: 1.6;
+      text-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+  </style>
+  <link rel="stylesheet" href="../../assets/css/contact-modal.css">
+</head>
+<body>
+
+  <!-- S1: HERO -->
+  <section class="section s1-hero full-vh bg-img" data-img="img1">
+    <div class="hero-content" data-aos="fade-in" data-aos-duration="2000">
+      <div class="hero-subtitle">The Wedding Celebration</div>
+      <h1 class="hero-names">
+        Hạnh Đinho<br>
+        <span class="hero-heart">❤️</span>
+        Thị My
+      </h1>
+      <div class="hero-tagline">"Từ hai người xa lạ đến một mái nhà."</div>
+    </div>
+  </section>
+
+  <!-- S2: LỜI MỞ ĐẦU -->
+  <section class="section s2-intro pad-sec">
+    <p data-aos="fade-up">
+      Có những cuộc gặp gỡ nhẹ nhàng như hơi thở, nhưng lại đủ sức mạnh để thay đổi cả một đời người. Gặp được nhau giữa hàng vạn người, đó chính là điều kỳ diệu nhất.
+    </p>
+  </section>
+
+  <!-- S3: NGÀY ĐẦU TIÊN -->
+  <section class="section s3-first-day pad-sec">
+    <img src="" data-img="img2" class="s3-img" alt="Ngày đầu tiên" data-aos="fade-up">
+    <h2 class="s3-title" data-aos="fade-right">Lần đầu tiên chúng ta gặp nhau...</h2>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Mọi thứ diễn ra thật tự nhiên. Một nụ cười, một ánh mắt, và ta biết rằng câu chuyện này sẽ không chỉ dừng lại ở trang đầu tiên.
+    </p>
+  </section>
+
+  <!-- S4: NHỮNG KHOẢNH KHẮC ĐẸP -->
+  <section class="section s4-gallery pad-sec">
+    <h2 class="gallery-title cinzel" data-aos="fade-in">Gallery</h2>
+    <div class="mag-layout">
+      <img src="" data-img="img3" class="mag-img-1" alt="Gallery 1" data-aos="fade-right">
+      <img src="" data-img="img4" class="mag-img-2" alt="Gallery 2" data-aos="fade-left" data-aos-delay="100">
+      <img src="" data-img="img5" class="mag-img-3" alt="Gallery 3" data-aos="fade-up" data-aos-delay="200">
+    </div>
+  </section>
+
+  <!-- S5: CHẶNG ĐƯỜNG ĐỒNG HÀNH -->
+  <section class="section s5-journey pad-sec">
+    <div class="journey-block left" data-aos="fade-up">
+      <img src="" data-img="img6" class="journey-img" alt="Milestone 1">
+      <div class="journey-year">2021</div>
+      <div class="journey-text">Chuyến đi đầu tiên, những cái nắm tay đầy bỡ ngỡ.</div>
+    </div>
+    <div class="journey-block right" data-aos="fade-up">
+      <img src="" data-img="img7" class="journey-img" alt="Milestone 2">
+      <div class="journey-year">2023</div>
+      <div class="journey-text">Cùng nhau vượt qua những giông bão, thấu hiểu và yêu thương trọn vẹn hơn.</div>
+    </div>
+  </section>
+
+  <!-- S6: NHỮNG ĐIỀU CHÚNG TA YÊU -->
+  <section class="section s6-hobbies pad-sec">
+    <h2 class="cinzel text-center mb-5" style="color: var(--cream);" data-aos="fade-down">Things We Love</h2>
+    
+    <div class="hobby-card" data-aos="zoom-in">
+      <h4>Hoàng hôn</h4>
+      <p>Cùng nhau ngắm mặt trời lặn sau những giờ làm việc mệt nhoài.</p>
+    </div>
+    
+    <div class="hobby-card" data-aos="zoom-in" data-aos-delay="100">
+      <h4>Cà phê sáng</h4>
+      <p>Bắt đầu ngày mới bằng hương vị quen thuộc và những câu chuyện không hồi kết.</p>
+    </div>
+  </section>
+
+  <!-- S7: ALBUM ẢNH -->
+  <section class="section s7-album">
+    <img src="" data-img="img10" class="album-img" alt="Album 1">
+    <img src="" data-img="img11" class="album-img" alt="Album 2">
+  </section>
+
+  <!-- S8: KHOẢNH KHẮC CẦU HÔN -->
+  <section class="section s8-proposal pad-sec">
+    <h2 class="proposal-title" data-aos="fade-down">She Said<br>Yes</h2>
+    <img src="" data-img="img12" class="proposal-img" alt="Cầu hôn" data-aos="fade-in" data-aos-duration="1500">
+    <p data-aos="fade-up">"Làm vợ anh nhé!" - Khoảnh khắc mà thời gian như ngừng trôi, chỉ còn lại những giọt nước mắt hạnh phúc.</p>
+  </section>
+
+  <!-- S9: THƯ GỬI NHAU -->
+  <section class="section s9-letters pad-sec">
+    <div class="letter-block" data-aos="fade-right">
+      <div class="letter-text">"Cảm ơn em đã đến, mang theo ánh sáng và sự bình yên cho cuộc đời anh."</div>
+      <div class="letter-author">- Chú rể</div>
+    </div>
+    
+    <div class="letter-block" data-aos="fade-left">
+      <div class="letter-text">"Anh là trạm dừng chân an toàn nhất, là nơi em thuộc về."</div>
+      <div class="letter-author">- Cô dâu</div>
+    </div>
+  </section>
+
+  <!-- S10: THÔNG TIN LỄ CƯỚI -->
+  <section class="section s10-info pad-sec">
+    <div class="info-wrapper" data-aos="zoom-in">
+      <h2 class="info-title cinzel">Lễ Thành Hôn</h2>
+      
+      <div class="info-detail">
+        <h5>Ngày</h5>
+        <p>Thứ Bảy, 14.12.2026</p>
+      </div>
+      
+      <div class="info-detail">
+        <h5>Thời gian</h5>
+        <p>17:30 PM</p>
+      </div>
+      
+      <div class="info-detail">
+        <h5>Địa điểm</h5>
+        <p>Luxury Palace<br><span style="font-size: 0.9rem; font-family: 'Montserrat', sans-serif;">123 Nguyễn Văn Cừ, Quận 5</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- S11: LỜI CẢM ƠN -->
+  <section class="section s11-thanks pad-sec">
+    <div data-aos="fade-up">
+      <h2 class="thanks-title">Trân trọng Cảm ơn</h2>
+      <p>Sự hiện diện của gia đình, bạn bè và những người thân yêu là mảnh ghép hoàn hảo nhất cho ngày trọng đại của chúng tôi.</p>
+    </div>
+  </section>
+
+  <!-- S12: KẾT THÚC -->
+  <section class="section s12-ending full-vh bg-img" data-img="img13">
+    <div class="ending-content" data-aos="fade-in" data-aos-duration="2000">
+      <div class="ending-text">"Và từ hôm nay, hành trình mới<br>chính thức bắt đầu."</div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: false, offset: 50, duration: 1000 });
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+    });
+  </script>
+  <script src="../../assets/js/contact-modal.js"></script>
+</body>
+</html>
