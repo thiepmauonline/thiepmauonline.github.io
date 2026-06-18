@@ -71,6 +71,7 @@
         </button>
         <nav class="nav-links" data-nav-menu>
           <a href="#mau-thiep">Mẫu thiệp</a>
+          <a href="#bang-gia">Bảng giá</a>
           <a href="#lien-he">Liên hệ</a>
         </nav>
       </div>
@@ -610,6 +611,143 @@
       </div>
     </section>
   </main>
+
+  <!-- PRICING SECTION -->
+  <section id="bang-gia" style="background:linear-gradient(160deg,#0f0c29,#302b63,#24243e);padding:80px 0;position:relative;overflow:hidden;">
+    <!-- Glow orbs -->
+    <div style="position:absolute;top:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(138,43,226,.3),transparent 70%);pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-80px;right:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(255,140,0,.2),transparent 70%);pointer-events:none;"></div>
+
+    <style>
+      .pricing-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      @media (min-width: 768px) {
+        .pricing-grid { grid-template-columns: repeat(3, 1fr); align-items: start; }
+      }
+      .p-card {
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 22px;
+        padding: 32px 26px;
+        position: relative;
+        backdrop-filter: blur(12px);
+        transition: transform .25s;
+      }
+      .p-card:hover { transform: translateY(-4px); }
+      .p-card.featured {
+        background: linear-gradient(145deg,#7c3aed,#4f46e5);
+        border: none;
+        box-shadow: 0 24px 70px rgba(124,58,237,.45);
+      }
+      .p-card.gold-card { border-color: rgba(255,165,0,.3); }
+      .p-badge {
+        position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+        background: #f0d080; color: #1a1a1a;
+        font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+        padding: 5px 18px; border-radius: 30px; white-space: nowrap;
+      }
+      .p-icon {
+        width: 46px; height: 46px; border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 18px; font-size: 1.1rem;
+      }
+      .p-label { font-size: .68rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+      .p-price { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: #fff; line-height: 1.1; margin-bottom: 4px; }
+      .p-price-note { font-size: .78rem; margin-bottom: 22px; }
+      .p-ul { list-style: none; padding: 0; margin: 0 0 26px; display: flex; flex-direction: column; gap: 10px; }
+      .p-ul li { font-size: .88rem; display: flex; align-items: flex-start; gap: 9px; }
+      .p-ul li i { margin-top: 2px; flex-shrink: 0; }
+      .p-btns { display: flex; gap: 10px; }
+      .p-btn {
+        flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px;
+        padding: 11px 8px; border-radius: 11px; font-size: .82rem; font-weight: 500;
+        text-decoration: none; transition: all .2s; border: 1px solid transparent;
+      }
+      .p-btn-zalo { background: #0068FF; color: #fff; }
+      .p-btn-zalo:hover { background: #0056d2; color: #fff; }
+      .p-btn-fb  { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.2); }
+      .p-btn-fb:hover  { background: rgba(255,255,255,.2); color: #fff; }
+      .p-btn-fb-featured { background: #fff; color: #4f46e5; }
+      .p-btn-fb-featured:hover { opacity: .9; color: #4f46e5; }
+    </style>
+
+    <div class="container-wide" style="position:relative;z-index:2;">
+      <!-- Header -->
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span style="display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#f0d080;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;padding:6px 18px;border-radius:30px;margin-bottom:16px;">Dịch vụ</span>
+        <h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;color:#fff;margin-bottom:12px;">Bảng Giá</h2>
+        <p style="color:rgba(255,255,255,.6);max-width:520px;margin:0 auto;font-size:.95rem;">Bạn chỉ cần chọn mẫu và cung cấp thông tin — chúng tôi lo phần còn lại và gửi mã QR trong vài giờ.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- GÓI 1: CƠ BẢN -->
+        <div class="p-card">
+          <div class="p-icon" style="background:rgba(167,139,250,.15);">
+            <i class="fa-solid fa-envelope-open-text" style="color:#a78bfa;"></i>
+          </div>
+          <div class="p-label" style="color:rgba(255,255,255,.45);">Gói cơ bản</div>
+          <div class="p-price">80k – 120k</div>
+          <div class="p-price-note" style="color:rgba(255,255,255,.4);">Phù hợp cho thiệp đơn giản</div>
+          <ul class="p-ul">
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#a78bfa;"></i>Chọn 1 mẫu có sẵn</li>
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#a78bfa;"></i>Đổi ảnh, thông tin theo yêu cầu</li>
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#a78bfa;"></i>Mã QR - Mở online</li>
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#a78bfa;"></i>Giao trong 2–4 giờ</li>
+          </ul>
+         
+        </div>
+
+        <!-- GÓI 2: CÁ NHÂN HÓA (FEATURED) -->
+        <div class="p-card featured">
+          <div class="p-badge">⭐ Phổ biến nhất</div>
+          <div class="p-icon" style="background:rgba(255,255,255,.2);">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color:#fff;"></i>
+          </div>
+          <div class="p-label" style="color:rgba(255,255,255,.6);">Cá nhân hóa</div>
+          <div class="p-price">200k – 300k</div>
+          <div class="p-price-note" style="color:rgba(255,255,255,.5);">Thay ảnh thật, chỉnh màu theo ý</div>
+          <ul class="p-ul">
+            <li style="color:rgba(255,255,255,.92);"><i class="fa-solid fa-check" style="color:#fde68a;"></i>Chọn mẫu, đổi ảnh, thông tin</li>
+            <li style="color:rgba(255,255,255,.92);"><i class="fa-solid fa-check" style="color:#fde68a;"></i>Chỉnh màu sắc, font theo yêu cầu</li>
+            <li style="color:rgba(255,255,255,.92);"><i class="fa-solid fa-check" style="color:#fde68a;"></i>Mã QR riêng + link chia sẻ</li>
+            <li style="color:rgba(255,255,255,.92);"><i class="fa-solid fa-check" style="color:#fde68a;"></i>Giao trong 12–24 giờ</li>
+          </ul>
+         
+        </div>
+
+        <!-- GÓI 3: ĐẶC BIỆT -->
+        <div class="p-card gold-card">
+          <div class="p-icon" style="background:rgba(251,191,36,.12);">
+            <i class="fa-solid fa-crown" style="color:#fbbf24;"></i>
+          </div>
+          <div class="p-label" style="color:rgba(255,165,0,.7);">Thiết kế riêng</div>
+          <div class="p-price">400k – 700k</div>
+          <div class="p-price-note" style="color:rgba(255,255,255,.4);">Tuỳ độ phức tạp theo yêu cầu</div>
+          <ul class="p-ul">
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#fbbf24;"></i>Thiết kế mới hoàn toàn theo ý tưởng</li>
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#fbbf24;"></i>Không giới hạn chỉnh sửa</li>
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#fbbf24;"></i>Mã QR cao cấp + link chia sẻ MXH</li>
+            <li style="color:rgba(255,255,255,.75);"><i class="fa-solid fa-check" style="color:#fbbf24;"></i>Hỗ trợ ưu tiên, giao 2–3 ngày</li>
+          </ul>
+          
+        </div>
+
+      </div>
+
+      <!-- Bottom note -->
+      <p data-aos="fade-up" data-aos-delay="300" style="text-align:center;color:rgba(255,255,255,.35);font-size:.8rem;margin-top:40px;padding:0 20px;">
+        <i class="fa-solid fa-shield-halved" style="margin-right:6px;"></i>
+        Mở được trên mọi điện thoại &nbsp;·&nbsp; Không cần cài app &nbsp;·&nbsp; Hoạt động vĩnh viễn
+      </p>
+    </div>
+  </section>
 
   <footer class="footer" id="lien-he">
     <div class="container-wide">
