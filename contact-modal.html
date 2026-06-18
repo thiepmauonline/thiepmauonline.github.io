@@ -1,0 +1,55 @@
+<!-- Nút nổi Chọn mẫu -->
+<button class="floating-btn-select" data-bs-toggle="modal" data-bs-target="#contactModal">
+  <i class="fa-solid fa-wand-magic-sparkles"></i> Chọn mẫu
+</button>
+
+<!-- Modal Đăng ký -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content contact-modal-content">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="contactModalLabel" style="color: #2C2C2C;">Đăng ký mẫu thiệp</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted mb-4" style="font-size: 0.95rem;">
+          Điền thông tin bên dưới, Happy Card sẽ chủ động liên hệ tư vấn và thiết kế theo yêu cầu.
+        </p>
+        
+        <!-- Alerts -->
+        <div id="contactAlertContainer"></div>
+
+        <form id="contactForm" novalidate>
+          <!-- Họ và tên -->
+          <div class="mb-3">
+            <label for="customerName" class="form-label fw-medium">Họ và tên <span class="text-danger">*</span></label>
+            <input type="text" class="form-control shadow-none" id="customerName" placeholder="Nhập họ và tên..." required>
+            <div class="invalid-feedback">
+              Vui lòng không để trống họ và tên.
+            </div>
+          </div>
+
+          <!-- Số Zalo -->
+          <div class="mb-3">
+            <label for="customerZalo" class="form-label fw-medium">Số Zalo <span class="text-danger">*</span></label>
+            <input type="tel" class="form-control shadow-none" id="customerZalo" placeholder="09xxxxxxxx" required>
+            <div class="invalid-feedback">
+              Vui lòng nhập số điện thoại Việt Nam hợp lệ (VD: 0912345678 hoặc +84912345678).
+            </div>
+          </div>
+
+          <!-- Link Facebook -->
+          <div class="mb-4">
+            <label for="customerFb" class="form-label fw-medium">Link Facebook</label>
+            <input type="url" class="form-control shadow-none" id="customerFb" placeholder="https://facebook.com/...">
+            <div class="form-text" style="font-size: 0.85rem;">Không bắt buộc. Giúp chúng tôi hỗ trợ bạn tốt hơn.</div>
+          </div>
+
+          <button type="submit" class="btn btn-dark w-100 py-2 fw-medium btn-submit-contact" id="btnSubmitContact">
+            <i class="fa-solid fa-paper-plane me-2"></i> Gửi thông tin
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
