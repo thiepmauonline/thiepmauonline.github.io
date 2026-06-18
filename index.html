@@ -78,24 +78,24 @@
   </header>
 
   <main>
-    <section class="hero-home">
+    <section class="hero-home text-center text-lg-start">
       <div class="container-wide">
         <div class="hero-grid">
           <div class="hero-copy" data-aos="fade-up">
             <span class="kicker">Thiệp điện tử cá nhân hóa</span>
             <h1 class="display-title">Gửi yêu thương với Happy Card</h1>
             <p class="lead">Happy Card – Thiệp điện tử hiện đại, tùy chỉnh theo yêu cầu hoặc thiết kế riêng. Dễ dàng chia sẻ qua liên kết, mã QR hoặc xuất ảnh, PDF. Bấm liên hệ ngay ở góc phải để sở hữu mẫu thiệp và mã QR riêng dành cho bạn.</p>
-            <div class="hero-badges">
+            <div class="hero-badges justify-content-center justify-content-lg-start">
               <span class="badge-pill"><i class="fa-solid fa-mobile-screen"></i> Responsive đẹp trên mọi màn hình</span>
               <span class="badge-pill"><i class="fa-solid fa-layer-group"></i>Chọn mẫu thiệp cho bạn</span>
             </div>
-            <div class="action-row">
+            <div class="action-row justify-content-center justify-content-lg-start">
               <a class="btn-card primary" href="#mau-thiep"><i class="fa-solid fa-eye"></i> Xem mẫu</a>
               <a class="btn-card secondary" href="#lien-he"><i class="fa-solid fa-message"></i> Liên hệ</a>
             </div>
           </div>
           <div class="hero-panel" data-aos="fade-left">
-            <div class="hero-visual">
+            <div class="hero-visual d-flex align-items-center justify-content-center">
               <div class="floating-card shine">
                 <span class="badge-soft mb-3"><i class="fa-solid fa-gift"></i> Happy Card</span>
                 <h4>Chọn mẫu, mở demo, gửi yêu thương</h4>
@@ -579,7 +579,7 @@
       categoriesContainer.parentNode.insertBefore(noResultsMsg, categoriesContainer.nextSibling);
 
       // CONFIG: Limit cards to display initially in each category
-      const INITIAL_LIMIT = 4;
+      const INITIAL_LIMIT = window.innerWidth >= 992 ? 6 : 4;
 
       // Initialize category pagination
       function initPagination() {
