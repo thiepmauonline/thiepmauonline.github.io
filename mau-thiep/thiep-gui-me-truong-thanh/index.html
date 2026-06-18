@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mẹ Ơi, Con Đã Lớn Rồi | Happy Card</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Câu chuyện của một người con trai đã trưởng thành nhìn lại tình yêu thương của mẹ.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/animation.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img_hero": "https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_meal": "https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_road": "https://images.pexels.com/photos/1105058/pexels-photo-1105058.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_night": "https://images.pexels.com/photos/5905902/pexels-photo-5905902.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gallery1": "https://images.pexels.com/photos/2085717/pexels-photo-2085717.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gallery2": "https://images.pexels.com/photos/4014919/pexels-photo-4014919.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_gallery3": "https://images.pexels.com/photos/3807736/pexels-photo-3807736.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_portrait": "https://images.pexels.com/photos/3768131/pexels-photo-3768131.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "img_ending": "https://images.pexels.com/photos/103123/pexels-photo-103123.jpeg?auto=compress&cs=tinysrgb&w=800"
+    };
+  </script>
+  
+  <style>
+    :root {
+      --milk-cream: #FDFBF7;
+      --light-brown: #D7C4B7;
+      --sunset-yellow: #F2C94C;
+      --earthy-orange: #E8AE94;
+      --ivory: #FFFFF0;
+      --text-dark: #4A3C31;
+      --text-light: #8A7B70;
+    }
+
+    html {
+      background-color: #2b2521;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--milk-cream);
+      color: var(--text-dark);
+      font-family: 'Mulish', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 50px rgba(0,0,0,0.15);
+      font-weight: 300;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin: 0;
+    }
+    
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .section {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 90px 24px;
+      min-height: 100vh;
+    }
+
+    .full-vh {
+      min-height: 100vh;
+    }
+    
+    .bg-milk { background-color: var(--milk-cream); }
+    .bg-ivory { background-color: var(--ivory); }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+    }
+
+    /* SECTION 1 - HERO */
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(253, 251, 247, 0.3) 0%, rgba(253, 251, 247, 0.95) 100%);
+      z-index: 1;
+    }
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+
+    /* SECTION 3 - ROAD */
+    .road-section {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .road-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(74, 60, 49, 0.7);
+      z-index: 1;
+    }
+
+    /* SECTION 5 - GALLERY */
+    .memory-gallery {
+      position: relative;
+      height: 520px;
+      margin-top: 30px;
+    }
+    .mem-img {
+      position: absolute;
+      object-fit: cover;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 2px;
+      filter: sepia(0.2) contrast(1.1);
+    }
+    .mem-1 {
+      width: 60%; height: 280px;
+      top: 0; left: 10px;
+      z-index: 1;
+    }
+    .mem-2 {
+      width: 50%; height: 240px;
+      top: 100px; right: 10px;
+      z-index: 2;
+    }
+    .mem-3 {
+      width: 70%; height: 220px;
+      bottom: 0; left: 15%;
+      z-index: 3;
+    }
+
+    /* SECTION 6 - CARDS */
+    .memory-card {
+      background: var(--ivory);
+      border: 1px solid rgba(215, 196, 183, 0.4);
+      padding: 35px 25px;
+      margin-bottom: 24px;
+      border-radius: 4px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+      position: relative;
+    }
+    .memory-card::before {
+      content: '”';
+      position: absolute;
+      top: 10px; right: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: rgba(232, 174, 148, 0.2);
+      line-height: 1;
+    }
+
+    /* SECTION 8 - STICKY NOTES */
+    .note-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .sticky-note {
+      background: #FEF9E7;
+      padding: 20px;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.05);
+      transform: rotate(-1deg);
+      border-top: 12px solid rgba(242, 201, 76, 0.4);
+    }
+    .sticky-note:nth-child(even) {
+      transform: rotate(2deg);
+      background: #FDF0E6;
+      border-top-color: rgba(232, 174, 148, 0.4);
+    }
+
+    /* SECTION 9 - LETTER */
+    .letter-paper {
+      background: var(--milk-cream);
+      padding: 40px 30px;
+      border-left: 2px double var(--light-brown);
+      border-right: 2px double var(--light-brown);
+      position: relative;
+    }
+
+    /* SECTION 10 - ENDING */
+    .ending-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(0deg, rgba(30,20,15,0.9) 0%, rgba(74,60,49,0.4) 100%);
+      z-index: 1;
+    }
+
+    .divider-line {
+      width: 1px;
+      height: 60px;
+      background-color: var(--light-brown);
+      margin: 30px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SECTION 1 - HERO -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div class="hero-bg" data-img="img_hero"></div>
+    <div class="hero-overlay"></div>
+    
+    <div style="z-index: 2; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 0 30px;">
+      
+      <h1 style="font-size: 3.5rem; line-height: 1.2; margin-bottom: 25px; color: var(--text-dark);" data-aos="fade-up" data-aos-duration="2000">
+        Mẹ Ơi,<br>
+        <span style="font-style: italic; font-size: 4rem;">Con Đã Lớn Rồi</span>
+      </h1>
+      
+      <div class="divider-line" data-aos="fade-up" data-aos-delay="400"></div>
+
+      <p class="font-cormorant" style="font-size: 1.25rem; font-style: italic; line-height: 1.6; color: var(--text-light);" data-aos="fade-up" data-aos-delay="800">
+        "Có những điều ngày bé con không hiểu.<br>
+        Đến khi trưởng thành, con mới biết đó chính là tình yêu của mẹ."
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 2 - NHỮNG BỮA CƠM NGÀY ẤY -->
+  <section class="section bg-ivory">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <img src="" data-img="img_meal" style="width: 100%; height: 350px; object-fit: cover; border-radius: 4px; margin-bottom: 40px; filter: brightness(0.95) sepia(0.1);" alt="Bữa cơm gia đình">
+      
+      <h2 style="font-size: 2.2rem; font-style: italic; margin-bottom: 25px; text-align: center;">Bữa Cơm Ngày Ấy</h2>
+      
+      <div style="padding: 0 15px;">
+        <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-dark); margin-bottom: 15px;">
+          Ngày bé, mẹ luôn bảo: <span style="font-style: italic; color: var(--earthy-orange);">"Mẹ ăn rồi, mẹ no rồi."</span>
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-dark); margin-bottom: 15px;">
+          Mẹ bảo mẹ không thích ăn thịt, mẹ chỉ thích ăn cá nhỏ, rau luộc. Con ngây ngô tin là thật, vô tư ăn phần ngon nhất.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.9; color: var(--text-dark); font-weight: 500;">
+          Lớn lên rồi con mới hiểu, không có ai trên đời này lại ghét đồ ăn ngon cả. Chỉ là mẹ nhường tất cả cho con.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3 - CON ĐƯỜNG ĐI HỌC -->
+  <section class="section road-section full-vh" data-img="img_road">
+    <div class="road-overlay"></div>
+    <div style="z-index: 2; color: #fff; text-align: center; padding: 0 20px;">
+      
+      <h2 style="font-size: 2.5rem; font-style: italic; margin-bottom: 30px; color: #fff;" data-aos="fade-up">Con Đường Mẹ Đưa Đi</h2>
+      
+      <p class="font-cormorant" style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 20px;" data-aos="fade-up" data-aos-delay="200">
+        Những ngày mưa rào tầm tã.<br>
+        Những buổi sáng mùa đông rét buốt.
+      </p>
+      
+      <p class="font-cormorant" style="font-size: 1.3rem; line-height: 1.8;" data-aos="fade-up" data-aos-delay="400">
+        Bóng lưng mẹ hao gầy che chở trước gió,<br>
+        chở con đi qua những năm tháng học trò.
+      </p>
+      
+    </div>
+  </section>
+
+  <!-- SECTION 4 - NHỮNG ĐÊM MẸ THỨC -->
+  <section class="section bg-milk">
+    <div class="text-center" data-aos="fade-up">
+      <img src="" data-img="img_night" style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); filter: grayscale(30%);" alt="Đêm thức">
+    </div>
+    
+    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+      <h2 style="font-size: 2.8rem; line-height: 1.3; font-style: italic; color: var(--text-dark); margin-bottom: 30px;">
+        Đêm mẹ thức,<br>
+        con yên giấc.
+      </h2>
+    </div>
+    
+    <p style="font-size: 1.05rem; line-height: 2; color: var(--text-light); text-align: center; padding: 0 20px;" data-aos="fade-up" data-aos-delay="300">
+      Đèn phòng mẹ luôn tắt muộn nhất. Mẹ lo con học bài khuya, mẹ lo áo con chưa khô kịp cho buổi sáng mai. Những lúc con ốm, bóng mẹ in trên tường dài cả đêm dài.
+    </p>
+  </section>
+
+  <!-- SECTION 5 - ALBUM KÝ ỨC -->
+  <section class="section bg-ivory">
+    <div class="text-center" data-aos="fade-up">
+      <h2 style="font-size: 2.2rem; font-style: italic;">Hồi Ký Tuổi Thơ</h2>
+    </div>
+    
+    <div class="memory-gallery">
+      <img src="" data-img="img_gallery1" class="mem-img mem-1" data-aos="fade-right" data-aos-duration="1200" alt="Ký ức 1">
+      <img src="" data-img="img_gallery2" class="mem-img mem-2" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1200" alt="Ký ức 2">
+      <img src="" data-img="img_gallery3" class="mem-img mem-3" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200" alt="Ký ức 3">
+    </div>
+  </section>
+
+  <!-- SECTION 6 - NHỮNG ĐIỀU CON TỪNG KHÔNG HIỂU -->
+  <section class="section bg-milk">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 style="font-size: 2.2rem; font-style: italic;">Giờ Con Đã Hiểu</h2>
+      <div class="divider-line" style="height: 40px; margin: 20px auto;"></div>
+    </div>
+    
+    <div class="d-flex flex-column">
+      <div class="memory-card" data-aos="fade-up">
+        <h3 style="font-size: 1.4rem; color: var(--earthy-orange); margin-bottom: 12px; font-style: italic;">Tại sao mẹ luôn tiết kiệm?</h3>
+        <p style="font-size: 1rem; line-height: 1.7; margin: 0; color: var(--text-dark);">
+          Mẹ tằn tiện từng đồng, chiếc áo mặc mấy năm không đổi. Không phải vì mẹ không thích đồ đẹp, mà vì mẹ muốn dành dụm để đóng học phí cho con.
+        </p>
+      </div>
+
+      <div class="memory-card" data-aos="fade-up" data-aos-delay="150">
+        <h3 style="font-size: 1.4rem; color: var(--earthy-orange); margin-bottom: 12px; font-style: italic;">Tại sao mẹ luôn nhường nhịn?</h3>
+        <p style="font-size: 1rem; line-height: 1.7; margin: 0; color: var(--text-dark);">
+          Mẹ chịu thiệt thòi ngoài xã hội, chỉ mỉm cười cho qua. Mẹ nuốt những tủi thân vào lòng, để đổi lấy một mái nhà yên bình cho con khôn lớn.
+        </p>
+      </div>
+
+      <div class="memory-card" data-aos="fade-up" data-aos-delay="300">
+        <h3 style="font-size: 1.4rem; color: var(--earthy-orange); margin-bottom: 12px; font-style: italic;">Tại sao mẹ luôn lo lắng?</h3>
+        <p style="font-size: 1rem; line-height: 1.7; margin: 0; color: var(--text-dark);">
+          Mỗi khi con đi xa, điện thoại mẹ chẳng bao giờ rời tay. Trưởng thành rồi con mới biết, ngoài thế giới kia đầy giông bão, chỉ có mẹ là bến đỗ an toàn nhất.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7 - MẸ GIÀ ĐI TỪ LÚC NÀO -->
+  <section class="section bg-ivory text-center" style="padding-top: 120px; padding-bottom: 120px;">
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <img src="" data-img="img_portrait" style="width: 100%; max-width: 300px; height: 400px; object-fit: cover; border-radius: 4px; margin-bottom: 50px; filter: sepia(0.3) contrast(1.1);" alt="Chân dung mẹ">
+    </div>
+    
+    <div data-aos="zoom-in" data-aos-duration="1500">
+      <h2 style="font-size: 2.4rem; font-style: italic; line-height: 1.5; color: var(--text-dark); margin-bottom: 30px;">
+        "Con cứ nghĩ mẹ vẫn<br>như ngày nào..."
+      </h2>
+      <p class="font-cormorant" style="font-size: 1.3rem; line-height: 1.8; color: var(--text-light);">
+        Đến một ngày nhìn lại,<br>
+        con thấy tóc mẹ đã bạc đi rất nhiều.<br>
+        Nếp nhăn in sâu nơi khóe mắt.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 8 - NHỮNG ĐIỀU CON MUỐN NÓI -->
+  <section class="section bg-milk">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 style="font-size: 2.2rem; font-style: italic;">Ghi Chú Cho Mẹ</h2>
+    </div>
+    
+    <div class="note-grid">
+      <div class="sticky-note" data-aos="fade-up">
+        <p style="font-size: 1rem; line-height: 1.6; font-family: 'Mulish', sans-serif; font-style: italic;">Mẹ nhớ uống thuốc đúng giờ nhé!</p>
+      </div>
+      <div class="sticky-note" data-aos="fade-up" data-aos-delay="100">
+        <p style="font-size: 1rem; line-height: 1.6; font-family: 'Mulish', sans-serif; font-style: italic;">Đừng tiết kiệm quá, mua sắm cho mình đi mẹ.</p>
+      </div>
+      <div class="sticky-note" data-aos="fade-up" data-aos-delay="200">
+        <p style="font-size: 1rem; line-height: 1.6; font-family: 'Mulish', sans-serif; font-style: italic;">Cuối tuần này con về ăn cơm với mẹ.</p>
+      </div>
+      <div class="sticky-note" data-aos="fade-up" data-aos-delay="300">
+        <p style="font-size: 1rem; line-height: 1.6; font-family: 'Mulish', sans-serif; font-style: italic;">Con thương mẹ nhiều lắm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9 - LỜI CẢM ƠN -->
+  <section class="section bg-ivory">
+    <div class="letter-paper" data-aos="fade-up" data-aos-duration="1500">
+      <h2 class="font-cormorant" style="font-size: 2rem; font-style: italic; margin-bottom: 30px; text-align: center; color: var(--text-dark);">Gửi Mẹ Của Con</h2>
+      
+      <p style="font-size: 1.05rem; line-height: 2.2; color: var(--text-dark); margin-bottom: 20px;">
+        Đã bao lâu rồi con chưa ôm mẹ và nói tiếng cảm ơn? 
+      </p>
+      <p style="font-size: 1.05rem; line-height: 2.2; color: var(--text-dark); margin-bottom: 20px;">
+        Cảm ơn mẹ vì đã sinh ra con, đã kiên nhẫn nuôi dạy một đứa trẻ bướng bỉnh trở thành người đàn ông trưởng thành. Mẹ đã đánh đổi tuổi trẻ, nhan sắc và những ước mơ riêng, chỉ để con có một tương lai trọn vẹn.
+      </p>
+      <p style="font-size: 1.05rem; line-height: 2.2; color: var(--text-dark); margin-bottom: 0; font-weight: 500;">
+        Từ nay về sau, hãy để con làm chỗ dựa cho mẹ nhé. 
+      </p>
+      
+      <div style="margin-top: 40px; text-align: right;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--earthy-orange); margin: 0;">Con trai của mẹ</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10 - KẾT THÚC -->
+  <section class="section full-vh text-center" style="padding: 0;">
+    <div class="hero-bg" data-img="img_ending" style="filter: brightness(0.8);"></div>
+    <div class="ending-overlay"></div>
+    
+    <div style="z-index: 2; position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; padding: 0 24px;">
+      
+      <h2 style="font-size: 2.8rem; font-style: italic; line-height: 1.3; color: var(--ivory); margin-bottom: 40px; text-shadow: 0 4px 20px rgba(0,0,0,0.5);" data-aos="fade-up" data-aos-duration="1500">
+        "Cảm Ơn Mẹ Vì Đã Dành Cả Thanh Xuân Cho Con"
+      </h2>
+      
+      <p class="font-cormorant" style="font-size: 1.25rem; line-height: 1.7; color: rgba(255, 255, 240, 0.8); margin-bottom: 50px;" data-aos="fade-up" data-aos-delay="500">
+        Con không còn là cậu bé ngày nào nữa.<br>
+        Nhưng mãi mãi vẫn là đứa con được mẹ yêu thương nhất.
+      </p>
+
+      <a href="../../index.html" class="btn btn-outline-light rounded-pill px-4 py-2" style="font-family: 'Mulish', sans-serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;" data-aos="zoom-in" data-aos-delay="800">
+        Về trang chủ
+      </a>
+      
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1000
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
