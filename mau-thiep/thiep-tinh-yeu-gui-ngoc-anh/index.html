@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gửi Ngọc Anh | Lời Yêu Thương</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <meta name="description" content="Thiệp tình yêu ngọt ngào gửi Ngọc Anh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../../assets/css/contact-modal.css">
+  
+  <script>
+    const PAGE_IMAGES = {
+      "img_hero": "../../assets/images/thiep-tinh-yeu-gui-ngoc-anh/hero.png",
+      "img_rose": "../../assets/images/thiep-tinh-yeu-gui-ngoc-anh/rose.png",
+      "img_polaroids": "../../assets/images/thiep-tinh-yeu-gui-ngoc-anh/polaroids.png",
+      "img_envelope": "../../assets/images/thiep-tinh-yeu-gui-ngoc-anh/envelope.png"
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-dark-pink: #4B2735;
+      --bg-light-pink: #FDE8F1;
+      --bg-mid-pink: #E9A1B4;
+      --text-dark: #642C3E;
+      --text-light: #FFFFFF;
+      --accent: #FF7FA0;
+      --glass-bg: rgba(255, 255, 255, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.6);
+    }
+    
+    html {
+      background-color: #f7f7f7;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+      background-color: var(--bg-light-pink);
+      color: var(--text-dark);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
+      font-weight: 400;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, .script-font {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    /* Common */
+    .section {
+      position: relative;
+      padding: 50px 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .content-z { position: relative; z-index: 2; }
+
+    /* Floating Hearts */
+    .floating-hearts {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .heart-flake {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.6);
+      animation: floatUp 10s linear infinite;
+      font-size: 14px;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      20% { opacity: 0.8; }
+      80% { opacity: 0.8; }
+      100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+    }
+
+    /* Section 1: Hero */
+    .s1-hero {
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--text-light);
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 30px;
+    }
+    .s1-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; width: 100%; height: 60%;
+      background: linear-gradient(to top, rgba(75, 39, 53, 0.9) 0%, transparent 100%);
+      z-index: 1;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+    .hero-top-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .hero-top-icon {
+      font-size: 1.2rem;
+    }
+    .hero-main {
+      z-index: 2;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .hero-greeting {
+      font-size: 2.2rem;
+      font-weight: 600;
+      margin-bottom: -10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero-name {
+      font-size: 5rem;
+      line-height: 1;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+      animation: pulseGlow 2s infinite alternate;
+    }
+    .hero-subtext {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.5;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    }
+    .scroll-down {
+      z-index: 2;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .scroll-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(5px);
+      animation: bounce 2s infinite;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    @keyframes pulseGlow {
+      0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
+      100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px #FF7FA0; }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    /* Section 2: Words */
+    .s2-words {
+      background: linear-gradient(180deg, var(--bg-light-pink) 0%, #FFFFFF 100%);
+      padding: 60px 20px;
+    }
+    .s2-title {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .s2-content {
+      font-size: 1rem;
+      line-height: 1.8;
+      text-align: center;
+      padding: 0 10px;
+      margin-bottom: 40px;
+      color: #794D5C;
+    }
+    .rose-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .rose-container img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(233, 161, 180, 0.3);
+    }
+
+    /* Section 3: 1000 Reasons */
+    .s3-reasons {
+      background: linear-gradient(135deg, #7A3E54 0%, #4B2735 100%);
+      color: white;
+      padding: 60px 20px;
+    }
+    .reasons-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 30px;
+    }
+    .reasons-title {
+      font-size: 2.5rem;
+      margin: 0;
+      line-height: 1.1;
+    }
+    .reasons-btn {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      border-radius: 20px;
+      padding: 5px 15px;
+      font-size: 0.8rem;
+      backdrop-filter: blur(5px);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .reasons-cards {
+      display: flex;
+      gap: 15px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      scrollbar-width: none;
+    }
+    .reasons-cards::-webkit-scrollbar { display: none; }
+    .reason-card {
+      min-width: 140px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 20px;
+      padding: 20px 15px;
+      text-align: center;
+      color: var(--text-dark);
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .reason-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--bg-light-pink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+    .reason-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Section 4: Memories */
+    .s4-memories {
+      background: var(--bg-light-pink);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .memories-title {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 15px;
+    }
+    .play-btn {
+      background: rgba(255, 127, 160, 0.2);
+      color: var(--text-dark);
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+    .polaroid-container {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .polaroid-container img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      transform: rotate(-2deg);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .polaroid-container img:hover {
+      transform: rotate(0deg) scale(1.02);
+    }
+
+    /* Section 5: Journey */
+    .s5-journey {
+      background: linear-gradient(to bottom, #4B2735, #2D1520);
+      color: white;
+      padding: 60px 20px;
+    }
+    .journey-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .journey-title {
+      font-size: 2.2rem;
+      margin: 0;
+    }
+    .journey-more {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+    .timeline {
+      position: relative;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 35px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      z-index: 1;
+    }
+    .timeline-item {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      width: 25%;
+    }
+    .timeline-icon {
+      width: 30px;
+      height: 30px;
+      background: #4B2735;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #FF7FA0;
+      margin-bottom: 10px;
+      box-shadow: 0 0 10px rgba(255, 127, 160, 0.5);
+    }
+    .timeline-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+    .timeline-date {
+      font-size: 0.65rem;
+      opacity: 0.7;
+    }
+
+    /* Section 6: Letter */
+    .s6-letter {
+      background: var(--bg-light-pink);
+      padding: 60px 20px;
+    }
+    .letter-title {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .letter-content {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #794D5C;
+      margin-bottom: 30px;
+    }
+    .letter-highlight {
+      color: var(--text-dark);
+      font-weight: 600;
+      display: block;
+      margin-top: 15px;
+    }
+    .envelope-img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(233, 161, 180, 0.4);
+    }
+
+    /* Section 7: Em là */
+    .s7-you-are {
+      background: #4B2735;
+      color: white;
+      padding: 60px 20px;
+    }
+    .you-are-title {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      text-align: center;
+    }
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .feature-icon-wrapper {
+      position: relative;
+    }
+    .feature-icon-wrapper i {
+      font-size: 2.5rem;
+      color: transparent;
+      -webkit-text-stroke: 1.5px white;
+    }
+    .feature-text {
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    /* Section 8: Promise */
+    .s8-promise {
+      background: linear-gradient(180deg, var(--bg-light-pink) 0%, #FFFFFF 100%);
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .promise-title {
+      font-size: 2.5rem;
+      color: var(--text-dark);
+      margin-bottom: 30px;
+    }
+    .promise-list {
+      text-align: left;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+    .promise-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      color: #794D5C;
+    }
+    .promise-item i {
+      color: var(--accent);
+      margin-top: 3px;
+    }
+    .heart-frame {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto;
+      background-size: cover;
+      background-position: center;
+      -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 85C50 85 10 55 10 30C10 15 25 10 35 20C42 27 50 35 50 35C50 35 58 27 65 20C75 10 90 15 90 30C90 55 50 85 50 85Z"/></svg>');
+      mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 85C50 85 10 55 10 30C10 15 25 10 35 20C42 27 50 35 50 35C50 35 58 27 65 20C75 10 90 15 90 30C90 55 50 85 50 85Z"/></svg>');
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      box-shadow: 0 0 30px rgba(255, 127, 160, 0.5);
+    }
+    .heart-glow {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, rgba(255, 127, 160, 0.4) 0%, transparent 70%);
+      z-index: -1;
+      animation: pulseLight 3s infinite alternate;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Background Hearts -->
+  <div class="floating-hearts" id="hearts-container"></div>
+
+  <!-- S1: Hero -->
+  <section class="section s1-hero" data-img="img_hero">
+    <div class="hero-top" data-aos="fade-down">
+      <div class="hero-top-text">
+        <i class="ph-fill ph-music-note"></i> For you, Ngọc Anh
+      </div>
+      <div class="hero-top-icon">
+        <i class="ph-bold ph-heart"></i>
+      </div>
+    </div>
+    
+    <div class="hero-main" data-aos="zoom-in" data-aos-duration="1500">
+      <div class="script-font hero-greeting">Gửi</div>
+      <h1 class="script-font hero-name">Ngọc Anh</h1>
+      <p class="hero-subtext">
+        Em là điều tuyệt vời nhất<br>
+        đã đến trong cuộc đời anh <i class="ph-fill ph-heart"></i>
+      </p>
+    </div>
+
+    <div class="scroll-down" data-aos="fade-up" data-aos-delay="500">
+      <a href="#s2" class="scroll-icon text-white text-decoration-none">
+        <i class="ph-bold ph-arrow-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- S2: Words -->
+  <section id="s2" class="section s2-words">
+    <div class="content-z w-100" data-aos="fade-up">
+      <h2 class="script-font s2-title">Điều anh muốn nói... <i class="ph-fill ph-heart" style="color: var(--accent); font-size: 1.5rem;"></i></h2>
+      <p class="s2-content">
+        Cảm ơn em vì đã xuất hiện,<br>
+        đã yêu thương, đã kiên nhẫn<br>
+        và luôn ở bên anh.<br>
+        Em làm cuộc sống của anh<br>
+        trở nên ý nghĩa hơn mỗi ngày.
+      </p>
+      <div class="rose-container" data-aos="zoom-in" data-aos-delay="200">
+        <img src="" data-img="img_rose" alt="Pink Rose">
+      </div>
+    </div>
+  </section>
+
+  <!-- S3: 1000 Reasons -->
+  <section class="section s3-reasons">
+    <div class="content-z w-100">
+      <div class="reasons-header" data-aos="fade-right">
+        <h2 class="script-font reasons-title">1000 lý do<br>anh yêu em <i class="ph-fill ph-heart" style="font-size: 1.2rem;"></i></h2>
+        <a href="#" class="reasons-btn">Xem hết <i class="ph-bold ph-arrow-right"></i></a>
+      </div>
+      
+      <div class="reasons-cards">
+        <div class="reason-card" data-aos="fade-left" data-aos-delay="100">
+          <div class="reason-icon"><i class="ph-fill ph-heart"></i></div>
+          <div class="reason-text">Nụ cười<br>của em</div>
+        </div>
+        <div class="reason-card" data-aos="fade-left" data-aos-delay="200">
+          <div class="reason-icon"><i class="ph-fill ph-chat-circle-text"></i></div>
+          <div class="reason-text">Sự quan tâm<br>chân thành</div>
+        </div>
+        <div class="reason-card" data-aos="fade-left" data-aos-delay="300">
+          <div class="reason-icon"><i class="ph-fill ph-star"></i></div>
+          <div class="reason-text">Em luôn tin<br>tưởng anh</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4: Memories -->
+  <section class="section s4-memories">
+    <div class="content-z w-100" data-aos="fade-up">
+      <h2 class="script-font memories-title">Những khoảnh khắc<br>của chúng mình <i class="ph-light ph-heart" style="font-size: 1.5rem;"></i></h2>
+      <button class="play-btn">
+        <i class="ph-fill ph-play-circle"></i> Play Memories <i class="ph-bold ph-caret-right"></i>
+      </button>
+      
+      <div class="polaroid-container" data-aos="zoom-in">
+        <img src="" data-img="img_polaroids" alt="Memories">
+      </div>
+    </div>
+  </section>
+
+  <!-- S5: Journey Timeline -->
+  <section class="section s5-journey">
+    <div class="content-z w-100">
+      <div class="journey-header" data-aos="fade-in">
+        <h2 class="script-font journey-title">Hành trình<br>của chúng ta <i class="ph-light ph-heart" style="font-size: 1.5rem;"></i></h2>
+        <span class="journey-more">Và còn nhiều hơn nữa...</span>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-icon"><i class="ph-fill ph-heart"></i></div>
+          <div class="timeline-title">Ngày đầu gặp</div>
+          <div class="timeline-date">12.05.2022</div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-icon"><i class="ph-fill ph-heart"></i></div>
+          <div class="timeline-title">Chính thức yêu</div>
+          <div class="timeline-date">20.06.2022</div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-icon"><i class="ph-fill ph-heart"></i></div>
+          <div class="timeline-title">Chuyến đi đầu</div>
+          <div class="timeline-date">15.08.2022</div>
+        </div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="timeline-icon"><i class="ph-fill ph-heart"></i></div>
+          <div class="timeline-title">Kỷ niệm 1 năm</div>
+          <div class="timeline-date">20.06.2023</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6: Letter -->
+  <section class="section s6-letter">
+    <div class="content-z w-100" data-aos="fade-up">
+      <h2 class="script-font letter-title">Gửi Ngọc Anh của anh <i class="ph-light ph-heart" style="font-size: 1.5rem; color: var(--accent);"></i></h2>
+      <p class="letter-content">
+        Dù mai này chúng ta có đi đâu,<br>
+        làm gì, anh vẫn mong<br>
+        em luôn vui vẻ, hạnh phúc<br>
+        và luôn nhớ rằng...
+        <span class="letter-highlight">Anh luôn ở đây, yêu em rất nhiều!</span>
+      </p>
+      <div data-aos="zoom-in">
+        <img src="" data-img="img_envelope" class="envelope-img" alt="Letter">
+      </div>
+    </div>
+  </section>
+
+  <!-- S7: Em là... -->
+  <section class="section s7-you-are">
+    <div class="content-z w-100">
+      <h2 class="script-font you-are-title" data-aos="fade-right">Em là... <i class="ph-light ph-heart" style="font-size: 1.5rem;"></i></h2>
+      
+      <div class="features-grid">
+        <div class="feature-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="feature-icon-wrapper"><i class="ph-bold ph-heart"></i></div>
+          <div class="feature-text">Điều ngọt ngào<br>nhất</div>
+        </div>
+        <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
+          <div class="feature-icon-wrapper"><i class="ph-bold ph-cloud"></i></div>
+          <div class="feature-text">Điều bình yên<br>nhất</div>
+        </div>
+        <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="feature-icon-wrapper"><i class="ph-bold ph-clover"></i></div>
+          <div class="feature-text">Điều may mắn<br>nhất</div>
+        </div>
+        <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+          <div class="feature-icon-wrapper"><i class="ph-bold ph-infinity"></i></div>
+          <div class="feature-text">Tình yêu<br>của đời anh</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S8: Promise -->
+  <section class="section s8-promise">
+    <div class="content-z w-100">
+      <h2 class="script-font promise-title" data-aos="fade-down">Anh hứa... <i class="ph-light ph-heart" style="font-size: 1.5rem; color: var(--accent);"></i></h2>
+      
+      <div class="promise-list" data-aos="fade-up">
+        <div class="promise-item">
+          <i class="ph-fill ph-heart"></i> Luôn yêu thương và trân trọng em
+        </div>
+        <div class="promise-item">
+          <i class="ph-fill ph-heart"></i> Luôn lắng nghe và thấu hiểu
+        </div>
+      </div>
+      
+      <div style="position: relative;" data-aos="zoom-in" data-aos-delay="300">
+        <div class="heart-glow"></div>
+        <div class="heart-frame" data-img="img_hero"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Animations
+    AOS.init({
+      once: false,
+      offset: 50,
+      duration: 1000,
+      easing: 'ease-in-out-cubic'
+    });
+
+    // Load dynamic images from PAGE_IMAGES
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-img]").forEach(el => {
+        const key = el.getAttribute("data-img");
+        const src = PAGE_IMAGES[key];
+        if (src && src.trim() !== "") {
+          if (el.tagName.toLowerCase() === "img") {
+            el.src = src;
+          } else {
+            el.style.backgroundImage = `url('${src}')`;
+          }
+        }
+      });
+
+      // Generate floating hearts
+      const container = document.getElementById('hearts-container');
+      for(let i=0; i<30; i++) {
+        const heart = document.createElement('i');
+        heart.className = 'ph-fill ph-heart heart-flake';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDelay = Math.random() * 10 + 's';
+        heart.style.animationDuration = 10 + Math.random() * 10 + 's';
+        heart.style.opacity = Math.random() * 0.5 + 0.3;
+        const scale = Math.random() * 1 + 0.5;
+        heart.style.transform = `scale(${scale})`;
+        container.appendChild(heart);
+      }
+    });
+  </script>
+  <script src="../../assets/js/contact-modal.js"></script>
+</body>
+</html>
